@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /
 ---
 
 <h1 align="center">Aslam Pandu Tasminto</h1>
