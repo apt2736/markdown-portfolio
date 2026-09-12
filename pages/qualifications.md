@@ -1,24 +1,20 @@
-[Back to main page](./../README.md)
-
 # Skills & Qualifications
 
 ### Languages & Tools
-C++, C#, Python, React, TypeScript, JavaScript, HTML/CSS, Java, SQL, F#
 
----
-
-### Other Technical Skills
-JetBrains IDEs, Visual Studio, Git, GitHub
+ROS 2, ROS 1, OpenCV, C++, Python, JavaScript, HTML/CSS, Java
 
 ---
 
 ### Principles
-Agile, Scrum, Kanban, Software as a Service, Object-Oriented Design
+
+Autonomous Robot Software, Computer Vision, System Control
 
 ---
 
 ### Soft Skills
-Communication, collaboration, adaptability, problem-solving, critical thinking
+
+Adaptability, problem-solving, critical thinking
 
 ---
 
