@@ -6,7 +6,6 @@ layout: default
 
 ## Introduction
 
-<div align="justify">
 In the RoboCup Middle Size League (MSL), the most popular wheel configuration is the 3-wheeled omnidirectional system.
 
 <table align="center">
@@ -30,11 +29,7 @@ In the RoboCup Middle Size League (MSL), the most popular wheel configuration is
 
 The main advantage of this system is that it allows the robot to move translationally in any direction while rotating freely at the same time. Even though the system has such a huge advantage, relying purely on this system can increase the difficulty of Natural Dribbling. Since the robot can move in any direction and orientation at the same time, this requires the dribbled ball to follow along at the same degree, which can be difficult to manage on robots with suboptimal dribbler configurations. To address this issue, I implemented a differential drive-like motion system for an omnidirectional robot with 3rd-Order Bézier curve path planning to minimalize ball horizontal movement, reducing the chance of losing control over the ball.
 
-</div>
-
 ## How it Works
-
-<div align="justify">
 
 MSL robots operate on a 2D plane, which means their translational velocity consists of only two orthogonal components. Let $\mathbf{v}_l$ denote the linear velocity vector in the robot's local coordinate frame:
 
@@ -131,35 +126,38 @@ where $\omega_{w1}, \omega_{w2}, \omega_{w3}$ are the wheel angular velocities f
 
 With that said, here is the complete motion algorithm:
 
-<div align="center">
-
-| Line | Differential Drive-like Motion with Bézier Curve Path Planning                                                                                                                                     |
-| :--: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      | **Input:** Initial pose $\mathbf{p}_O = [x_O, y_O, \theta_O]^T$, target pose $\mathbf{p}_T = [x_T, y_T, \theta_T]^T$, wheel radius $r_w$, ball offset $r_b$, wheel mounting angles $q_1, q_2, q_3$ |
-|      | **Output:** Commanded wheel angular velocities $[\omega_{w1}, \omega_{w2}, \omega_{w3}]^T$ (in RPM)                                                                                                |
-|  1   | $d_t \leftarrow \sqrt{(x_T - x_O)^2 + (y_T - y_O)^2}, \quad d_q \leftarrow d_t / 4$                                                                                                                |
-|  2   | $P_0 \leftarrow [x_O, y_O]^T, \quad P_3 \leftarrow [x_T, y_T]^T$                                                                                                                                   |
-|  3   | Compute control points $P_1$ and $P_2$ using heading angles $(\theta_O, \theta_T)$ and distance offset $d_q$                                                                                       |
-|  4   | $\mathcal{W} \leftarrow \text{DeCasteljau}(P_0, P_1, P_2, P_3)$ &emsp; _(interpolate waypoints along $\mathbf{B}_3(t)$)_                                                                           |
-|  5   | **while** robot has not reached target pose $\mathbf{p}_T$ **do**                                                                                                                                  |
-|  6   | &emsp; $(x_n, y_n), (x_m, y_m) \leftarrow \text{GetNextWaypointPair}(\mathcal{W})$                                                                                                                 |
-|  7   | &emsp; **if** robot requires $180^\circ$ pivot turn **then**                                                                                                                                       |
-|  8   | &emsp;&emsp; $l_a \leftarrow \omega_l \cdot r_b$                                                                                                                                                   |
-|  9   | &emsp;&emsp; $\boldsymbol{q}_l \leftarrow l_a \left[1, \; 0, \; 1/r_b\right]^T$                                                                                                                    |
-|  10  | &emsp; **else**                                                                                                                                                                                    |
-|  11  | &emsp;&emsp; $d_{mn} \leftarrow \sqrt{(x_n - x_m)^2 + (y_n - y_m)^2}$                                                                                                                              |
-|  12  | &emsp;&emsp; $\theta_{mn} \leftarrow \arctan\left(\frac{y_n - y_m}{x_n - x_m}\right)$                                                                                                              |
-|  13  | &emsp;&emsp; $[v_{gx}, v_{gy}]^T \leftarrow d_{mn} [\cos\theta_{mn}, \sin\theta_{mn}]^T$                                                                                                           |
-|  14  | &emsp;&emsp; $[v_l, \omega_l]^T \leftarrow \mathbf{F}(x_m, y_m, x_n, y_n, \theta_R(t))$                                                                                                            |
-|  15  | &emsp;&emsp; $\boldsymbol{q}_l \leftarrow [0, \; v_l, \; \omega_l]^T$                                                                                                                              |
-|  16  | &emsp; **end if**                                                                                                                                                                                  |
-|  17  | &emsp; $[\omega_{w1}, \omega_{w2}, \omega_{w3}]^T \leftarrow \text{InverseKinematics}(\boldsymbol{q}_l, r_w, q_1, q_2, q_3)$                                                                       |
-|  18  | &emsp; $\text{ActuateMotors}(\omega_{w1}, \omega_{w2}, \omega_{w3})$                                                                                                                               |
-|  19  | **end while**                                                                                                                                                                                      |
-
-</div>
-
-</div>
+$$
+\begin{array}{l}
+\hline
+\textbf{Algorithm 1: } \text{Differential Drive-like Motion with Bézier Curve Path Planning} \\[2pt]
+\hline
+\textbf{Input: } \mathbf{p}_O = [x_O, y_O, \theta_O]^T, \; \mathbf{p}_T = [x_T, y_T, \theta_T]^T, \; r_w, \; r_b, \; q_1, q_2, q_3 \\
+\textbf{Output: } [\omega_{w1}, \omega_{w2}, \omega_{w3}]^T \text{ (Commanded wheel angular velocities in RPM)} \\[2pt]
+\hline
+\begin{array}{rl}
+1: & d_t \leftarrow \sqrt{(x_T - x_O)^2 + (y_T - y_O)^2}, \quad d_q \leftarrow d_t / 4 \\[2pt]
+2: & P_0 \leftarrow [x_O, y_O]^T, \quad P_3 \leftarrow [x_T, y_T]^T \\[2pt]
+3: & \text{Compute control points } P_1, P_2 \text{ using } (\theta_O, \theta_T) \text{ and } d_q \\[2pt]
+4: & \mathcal{W} \leftarrow \text{DeCasteljau}(P_0, P_1, P_2, P_3) \quad \text{(interpolate waypoints along } \mathbf{B}_3(t)\text{)} \\[2pt]
+5: & \textbf{while } \text{robot has not reached target pose } \mathbf{p}_T \textbf{ do} \\[2pt]
+6: & \quad (x_n, y_n), (x_m, y_m) \leftarrow \text{GetNextWaypointPair}(\mathcal{W}) \\[2pt]
+7: & \quad \textbf{if } \text{robot requires } 180^\circ \text{ pivot turn } \textbf{then} \\[2pt]
+8: & \quad\quad l_a \leftarrow \omega_l \cdot r_b \\[2pt]
+9: & \quad\quad \boldsymbol{q}_l \leftarrow l_a \left[1, \; 0, \; 1/r_b\right]^T \\[2pt]
+10: & \quad \textbf{else} \\[2pt]
+11: & \quad\quad d_{mn} \leftarrow \sqrt{(x_n - x_m)^2 + (y_n - y_m)^2} \\[2pt]
+12: & \quad\quad \theta_{mn} \leftarrow \arctan\left(\frac{y_n - y_m}{x_n - x_m}\right) \\[2pt]
+13: & \quad\quad [v_{gx}, v_{gy}]^T \leftarrow d_{mn} [\cos\theta_{mn}, \sin\theta_{mn}]^T \\[2pt]
+14: & \quad\quad [v_l, \omega_l]^T \leftarrow \mathbf{F}(x_m, y_m, x_n, y_n, \theta_R(t)) \\[2pt]
+15: & \quad\quad \boldsymbol{q}_l \leftarrow [0, \; v_l, \; \omega_l]^T \\[2pt]
+16: & \quad \textbf{end if} \\[2pt]
+17: & \quad [\omega_{w1}, \omega_{w2}, \omega_{w3}]^T \leftarrow \text{InverseKinematics}(\boldsymbol{q}_l, r_w, q_1, q_2, q_3) \\[2pt]
+18: & \quad \text{ActuateMotors}(\omega_{w1}, \omega_{w2}, \omega_{w3}) \\[2pt]
+19: & \textbf{end while}
+\end{array} \\[2pt]
+\hline
+\end{array}
+$$
 
 ## Result
 
