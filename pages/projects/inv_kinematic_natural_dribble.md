@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Inverse Kinematic Feedforward Control for MSL Natural Dribbling
 
 Coming Soon

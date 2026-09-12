@@ -1,5 +1,7 @@
 title: "Aslam Pandu Tasminto | Portfolio"
 description: "Personal Portfolio and Projects"
+baseurl: "/markdown-portfolio"
+url: "https://apt2736.github.io"
 markdown: kramdown
 kramdown:
   math_engine: mathjax

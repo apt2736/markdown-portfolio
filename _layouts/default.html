@@ -21,6 +21,22 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Automatic .md -> .html link resolution for GitHub Pages -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('a').forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href && !href.startsWith('http://') && !href.startsWith('https://') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+          if (href.endsWith('README.md')) {
+            link.setAttribute('href', href.replace(/README\.md$/, 'index.html'));
+          } else if (href.endsWith('.md')) {
+            link.setAttribute('href', href.replace(/\.md$/, '.html'));
+          }
+        }
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="page-wrapper">

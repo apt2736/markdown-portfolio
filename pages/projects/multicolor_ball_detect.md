@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Multicolor Long Range Ball Detection
 
 Coming Soon

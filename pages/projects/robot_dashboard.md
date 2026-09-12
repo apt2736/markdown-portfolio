@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Robot Web Dashboard
 
 Coming Soon

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Projects
 
 ### MSL Robot | January - June 2026
@@ -11,5 +15,7 @@
 [Multicolor Long Range Ball Detection](projects/multicolor_ball_detect.md) | February 2026
 
 [Robot Web Dashboard](projects/robot_dashboard.md) | June 2025
+
+---
 
 [Back to main page](./../README.md)

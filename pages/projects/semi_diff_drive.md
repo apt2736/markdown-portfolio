@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Differential Drive-like Motion on Omnidirectional Robot with 3rd-Order Bézier Curve Path Planning
 
 ## Introduction

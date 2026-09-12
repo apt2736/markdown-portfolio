@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Artificial Potential Field Based Obstacle Avoidance with Dynamic Acceleration Control
 
 Coming Soon

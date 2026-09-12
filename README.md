@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <h1 align="center">Aslam Pandu Tasminto</h1>
 <table align="center">
   <tbody>
