@@ -84,16 +84,26 @@ $$
 The control points $P_1$ and $P_2$ are generated as follows:
 
 $$
-P_1 = \begin{bmatrix} x_{P_1} \\ y_{P_1} \end{bmatrix} = \begin{bmatrix} -\dfrac{d_q}{\sqrt{1 + \tan^2\left({\theta_O}\right)}} \\[0.3cm] (x_{P_1} - x_O)\tan\left({\theta_O}\right) \end{bmatrix} + \begin{bmatrix} x_O \\ y_O \end{bmatrix} \\[0.5cm]
-P_2 = \begin{bmatrix} x_{P_2} \\ y_{P_2} \end{bmatrix} = \begin{bmatrix} -\dfrac{d_q}{\sqrt{1 + \tan^2\left({\theta_T}\right)}} \\[0.3cm] (x_{P_2} - x_T)\tan\left({\theta_T}\right) \end{bmatrix} + \begin{bmatrix} x_T \\ y_T \end{bmatrix}
+P_1 = \begin{bmatrix} x_{P_1} \\ y_{P_1} \end{bmatrix} = \begin{bmatrix} -\dfrac{d_q}{\sqrt{1 + \tan^2(\theta_O)}} \\ \rule{0pt}{1.5em} (x_{P_1} - x_O)\tan(\theta_O) \end{bmatrix} + \begin{bmatrix} x_O \\ y_O \end{bmatrix}
+$$
+
+$$
+P_2 = \begin{bmatrix} x_{P_2} \\ y_{P_2} \end{bmatrix} = \begin{bmatrix} -\dfrac{d_q}{\sqrt{1 + \tan^2(\theta_T)}} \\ \rule{0pt}{1.5em} (x_{P_2} - x_T)\tan(\theta_T) \end{bmatrix} + \begin{bmatrix} x_T \\ y_T \end{bmatrix}
 $$
 
 After obtaining the control points, we use De Casteljau's algorithm to interpolate the curve and produce a smooth trajectory.
 To make the omnidirectional robot follow the interpolated waypoints like a differential drive robot, consecutive points must be transformed into target linear and angular velocities. The transformation function can be represented as:
 
 $$
-\mathbf{F}(x_m, y_m, x_n, y_n) = \begin{bmatrix} v_l \\ \omega_l \end{bmatrix} = \begin{bmatrix} \cos({\theta_R(t)}) & \sin({\theta_R(t)}) & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} v_{gx} \\ v_{gy} \\ \omega_g \end{bmatrix} \\[0.5cm]
-\begin{bmatrix} v_{gx} \\ v_{gy} \end{bmatrix} = d_{mn} \begin{bmatrix} \cos\left({\theta_{mn}}\right) \\ \sin\left({\theta_{mn}}\right) \end{bmatrix} \\[0.5cm] d_{mn} = \sqrt{\left(x_m - x_n\right)^2 + \left(y_m - y_n\right)^2} \hspace{1cm} \theta_{mn} = \arctan\left(\frac{y_m - y_n}{x_m - x_n}\right)
+\mathbf{F}(x_m, y_m, x_n, y_n) = \begin{bmatrix} v_l \\ \omega_l \end{bmatrix} = \begin{bmatrix} \cos(\theta_R(t)) & \sin(\theta_R(t)) & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} v_{gx} \\ v_{gy} \\ \omega_g \end{bmatrix}
+$$
+
+$$
+\begin{bmatrix} v_{gx} \\ v_{gy} \end{bmatrix} = d_{mn} \begin{bmatrix} \cos(\theta_{mn}) \\ \sin(\theta_{mn}) \end{bmatrix}
+$$
+
+$$
+d_{mn} = \sqrt{(x_m - x_n)^2 + (y_m - y_n)^2}, \qquad \theta_{mn} = \arctan\left(\frac{y_m - y_n}{x_m - x_n}\right)
 $$
 
 where $\left(x_n, y_n\right)$ is the initial position, $\left(x_m, y_m\right)$ is the targeted position, and $\theta_R(t)$ is the robot orientation at time $t$. Three of them are on the robot's global coordinate frame. Finally, the resulting velocities are assigned to the commanded velocity state vector $\boldsymbol{q}_l'$ as the velocity command.
@@ -107,7 +117,7 @@ $$
 where $l_a$ is the linear arc velocity produced by the robot while pivoting and $r_b$ is the distance from the robot's center of rotation to the center of the ball. The transformation from arc velocity to the velocity command vector is expressed as:
 
 $$
-\boldsymbol{q}_l = \begin{bmatrix} v_{lx} \\ v_{ly} \\ \omega_l \end{bmatrix} = \begin{bmatrix} l_a \\ 0 \\ \dfrac{l_a}{r_b} \end{bmatrix} = l_a \begin{bmatrix} 1 \\[0.2cm] 0 \\[0.2cm] \dfrac{1}{r_b} \end{bmatrix}
+\boldsymbol{q}_l = \begin{bmatrix} v_{lx} \\ v_{ly} \\ \omega_l \end{bmatrix} = \begin{bmatrix} l_a \\ 0 \\ \rule{0pt}{1.3em}\dfrac{l_a}{r_b} \end{bmatrix} = l_a \begin{bmatrix} 1 \\ 0 \\ \rule{0pt}{1.3em}\dfrac{1}{r_b} \end{bmatrix}
 $$
 
 After the velocity command vector is calculated, it is passed to the 3-wheeled omnidirectional robot inverse kinematics model:
@@ -119,7 +129,7 @@ After the velocity command vector is calculated, it is passed to the 3-wheeled o
 </div>
 
 $$
-\begin{bmatrix} \omega_{w1} \\ \omega_{w2} \\ \omega_{w3} \end{bmatrix} = \dfrac{60}{2\pi r_w} \begin{bmatrix} \cos(q_1) & \sin(q_1) & 1 \\ \cos(q_2) & \sin(q_2) & 1 \\ \cos(q_3) & \sin(q_3) & 1 \end{bmatrix} \begin{bmatrix} v_{lx} \\ v_{ly} \\[0.2cm] \dfrac{2\pi r_w}{60}\omega_l \end{bmatrix}
+\begin{bmatrix} \omega_{w1} \\ \omega_{w2} \\ \omega_{w3} \end{bmatrix} = \dfrac{60}{2\pi r_w} \begin{bmatrix} \cos(q_1) & \sin(q_1) & 1 \\ \cos(q_2) & \sin(q_2) & 1 \\ \cos(q_3) & \sin(q_3) & 1 \end{bmatrix} \begin{bmatrix} v_{lx} \\ v_{ly} \\ \rule{0pt}{1.5em}\dfrac{2\pi r_w}{60}\omega_l \end{bmatrix}
 $$
 
 where $\omega_{w1}, \omega_{w2}, \omega_{w3}$ are the wheel angular velocities for wheels 1 through 3, $r_w$ is the wheel radius, and $q_1, q_2, q_3$ are the respective wheel mounting angles.
@@ -129,32 +139,32 @@ With that said, here is the complete motion algorithm:
 $$
 \begin{array}{l}
 \hline
-\textbf{Algorithm 1: } \text{Differential Drive-like Motion with Bézier Curve Path Planning} \\[2pt]
+\textbf{Algorithm 1: } \text{Differential Drive-like Motion with Bézier Curve Path Planning} \\
 \hline
 \textbf{Input: } \mathbf{p}_O = [x_O, y_O, \theta_O]^T, \; \mathbf{p}_T = [x_T, y_T, \theta_T]^T, \; r_w, \; r_b, \; q_1, q_2, q_3 \\
-\textbf{Output: } [\omega_{w1}, \omega_{w2}, \omega_{w3}]^T \text{ (Commanded wheel angular velocities in RPM)} \\[2pt]
+\textbf{Output: } [\omega_{w1}, \omega_{w2}, \omega_{w3}]^T \text{ (Commanded wheel angular velocities in RPM)} \\
 \hline
 \begin{array}{rl}
-1: & d_t \leftarrow \sqrt{(x_T - x_O)^2 + (y_T - y_O)^2}, \quad d_q \leftarrow d_t / 4 \\[2pt]
-2: & P_0 \leftarrow [x_O, y_O]^T, \quad P_3 \leftarrow [x_T, y_T]^T \\[2pt]
-3: & \text{Compute control points } P_1, P_2 \text{ using } (\theta_O, \theta_T) \text{ and } d_q \\[2pt]
-4: & \mathcal{W} \leftarrow \text{DeCasteljau}(P_0, P_1, P_2, P_3) \quad \text{(interpolate waypoints along } \mathbf{B}_3(t)\text{)} \\[2pt]
-5: & \textbf{while } \text{robot has not reached target pose } \mathbf{p}_T \textbf{ do} \\[2pt]
-6: & \quad (x_n, y_n), (x_m, y_m) \leftarrow \text{GetNextWaypointPair}(\mathcal{W}) \\[2pt]
-7: & \quad \textbf{if } \text{robot requires } 180^\circ \text{ pivot turn } \textbf{then} \\[2pt]
-8: & \quad\quad l_a \leftarrow \omega_l \cdot r_b \\[2pt]
-9: & \quad\quad \boldsymbol{q}_l \leftarrow l_a \left[1, \; 0, \; 1/r_b\right]^T \\[2pt]
-10: & \quad \textbf{else} \\[2pt]
-11: & \quad\quad d_{mn} \leftarrow \sqrt{(x_n - x_m)^2 + (y_n - y_m)^2} \\[2pt]
-12: & \quad\quad \theta_{mn} \leftarrow \arctan\left(\frac{y_n - y_m}{x_n - x_m}\right) \\[2pt]
-13: & \quad\quad [v_{gx}, v_{gy}]^T \leftarrow d_{mn} [\cos\theta_{mn}, \sin\theta_{mn}]^T \\[2pt]
-14: & \quad\quad [v_l, \omega_l]^T \leftarrow \mathbf{F}(x_m, y_m, x_n, y_n, \theta_R(t)) \\[2pt]
-15: & \quad\quad \boldsymbol{q}_l \leftarrow [0, \; v_l, \; \omega_l]^T \\[2pt]
-16: & \quad \textbf{end if} \\[2pt]
-17: & \quad [\omega_{w1}, \omega_{w2}, \omega_{w3}]^T \leftarrow \text{InverseKinematics}(\boldsymbol{q}_l, r_w, q_1, q_2, q_3) \\[2pt]
-18: & \quad \text{ActuateMotors}(\omega_{w1}, \omega_{w2}, \omega_{w3}) \\[2pt]
+1: & d_t \leftarrow \sqrt{(x_T - x_O)^2 + (y_T - y_O)^2}, \quad d_q \leftarrow d_t / 4 \\
+2: & P_0 \leftarrow [x_O, y_O]^T, \quad P_3 \leftarrow [x_T, y_T]^T \\
+3: & \text{Compute control points } P_1, P_2 \text{ using } (\theta_O, \theta_T) \text{ and } d_q \\
+4: & \mathcal{W} \leftarrow \text{DeCasteljau}(P_0, P_1, P_2, P_3) \quad \text{(interpolate waypoints along } \mathbf{B}_3(t)\text{)} \\
+5: & \textbf{while } \text{robot has not reached target pose } \mathbf{p}_T \textbf{ do} \\
+6: & \quad (x_n, y_n), (x_m, y_m) \leftarrow \text{GetNextWaypointPair}(\mathcal{W}) \\
+7: & \quad \textbf{if } \text{robot requires } 180^\circ \text{ pivot turn } \textbf{then} \\
+8: & \quad\quad l_a \leftarrow \omega_l \cdot r_b \\
+9: & \quad\quad \boldsymbol{q}_l \leftarrow l_a \left[1, \; 0, \; 1/r_b\right]^T \\
+10: & \quad \textbf{else} \\
+11: & \quad\quad d_{mn} \leftarrow \sqrt{(x_n - x_m)^2 + (y_n - y_m)^2} \\
+12: & \quad\quad \theta_{mn} \leftarrow \arctan\left(\frac{y_n - y_m}{x_n - x_m}\right) \\
+13: & \quad\quad [v_{gx}, v_{gy}]^T \leftarrow d_{mn} [\cos\theta_{mn}, \sin\theta_{mn}]^T \\
+14: & \quad\quad [v_l, \omega_l]^T \leftarrow \mathbf{F}(x_m, y_m, x_n, y_n, \theta_R(t)) \\
+15: & \quad\quad \boldsymbol{q}_l \leftarrow [0, \; v_l, \; \omega_l]^T \\
+16: & \quad \textbf{end if} \\
+17: & \quad [\omega_{w1}, \omega_{w2}, \omega_{w3}]^T \leftarrow \text{InverseKinematics}(\boldsymbol{q}_l, r_w, q_1, q_2, q_3) \\
+18: & \quad \text{ActuateMotors}(\omega_{w1}, \omega_{w2}, \omega_{w3}) \\
 19: & \textbf{end while}
-\end{array} \\[2pt]
+\end{array} \\
 \hline
 \end{array}
 $$
