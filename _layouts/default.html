@@ -1,40 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title | default: site.title }}</title>
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
 
-  <!-- MathJax 3 Configuration for LaTeX Rendering -->
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    };
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MathJax 3 Configuration for LaTeX Rendering -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          processEscapes: true,
+          processEnvironments: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
 
-  <!-- Interactive & Zoomable Mermaid.js (Loaded on demand only when diagrams exist) -->
-  <script type="module">
-    document.addEventListener("DOMContentLoaded", async function() {
-      const codeBlocks = document.querySelectorAll('pre.highlight > code.language-mermaid, pre > code.language-mermaid');
-      if (codeBlocks.length === 0) return;
+    <!-- Interactive & Zoomable Mermaid.js (Loaded on demand only when diagrams exist) -->
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll(
+          "pre.highlight > code.language-mermaid, pre > code.language-mermaid",
+        );
+        if (codeBlocks.length === 0) return;
 
-      // 1. Transform markdown code blocks into interactive PanZoom containers
-      const containers = [];
-      codeBlocks.forEach(function(el, index) {
-        const rawCode = el.textContent.trim();
-        const wrapper = document.createElement('div');
-        wrapper.className = 'mermaid-panzoom-container';
-        wrapper.innerHTML = `
+        // 1. Transform markdown code blocks into interactive PanZoom containers
+        const containers = [];
+        codeBlocks.forEach(function (el, index) {
+          const rawCode = el.textContent.trim();
+          const wrapper = document.createElement("div");
+          wrapper.className = "mermaid-panzoom-container";
+          wrapper.innerHTML = `
           <div class="mermaid-toolbar">
             <span class="mermaid-toolbar-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
@@ -43,8 +65,8 @@
             <div class="mermaid-toolbar-actions">
               <button type="button" class="panzoom-btn zoom-in" title="Zoom in (+)">+</button>
               <button type="button" class="panzoom-btn zoom-out" title="Zoom out (−)">−</button>
-              <button type="button" class="panzoom-btn zoom-reset" title="Reset view">⟲ Reset</button>
-              <button type="button" class="panzoom-btn fullscreen-toggle" title="Toggle fullscreen">⛶ Fullscreen</button>
+              <button type="button" class="panzoom-btn zoom-reset" title="Reset view">Reset</button>
+              <button type="button" class="panzoom-btn fullscreen-toggle" title="Toggle fullscreen">Fullscreen</button>
             </div>
           </div>
           <div class="mermaid-viewport">
@@ -54,183 +76,210 @@
             Drag to pan &bull; Scroll / pinch to zoom &bull; Double-click to zoom in
           </div>
         `;
-        const parent = el.closest('.highlighter-rouge') || el.closest('pre');
-        parent.replaceWith(wrapper);
-        containers.push(wrapper);
-      });
-
-      // 2. Load svg-pan-zoom script if needed
-      if (!window.svgPanZoom) {
-        await new Promise(function(resolve, reject) {
-          const script = document.createElement('script');
-          script.src = "{{ '/assets/js/svg-pan-zoom.min.js' | relative_url }}";
-          script.onload = resolve;
-          script.onerror = function() {
-            const cdnScript = document.createElement('script');
-            cdnScript.src = "https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js";
-            cdnScript.onload = resolve;
-            cdnScript.onerror = reject;
-            document.head.appendChild(cdnScript);
-          };
-          document.head.appendChild(script);
-        });
-      }
-
-      // 3. Dynamically import Mermaid ESM only on pages with diagrams
-      const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs');
-      const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      // Clean, light, high-contrast palette
-      mermaid.initialize({
-        startOnLoad: false,
-        securityLevel: 'loose',
-        theme: isDark ? 'dark' : 'neutral',
-        themeVariables: isDark ? {
-          darkMode: true,
-          background: '#0d1117',
-          mainBkg: '#161b22',
-          clusterBkg: '#161b22',
-          clusterBorder: '#30363d',
-          lineColor: '#58a6ff',
-          primaryColor: '#1f2937',
-          primaryTextColor: '#e2e8f0',
-          primaryBorderColor: '#3b82f6',
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-          fontSize: '13px'
-        } : {
-          darkMode: false,
-          background: '#ffffff',
-          mainBkg: '#ffffff',
-          clusterBkg: '#f8fafc',
-          clusterBorder: '#cbd5e1',
-          lineColor: '#475569',
-          primaryColor: '#f0f9ff',
-          primaryTextColor: '#0f172a',
-          primaryBorderColor: '#0284c7',
-          secondaryColor: '#fef3c7',
-          secondaryTextColor: '#78350f',
-          secondaryBorderColor: '#d97706',
-          tertiaryColor: '#f0fdf4',
-          tertiaryTextColor: '#14532d',
-          tertiaryBorderColor: '#16a34a',
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-          fontSize: '13px',
-          edgeLabelBackground: '#ffffff'
-        }
-      });
-
-      await mermaid.run();
-
-      // 4. Attach panzoom to rendered SVGs
-      containers.forEach(function(wrapper) {
-        const svg = wrapper.querySelector('.mermaid-viewport svg');
-        if (!svg) return;
-
-        svg.style.maxWidth = 'none';
-        svg.style.width = '100%';
-        svg.style.height = '100%';
-        svg.removeAttribute('height');
-
-        const panZoom = window.svgPanZoom(svg, {
-          zoomEnabled: true,
-          controlIconsEnabled: false,
-          fit: true,
-          center: true,
-          minZoom: 0.3,
-          maxZoom: 10,
-          zoomScaleSensitivity: 0.25,
-          dblClickZoomEnabled: true,
-          mouseWheelZoomEnabled: true,
-          preventMouseEventsDefault: true
+          const parent = el.closest(".highlighter-rouge") || el.closest("pre");
+          parent.replaceWith(wrapper);
+          containers.push(wrapper);
         });
 
-        svg.__panZoom = panZoom;
-        panZoom.resize();
-        panZoom.fit();
-        panZoom.center();
-
-        const btnIn = wrapper.querySelector('.zoom-in');
-        const btnOut = wrapper.querySelector('.zoom-out');
-        const btnReset = wrapper.querySelector('.zoom-reset');
-        const btnFs = wrapper.querySelector('.fullscreen-toggle');
-
-        if (btnIn) btnIn.addEventListener('click', function() { panZoom.zoomIn(); });
-        if (btnOut) btnOut.addEventListener('click', function() { panZoom.zoomOut(); });
-        if (btnReset) btnReset.addEventListener('click', function() {
-          panZoom.reset();
-          panZoom.fit();
-          panZoom.center();
-        });
-
-        if (btnFs) {
-          btnFs.addEventListener('click', function() {
-            wrapper.classList.toggle('is-fullscreen');
-            if (wrapper.classList.contains('is-fullscreen')) {
-              document.body.style.overflow = 'hidden';
-            } else {
-              document.body.style.overflow = '';
-            }
-            setTimeout(function() {
-              panZoom.resize();
-              panZoom.fit();
-              panZoom.center();
-            }, 120);
+        // 2. Load svg-pan-zoom script if needed
+        if (!window.svgPanZoom) {
+          await new Promise(function (resolve, reject) {
+            const script = document.createElement("script");
+            script.src =
+              "{{ '/assets/js/svg-pan-zoom.min.js' | relative_url }}";
+            script.onload = resolve;
+            script.onerror = function () {
+              const cdnScript = document.createElement("script");
+              cdnScript.src =
+                "https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js";
+              cdnScript.onload = resolve;
+              cdnScript.onerror = reject;
+              document.head.appendChild(cdnScript);
+            };
+            document.head.appendChild(script);
           });
         }
-      });
 
-      // Window resize handler
-      window.addEventListener('resize', function() {
-        document.querySelectorAll('.mermaid-viewport svg').forEach(function(svg) {
-          if (svg.__panZoom) {
-            svg.__panZoom.resize();
-            svg.__panZoom.fit();
-            svg.__panZoom.center();
+        // 3. Dynamically import Mermaid ESM only on pages with diagrams
+        const { default: mermaid } =
+          await import("https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs");
+        const isDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Clean, light, high-contrast palette
+        mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: "loose",
+          theme: isDark ? "dark" : "neutral",
+          themeVariables: isDark
+            ? {
+                darkMode: true,
+                background: "#0d1117",
+                mainBkg: "#161b22",
+                clusterBkg: "#161b22",
+                clusterBorder: "#30363d",
+                lineColor: "#58a6ff",
+                primaryColor: "#1f2937",
+                primaryTextColor: "#e2e8f0",
+                primaryBorderColor: "#3b82f6",
+                fontFamily:
+                  '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                fontSize: "13px",
+              }
+            : {
+                darkMode: false,
+                background: "#ffffff",
+                mainBkg: "#ffffff",
+                clusterBkg: "#f8fafc",
+                clusterBorder: "#cbd5e1",
+                lineColor: "#475569",
+                primaryColor: "#f0f9ff",
+                primaryTextColor: "#0f172a",
+                primaryBorderColor: "#0284c7",
+                secondaryColor: "#fef3c7",
+                secondaryTextColor: "#78350f",
+                secondaryBorderColor: "#d97706",
+                tertiaryColor: "#f0fdf4",
+                tertiaryTextColor: "#14532d",
+                tertiaryBorderColor: "#16a34a",
+                fontFamily:
+                  '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                fontSize: "13px",
+                edgeLabelBackground: "#ffffff",
+              },
+        });
+
+        await mermaid.run();
+
+        // 4. Attach panzoom to rendered SVGs
+        containers.forEach(function (wrapper) {
+          const svg = wrapper.querySelector(".mermaid-viewport svg");
+          if (!svg) return;
+
+          svg.style.maxWidth = "none";
+          svg.style.width = "100%";
+          svg.style.height = "100%";
+          svg.removeAttribute("height");
+
+          const panZoom = window.svgPanZoom(svg, {
+            zoomEnabled: true,
+            controlIconsEnabled: false,
+            fit: true,
+            center: true,
+            minZoom: 0.3,
+            maxZoom: 10,
+            zoomScaleSensitivity: 0.25,
+            dblClickZoomEnabled: true,
+            mouseWheelZoomEnabled: true,
+            preventMouseEventsDefault: true,
+          });
+
+          svg.__panZoom = panZoom;
+          panZoom.resize();
+          panZoom.fit();
+          panZoom.center();
+
+          const btnIn = wrapper.querySelector(".zoom-in");
+          const btnOut = wrapper.querySelector(".zoom-out");
+          const btnReset = wrapper.querySelector(".zoom-reset");
+          const btnFs = wrapper.querySelector(".fullscreen-toggle");
+
+          if (btnIn)
+            btnIn.addEventListener("click", function () {
+              panZoom.zoomIn();
+            });
+          if (btnOut)
+            btnOut.addEventListener("click", function () {
+              panZoom.zoomOut();
+            });
+          if (btnReset)
+            btnReset.addEventListener("click", function () {
+              panZoom.reset();
+              panZoom.fit();
+              panZoom.center();
+            });
+
+          if (btnFs) {
+            btnFs.addEventListener("click", function () {
+              wrapper.classList.toggle("is-fullscreen");
+              if (wrapper.classList.contains("is-fullscreen")) {
+                document.body.style.overflow = "hidden";
+              } else {
+                document.body.style.overflow = "";
+              }
+              setTimeout(function () {
+                panZoom.resize();
+                panZoom.fit();
+                panZoom.center();
+              }, 120);
+            });
           }
         });
-      });
 
-      // Escape key exits fullscreen
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          document.querySelectorAll('.mermaid-panzoom-container.is-fullscreen').forEach(function(w) {
-            w.classList.remove('is-fullscreen');
-            document.body.style.overflow = '';
-            const svg = w.querySelector('svg');
-            if (svg && svg.__panZoom) {
-              setTimeout(function() {
+        // Window resize handler
+        window.addEventListener("resize", function () {
+          document
+            .querySelectorAll(".mermaid-viewport svg")
+            .forEach(function (svg) {
+              if (svg.__panZoom) {
                 svg.__panZoom.resize();
                 svg.__panZoom.fit();
                 svg.__panZoom.center();
-              }, 120);
-            }
-          });
-        }
-      });
-    });
-  </script>
+              }
+            });
+        });
 
-  <!-- Automatic .md -> .html link resolution for GitHub Pages -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll('a').forEach(function(link) {
-        var href = link.getAttribute('href');
-        if (href && !href.startsWith('http://') && !href.startsWith('https://') && !href.startsWith('#') && !href.startsWith('mailto:')) {
-          if (href.endsWith('README.md')) {
-            link.setAttribute('href', href.replace(/README\.md$/, 'index.html'));
-          } else if (href.endsWith('.md')) {
-            link.setAttribute('href', href.replace(/\.md$/, '.html'));
+        // Escape key exits fullscreen
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            document
+              .querySelectorAll(".mermaid-panzoom-container.is-fullscreen")
+              .forEach(function (w) {
+                w.classList.remove("is-fullscreen");
+                document.body.style.overflow = "";
+                const svg = w.querySelector("svg");
+                if (svg && svg.__panZoom) {
+                  setTimeout(function () {
+                    svg.__panZoom.resize();
+                    svg.__panZoom.fit();
+                    svg.__panZoom.center();
+                  }, 120);
+                }
+              });
           }
-        }
+        });
       });
-    });
-  </script>
-</head>
-<body>
-  <div class="page-wrapper">
-    <main class="markdown-body">
-      {{ content }}
-    </main>
-  </div>
-</body>
+    </script>
+
+    <!-- Automatic .md -> .html link resolution for GitHub Pages -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("a").forEach(function (link) {
+          var href = link.getAttribute("href");
+          if (
+            href &&
+            !href.startsWith("http://") &&
+            !href.startsWith("https://") &&
+            !href.startsWith("#") &&
+            !href.startsWith("mailto:")
+          ) {
+            if (href.endsWith("README.md")) {
+              link.setAttribute(
+                "href",
+                href.replace(/README\.md$/, "index.html"),
+              );
+            } else if (href.endsWith(".md")) {
+              link.setAttribute("href", href.replace(/\.md$/, ".html"));
+            }
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <main class="markdown-body">{{ content }}</main>
+    </div>
+  </body>
 </html>
