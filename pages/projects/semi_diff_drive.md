@@ -27,61 +27,61 @@ In the RoboCup Middle Size League (MSL), the most popular wheel configuration is
   </tr>
 </table>
 
-The main advantage of this system is that it allows the robot to move translationally in any direction while rotating freely at the same time. Even though the system has such a huge advantage, relying purely on this system can increase the difficulty of Natural Dribbling. Since the robot can move in any direction and orientation at the same time, this requires the dribbled ball to follow along at the same degree, which can be difficult to manage on robots with suboptimal dribbler configurations. To address this issue, I implemented a differential drive-like motion system for an omnidirectional robot with 3rd-Order Bézier curve path planning to minimalize ball horizontal movement, reducing the chance of losing control over the ball.
+The main advantage of this system is that it allows simultaneous translation in any direction and independent rotation. However, unconstrained omnidirectional motion makes ball handling harder during dribbling. When the chassis slides laterally, the ball must follow without rolling out of the dribbler mechanism. On robots with mechanical dribbler constraints, lateral ball slip often causes lost possession. Constraining the omnidirectional base to differential drive-like motion using 3rd-order Bézier curves keeps the ball centered on the dribbler wheels and minimizes lateral slip.
 
 ## How it Works
 
-MSL robots operate on a 2D plane, which means their translational velocity consists of only two orthogonal components. Let $\mathbf{v}_l$ denote the linear velocity vector in the robot's local coordinate frame:
+MSL robots operate on a 2D plane, where linear velocity consists of two orthogonal components. Let $\mathbf{v}_l$ denote the linear velocity vector in the robot's local body frame:
 
 $$
 \mathbf{v}_l = \begin{bmatrix} v_{lx} \\ v_{ly} \end{bmatrix}
 $$
 
-Including the angular velocity $\omega_l$ (rotation around the local vertical $z$-axis), the complete robot velocity state vector in body coordinates can be represented as:
+Including angular velocity $\omega_l$ around the vertical $z$-axis, the body velocity state vector is:
 
 $$
 \boldsymbol{q}_l = \begin{bmatrix} v_{lx} \\ v_{ly} \\ \omega_l \end{bmatrix}
 $$
 
-In order to make the omnidirectional robot move like a differential drive robot, we set $v_{lx} = 0$, since the robot only moves vertically along the local $y$-axis and rotates around the $z$-axis. With that in mind, the new velocity state vector is as follows:
+To emulate differential drive motion, we set the lateral body velocity $v_{lx} = 0$, restricting linear translation to the local $y$-axis while allowing rotation about $z$:
 
 $$
 \boldsymbol{q}_l' = \begin{bmatrix} 0 \\ v_{ly} \\ \omega_l \end{bmatrix} = \begin{bmatrix} 0 \\ v_l \\ \omega_l \end{bmatrix}
 $$
 
-To move the robot to a target pose, it must receive velocity commands directed toward that pose and traverse the required distance until its pose matches the target. Let $\mathbf{p}_T$ be the target pose and $\mathbf{p}_O$ be the robot's initial pose in the global coordinate frame:
+Let $\mathbf{p}_T$ be the target pose and $\mathbf{p}_O$ be the initial robot pose in the global coordinate frame:
 
 $$
 \mathbf{p}_T = \begin{bmatrix} x_T \\ y_T \\ \theta_T \end{bmatrix} \hspace{1cm} \mathbf{p}_O = \begin{bmatrix} x_O \\ y_O \\ \theta_O \end{bmatrix}
 $$
 
-The Euclidean distance from the robot to the target position is given by:
+The Euclidean distance from the robot to the target position is:
 
 $$
 d_t = \sqrt{\left(x_T - x_O\right)^2 + \left(y_T - y_O\right)^2}
 $$
 
-Because the omnidirectional robot has fundamentally different kinematics from a differential drive system, differential drive kinematics cannot be applied directly. Instead, we use a Bézier curve to generate control points that guide the omnidirectional robot to move like a differential drive robot.
+Because omnidirectional kinematics differ from nonholonomic differential drive kinematics, standard differential wheel equations cannot be applied directly. Instead, a cubic Bézier curve generates smooth waypoints that steer the robot along forward-facing arcs.
 
 <div align="center">
   <img alt="3rd-Order Bezier Curve" src="../../assets/images/bezier_curve.png" height="200" />
   <br>
   <sub>3rd-Order Bezier Curve</sub>
 </div>
-<br>
-In general, a 3rd-Order Bézier curve equation is defined as:
+
+A 3rd-order Bézier curve is defined as:
 
 $$
 \mathbf{B}_3(t) = (1 - t)^3 P_0 + 3t(1 - t)^2 P_1 + 3t^2(1 - t) P_2 + t^3 P_3
 $$
 
-where $P_0$ is the origin point, $P_3$ is the target point, and $P_1$ and $P_2$ are the intermediate control points. Let $d_q$ be the quarter distance from the origin to the target position:
+where $P_0$ is the origin point, $P_3$ is the target point, and $P_1$ and $P_2$ are the intermediate control points. Let $d_q$ be the quarter distance from origin to target:
 
 $$
 d_q = \frac{d_t}{4}
 $$
 
-The control points $P_1$ and $P_2$ are generated as follows:
+The control points $P_1$ and $P_2$ are generated as:
 
 $$
 P_1 = \begin{bmatrix} x_{P_1} \\ y_{P_1} \end{bmatrix} = \begin{bmatrix} -\dfrac{d_q}{\sqrt{1 + \tan^2(\theta_O)}} \\ \rule{0pt}{1.5em} (x_{P_1} - x_O)\tan(\theta_O) \end{bmatrix} + \begin{bmatrix} x_O \\ y_O \end{bmatrix}
@@ -91,8 +91,7 @@ $$
 P_2 = \begin{bmatrix} x_{P_2} \\ y_{P_2} \end{bmatrix} = \begin{bmatrix} -\dfrac{d_q}{\sqrt{1 + \tan^2(\theta_T)}} \\ \rule{0pt}{1.5em} (x_{P_2} - x_T)\tan(\theta_T) \end{bmatrix} + \begin{bmatrix} x_T \\ y_T \end{bmatrix}
 $$
 
-After obtaining the control points, we use De Casteljau's algorithm to interpolate the curve and produce a smooth trajectory.
-To make the omnidirectional robot follow the interpolated waypoints like a differential drive robot, consecutive points must be transformed into target linear and angular velocities. The transformation function can be represented as:
+After computing the control points, De Casteljau's algorithm interpolates waypoints along the curve. To follow the interpolated waypoints, each consecutive waypoint pair is converted into linear and angular velocity commands:
 
 $$
 \mathbf{F}(x_m, y_m, x_n, y_n) = \begin{bmatrix} v_l \\ \omega_l \end{bmatrix} = \begin{bmatrix} \cos(\theta_R(t)) & \sin(\theta_R(t)) & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} v_{gx} \\ v_{gy} \\ \omega_g \end{bmatrix}
@@ -106,15 +105,15 @@ $$
 d_{mn} = \sqrt{(x_m - x_n)^2 + (y_m - y_n)^2}, \qquad \theta_{mn} = \arctan\left(\frac{y_m - y_n}{x_m - x_n}\right)
 $$
 
-where $\left(x_n, y_n\right)$ is the initial position, $\left(x_m, y_m\right)$ is the targeted position, and $\theta_R(t)$ is the robot orientation at time $t$. Three of them are on the robot's global coordinate frame. Finally, the resulting velocities are assigned to the commanded velocity state vector $\boldsymbol{q}_l'$ as the velocity command.
+where $(x_n, y_n)$ is the current waypoint, $(x_m, y_m)$ is the next waypoint, and $\theta_R(t)$ is the robot heading at time $t$, all expressed in the global coordinate frame. The resulting velocities form the commanded body velocity vector $\boldsymbol{q}_l'$.
 
-To improve the motion further, whenever the robot needs to perform a 180-degree turn, we can implement a pivotal motion centered on the ball. To perform this pivotal motion, the robot needs to move along the local $x$-axis while simultaneously rotating around the $z$-axis, keeping $v_{ly} = 0$ to maintain a constant radial distance to the ball. The pivot motion uses the same principle as circular arc velocity, represented as:
+For $180^\circ$ turns, the robot pivots around the ball rather than its own center. The chassis translates along its local $x$-axis while rotating about $z$, holding $v_{ly} = 0$ to maintain a constant radius to the ball:
 
 $$
 l_a = \omega_l r_b
 $$
 
-where $l_a$ is the linear arc velocity produced by the robot while pivoting and $r_b$ is the distance from the robot's center of rotation to the center of the ball. The transformation from arc velocity to the velocity command vector is expressed as:
+where $l_a$ is the linear arc velocity produced during the pivot and $r_b$ is the distance from the robot's rotation center to the ball center. The resulting body velocity vector is:
 
 $$
 \boldsymbol{q}_l = \begin{bmatrix} v_{lx} \\ v_{ly} \\ \omega_l \end{bmatrix} = \begin{bmatrix} l_a \\ 0 \\ \rule{0pt}{1.3em}\dfrac{l_a}{r_b} \end{bmatrix} = l_a \begin{bmatrix} 1 \\ 0 \\ \rule{0pt}{1.3em}\dfrac{1}{r_b} \end{bmatrix}
@@ -132,9 +131,9 @@ $$
 \begin{bmatrix} \omega_{w1} \\ \omega_{w2} \\ \omega_{w3} \end{bmatrix} = \dfrac{60}{2\pi r_w} \begin{bmatrix} \cos(q_1) & \sin(q_1) & 1 \\ \cos(q_2) & \sin(q_2) & 1 \\ \cos(q_3) & \sin(q_3) & 1 \end{bmatrix} \begin{bmatrix} v_{lx} \\ v_{ly} \\ \rule{0pt}{1.5em}\dfrac{2\pi r_w}{60}\omega_l \end{bmatrix}
 $$
 
-where $\omega_{w1}, \omega_{w2}, \omega_{w3}$ are the wheel angular velocities for wheels 1 through 3, $r_w$ is the wheel radius, and $q_1, q_2, q_3$ are the respective wheel mounting angles.
+where $\omega_{w1}, \omega_{w2}, \omega_{w3}$ are wheel speeds in RPM, $r_w$ is wheel radius, and $q_1, q_2, q_3$ are the mounting angles.
 
-With that said, here is the complete motion algorithm:
+The complete motion control loop is summarized in Algorithm 1:
 
 $$
 \begin{array}{l}

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Robot Web Dashboard
+# IRIS ITS RoboCup 2026 Middle Size League Play Strategy
 
 Coming Soon
 
