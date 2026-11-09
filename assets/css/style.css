@@ -101,12 +101,130 @@ body {
   margin: 1.2rem auto;
 }
 
-/* Mermaid Flowcharts and Diagrams */
-.mermaid {
+/* Mermaid Flowcharts and PanZoom Container */
+.mermaid-panzoom-container {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  margin: 1.8rem auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--code-bg);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
+}
+
+.mermaid-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: var(--table-zebra);
+  border-bottom: 1px solid var(--border-color);
+  user-select: none;
+}
+
+.mermaid-toolbar-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--subtext-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mermaid-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.panzoom-btn {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  margin: 1.5rem auto;
-  overflow-x: auto;
+  padding: 4px 8px;
+  height: 26px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.panzoom-btn:hover {
+  background-color: var(--table-zebra);
+  border-color: var(--link-color);
+  color: var(--link-color);
+}
+
+.panzoom-btn:active {
+  transform: scale(0.96);
+}
+
+.mermaid-viewport {
+  width: 100%;
+  height: 520px;
+  cursor: grab;
+  position: relative;
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+.mermaid-viewport:active {
+  cursor: grabbing;
+}
+
+.mermaid-viewport .mermaid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mermaid-viewport svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+}
+
+.mermaid-footer-hint {
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  color: var(--subtext-color);
+  background-color: var(--table-zebra);
+  border-top: 1px solid var(--border-color);
+  text-align: right;
+  user-select: none;
+}
+
+/* Fullscreen Overlay Mode */
+.mermaid-panzoom-container.is-fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  z-index: 999999 !important;
+  border: none !important;
+}
+
+.mermaid-panzoom-container.is-fullscreen .mermaid-viewport {
+  height: calc(100vh - 72px) !important;
+  flex: 1;
 }
 
 .markdown-body th,
