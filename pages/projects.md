@@ -14,7 +14,7 @@ layout: default
 
 [Multicolor Long Range Ball Detection](projects/multicolor_ball_detect.md) | February 2026
 
-[IRIS ITS RoboCup 2026 Middle Size League Play Strategy](projects/play_strategy.md) | June 2026
+[Multi-Robot Play Strategy for RoboCup Middle Size League](projects/play_strategy.md) | June 2026
 
 ---
 

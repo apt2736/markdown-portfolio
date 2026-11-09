@@ -158,7 +158,7 @@ $$
 19: & (d_{\text{obs}}, \theta_{\text{obs}}, \text{hit}) \leftarrow \text{SectorObstacleCheck}(\mathcal{O}, \phi^\ast, \pm 90^\circ, r_{\text{avoid}}) \\
 20: & \textbf{if } \text{hit} \textbf{ then} \\
 21: & \quad v_{\text{avoid}} \leftarrow \min\!\left(\|\mathbf{v}_{\text{apf}}\|_2, \max(d_{\text{obs}}, v_{\text{safe}})\right) \text{ if } \|\mathbf{v}_{\text{apf}}\|_2 > v_{\text{safe}} \text{ else } \|\mathbf{v}_{\text{apf}}\|_2 \\
-22: & \quad \textbf{if } \text{head-on collision imminent } (d_{\text{obs}} < 150 \text{ and } \lvert\theta_{\text{vel}} - \theta_{\text{obs}}\rvert < 30^\circ) \textbf{ then} \\
+22: & \quad \textbf{if } \text{head-on collision imminent } \textbf{ then} \\
 23: & \quad\quad \mathbf{v}_g \leftarrow 2 v_{\text{avoid}} [\cos(\theta_{\text{obs}} - 180^\circ), \; \sin(\theta_{\text{obs}} - 180^\circ)]^T \\
 24: & \quad \textbf{else} \\
 25: & \quad\quad \Delta\phi \leftarrow \operatorname{wrap}(\phi^\ast - \theta_{\text{obs}}), \quad \sigma \leftarrow -90^\circ \text{ if } \Delta\phi < 0 \text{ else } +90^\circ \\
@@ -203,4 +203,5 @@ S. Temizer, "Potential Field Method Formula: Step by Step Construction of the Fo
 
 Coming Soon
 
+[Back to projects page](./../projects.md)
 [Back to main page](./../../README.md)
