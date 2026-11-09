@@ -66,12 +66,37 @@ body {
   padding-bottom: 0.3rem;
 }
 
+/* Paragraph and Content Justification */
+p,
 .markdown-body p,
+.markdown-body li,
+.markdown-body dd,
+.markdown-body blockquote,
 .markdown-body [align="justify"] {
   text-align: justify;
   text-justify: inter-word;
+  text-align-last: left;
+}
+
+.markdown-body p {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.35rem;
+}
+
+.markdown-body li > p {
+  margin-bottom: 0.35rem;
+}
+
+/* Ensure centered elements and captions remain centered */
+.markdown-body [align="center"],
+.markdown-body [align="center"] p,
+.markdown-body [align="center"] sub,
+.markdown-body [align="center"] div {
+  text-align: center;
 }
 
 .markdown-body a {
