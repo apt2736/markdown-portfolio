@@ -51,4 +51,4 @@ layout: default
   </tr>
 </table>
 
-[Back to main page](./../README.md)
+[Back to Main](./../README.md)

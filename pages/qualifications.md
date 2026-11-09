@@ -22,4 +22,4 @@ Adaptability, problem-solving, critical thinking
 
 ---
 
-[Back to main page](./../README.md)
+[Back to Main](./../README.md)

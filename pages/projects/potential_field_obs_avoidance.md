@@ -203,6 +203,6 @@ S. Temizer, "Potential Field Method Formula: Step by Step Construction of the Fo
 
 Coming Soon
 
-[Back to projects page](./../projects.md)
+[Back to Projects](./../projects.md)
 
-[Back to main page](./../../README.md)
+[Back to Main](./../../README.md)

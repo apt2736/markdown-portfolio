@@ -140,6 +140,6 @@ Detailed breakdowns for each role:
 - [Assist Play Strategy](./assist_play_strategy.md): Set-piece restarts, distance-scaled passing, ball interception, and defensive recovery.
 - [Defender Play Strategy](./defender_play_strategy.md): Penalty-box shot blocking, variable standoff arcs, and counter-attack clearance.
 
-[Back to projects page](./../projects.md)
+[Back to Projects](./../projects.md)
 
-[Back to main page](./../../README.md)
+[Back to Main](./../../README.md)

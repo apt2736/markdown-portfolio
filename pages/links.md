@@ -9,4 +9,4 @@ layout: default
 
 ---
 
-[Back to main page](./../README.md)
+[Back to Main](./../README.md)

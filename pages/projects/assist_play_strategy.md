@@ -143,4 +143,4 @@ This lets the robot meet the ball cleanly without overrunning the touchline.
 
 [Back to Play Strategy Overview](./play_strategy.md)
 
-[Back to main page](./../../README.md)
+[Back to Main](./../../README.md)
