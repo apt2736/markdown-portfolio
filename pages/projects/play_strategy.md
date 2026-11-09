@@ -141,4 +141,5 @@ Detailed breakdowns for each role:
 - [Defender Play Strategy](./defender_play_strategy.md): Penalty-box shot blocking, variable standoff arcs, and counter-attack clearance.
 
 [Back to projects page](./../projects.md)
+
 [Back to main page](./../../README.md)

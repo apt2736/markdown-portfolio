@@ -143,5 +143,6 @@ For loose balls in the attacking half, the Attacker pursues at full speed across
   <sub>Defensive recovery: orbiting at a 2.3 m radius to tackle from the front without fouling (left) vs. looping behind a sideline loose ball to gather it inward (right).</sub>
 </div>
 
-- [Back to Play Strategy Overview](./play_strategy.md)
-- [Back to main page](./../../README.md)
+[Back to Play Strategy Overview](./play_strategy.md)
+
+[Back to main page](./../../README.md)

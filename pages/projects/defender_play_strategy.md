@@ -127,5 +127,6 @@ When teammates have possession upfield or cameras lose the ball, the Defender ho
   <sub>Anchor positioning during upfield attacks: holding the central penalty-box station in a 3-robot squad (left) vs. splitting half-space coverage in a 4-robot squad (right).</sub>
 </div>
 
-- [Back to Play Strategy Overview](./play_strategy.md)
-- [Back to main page](./../../README.md)
+[Back to Play Strategy Overview](./play_strategy.md)
+
+[Back to main page](./../../README.md)

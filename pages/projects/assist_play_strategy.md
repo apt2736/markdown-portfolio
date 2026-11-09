@@ -141,5 +141,6 @@ This lets the robot meet the ball cleanly without overrunning the touchline.
   <sub>Midfield recovery: holding a 3 m second-line containment buffer behind the ball (left) vs. driving to a velocity-lead intercept point ahead of a fast loose ball (right).</sub>
 </div>
 
-- [Back to Play Strategy Overview](./play_strategy.md)
-- [Back to main page](./../../README.md)
+[Back to Play Strategy Overview](./play_strategy.md)
+
+[Back to main page](./../../README.md)
