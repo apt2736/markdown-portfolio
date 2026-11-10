@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Multicolor Long Range Ball Detection
+# Bird's Eye View Autotuner with RealSense using RANSAC Plane Regression
 
 Coming Soon
 

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Multi-Robot Play Strategy for RoboCup Middle Size League
+# Multi-Robot Play Strategy for RoboCup Middle Size League 2026
 
 ## Introduction
 
