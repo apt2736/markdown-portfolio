@@ -9,7 +9,7 @@ layout: default
       <b>Undergraduate Student in Mathematics</b> | Ongoing<br />
       Institut Teknologi Sepuluh Nopember - Surabaya, Indonesia<br />
     </td>
-    <td><img alt="ITS Logo" src="../assets/images/LAMBANG%20ITS.png" /></td>
+    <td><img alt="ITS Logo" src="../assets/images/LAMBANG%20ITS.png" loading="lazy" decoding="async" /></td>
   </tr>
 </table>
 

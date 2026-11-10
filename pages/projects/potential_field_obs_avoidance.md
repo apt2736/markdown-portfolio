@@ -7,7 +7,9 @@ layout: default
 ## Introduction
 
 <div align="center">
-  <img alt="Obstacle Avoidance Motion" src="../../assets/images/motion_around_point.gif" width="360" />
+  <video autoplay loop muted playsinline width="360">
+    <source src="../../assets/images/motion_around_point.mp4" type="video/mp4" />
+  </video>
   <br>
   <sub>Example of robot motion</sub>
 </div>
@@ -17,7 +19,7 @@ In the RoboCup Middle Size League (MSL), robots must traverse the field at high 
 This controller pairs a discrete Artificial Potential Field (APF) grid planner with reactive sector avoidance. Rather than relying on point-to-point avoidance alone, the APF evaluates a moving world-frame grid around the robot to pick a minimum-potential waypoint and feeds it into the local controller.
 
 <div align="center">
-  <img alt="Artificial Potential Field Example" src="../../assets/images/potential_field_illust.png" width="260" />
+  <img alt="Artificial Potential Field Example" src="../../assets/images/potential_field_illust.png" width="260" loading="lazy" decoding="async" />
   <br>
   <sub>Example of generated Artificial Potential Field map </sub>
 </div>
@@ -182,10 +184,14 @@ $$
 <table align="center">
   <tr>
     <td align="center">
-      <img alt="Obstacle Avoidance Demo 1" src="../../assets/images/obs_avoid_1.gif" height="180" />
+      <video autoplay loop muted playsinline height="180">
+        <source src="../../assets/images/obs_avoid_1.mp4" type="video/mp4" />
+      </video>
     </td>
     <td align="center">
-      <img alt="Obstacle Avoidance Demo 2" src="../../assets/images/obs_avoid_2.gif" height="180" />
+      <video autoplay loop muted playsinline height="180">
+        <source src="../../assets/images/obs_avoid_2.mp4" type="video/mp4" />
+      </video>
     </td>
   </tr>
   <tr>
@@ -198,10 +204,6 @@ $$
 ## References
 
 S. Temizer, "Potential Field Method Formula: Step by Step Construction of the Formula," MIT Artificial Intelligence Laboratory, Mobile Autonomous Robot Software (MARS) Project, 2001. [Online]. Available: [https://people.csail.mit.edu/lpk/mars/temizer_2001/Potential_Field_Method/index.html#Complete%20Formula](https://people.csail.mit.edu/lpk/mars/temizer_2001/Potential_Field_Method/index.html#Complete%20Formula)
-
-## Source
-
-Coming Soon
 
 [Back to Projects](./../projects.md)
 

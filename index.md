@@ -8,7 +8,7 @@ layout: default
     <tr>
       <td><b>Information</b></td>
       <td width="50%" rowspan="4">
-        <img alt="Photo" src="./assets/images/profile_self.jpeg" />
+        <img alt="Photo" src="./assets/images/profile_self.jpeg" loading="eager" decoding="async" />
       </td>
     </tr>
     <tr>

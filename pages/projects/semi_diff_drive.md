@@ -11,13 +11,13 @@ In the RoboCup Middle Size League (MSL), the most popular wheel configuration is
 <table align="center">
   <tr>
     <td align="center">
-      <img alt="Tech United Eindhoven Robot" src="../../assets/images/tu_eindhoven_robot.jpeg" height="190" />
+      <img alt="Tech United Eindhoven Robot" src="../../assets/images/tu_eindhoven_robot.jpeg" height="190" loading="lazy" decoding="async" />
     </td>
     <td align="center">
-      <img alt="Falcons Robot" src="../../assets/images/falcons_tu_bots.jpeg" height="190" />
+      <img alt="Falcons Robot" src="../../assets/images/falcons_tu_bots.jpeg" height="190" loading="lazy" decoding="async" />
     </td>
     <td align="center">
-      <img alt="IRIS Robot" src="../../assets/images/iris_bots.jpg" height="190" />
+      <img alt="IRIS Robot" src="../../assets/images/iris_bots.jpg" height="190" loading="lazy" decoding="async" />
     </td>
   </tr>
   <tr>
@@ -64,7 +64,7 @@ $$
 Because omnidirectional kinematics differ from nonholonomic differential drive kinematics, standard differential wheel equations cannot be applied directly. Instead, a cubic Bézier curve generates smooth waypoints that steer the robot along forward-facing arcs.
 
 <div align="center">
-  <img alt="3rd-Order Bezier Curve" src="../../assets/images/bezier_curve.png" height="200" />
+  <img alt="3rd-Order Bezier Curve" src="../../assets/images/bezier_curve.png" height="200" loading="lazy" decoding="async" />
   <br>
   <sub>3rd-Order Bezier Curve</sub>
 </div>
@@ -122,7 +122,7 @@ $$
 After the velocity command vector is calculated, it is passed to the 3-wheeled omnidirectional robot inverse kinematics model:
 
 <div align="center">
-  <img alt="3-wheeled omnidirectional robot configuration" src="../../assets/images/Omni_3_4.png" height="220" />
+  <img alt="3-wheeled omnidirectional robot configuration" src="../../assets/images/Omni_3_4.png" height="220" loading="lazy" decoding="async" />
   <br>
   <sub>3-wheeled omnidirectional robot configuration</sub>
 </div>
@@ -171,12 +171,14 @@ $$
 ## Result
 
 <div align="center">
-  <img alt="Differential Drive Motion" src="../../assets/images/semi_diff.gif" width="560" />
+  <video autoplay loop muted playsinline width="560">
+    <source src="../../assets/images/semi_diff.mp4" type="video/mp4" />
+  </video>
   <br>
   <sub>Differential drive-like motion simulation result</sub>
 </div>
 
-## Source
+## References
 
 Coming Soon
 

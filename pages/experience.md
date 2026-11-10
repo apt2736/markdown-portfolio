@@ -23,7 +23,7 @@ layout: default
         <li>ROS 1, ROS 2, OpenCV, CAN</li>
       </ul>
     </td>
-    <td><img alt="IRIS" src="../assets/images/1630633001431.jpeg"/></td>
+    <td><img alt="IRIS" src="../assets/images/1630633001431.jpeg" loading="lazy" decoding="async" /></td>
   </tr>
   <tr>
     <td>
@@ -35,7 +35,7 @@ layout: default
         <li>Java, NetBeans IDE</li>
       </ul>
     </td>
-    <td><img alt="ITS Mathematics" src="../assets/images/1630669839958.jpeg" /></td>
+    <td><img alt="ITS Mathematics" src="../assets/images/1630669839958.jpeg" loading="lazy" decoding="async" /></td>
   </tr>
   <tr>
     <td>
@@ -47,7 +47,7 @@ layout: default
         <li>Contributed to map layout design</li>
       </ul>
     </td>
-    <td><img alt="OMITS" src="../assets/images/olimpiade_matematika_its_omits_logo.jpeg" /></td>
+    <td><img alt="OMITS" src="../assets/images/olimpiade_matematika_its_omits_logo.jpeg" loading="lazy" decoding="async" /></td>
   </tr>
 </table>
 

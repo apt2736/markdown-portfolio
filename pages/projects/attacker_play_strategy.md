@@ -70,7 +70,7 @@ During referee stoppages, the Attacker slews its target position smoothly to pre
 - **On Opponent Restarts (Away)**: The Attacker holds the legal standoff boundary ($2\text{ m}$ on kickoffs, $3\text{ m}$ on free kicks and corners), staying directly between the ball and our goal. When the opponent touches the ball into play, the Attacker breaks from the standoff ring to contest possession.
 
 <div align="center">
-  <img alt="Attacker Set-Piece Scenarios" src="../../assets/images/attacker_set_piece.gif" width="680" />
+  <img alt="Attacker Set-Piece Scenarios" src="../../assets/images/attacker_set_piece.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Attacker set-piece behavior: receiving the opening pass to shoot on Home restarts (left) vs. holding the 3 m standoff ring before pressing on Away restarts (right).</sub>
 </div>
@@ -87,7 +87,7 @@ When the Attacker gains possession in open play, it follows a four-step sequence
 | **4. Goal Shot**        | Inside the attacking half with an open shooting line     | Detects the empty side of the goalpost and shoots, or lobs into the box if no prior pass occurred      |
 
 <div align="center">
-  <img alt="Attacker Ball Possession Progression" src="../../assets/images/attacker_has_ball.gif" width="680" />
+  <img alt="Attacker Ball Possession Progression" src="../../assets/images/attacker_has_ball.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Four-step ball progression: clearing the sideline and passing to Assist (left) vs. respecting the 2.5 m dribble cap and shooting into the empty side of the goalpost (right).</sub>
 </div>
@@ -119,7 +119,7 @@ When the Assist or Defender controls the ball, the Attacker adjusts based on whe
 - **After Pass Completion**: Once shooting rights are unlocked, the Attacker advances along the opposite flank from the Assist to stretch the defensive line.
 
 <div align="center">
-  <img alt="Attacker Off-Ball Support" src="../../assets/images/attacker_off_ball.gif" width="680" />
+  <img alt="Attacker Off-Ball Support" src="../../assets/images/attacker_off_ball.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Off-ball support: sliding out of the Assist passing cone shadow to receive a pass (left) vs. advancing up the opposite wing once shooting is unlocked (right).</sub>
 </div>
@@ -138,7 +138,7 @@ Running directly into an opponent's rear chassis draws a pushing foul. The Attac
 For loose balls in the attacking half, the Attacker pursues at full speed across open turf. Near touchlines or end lines, it reduces speed and loops around the ball to face inward before making contact, preventing the ball from rolling out. If sight of the ball is lost, the Attacker checks the last known coordinates before patrolling its attacking wing.
 
 <div align="center">
-  <img alt="Attacker Pressing and Boundary Pursuit" src="../../assets/images/attacker_pressing_pursuit.gif" width="680" />
+  <img alt="Attacker Pressing and Boundary Pursuit" src="../../assets/images/attacker_pressing_pursuit.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Defensive recovery: orbiting at a 2.3 m radius to tackle from the front without fouling (left) vs. looping behind a sideline loose ball to gather it inward (right).</sub>
 </div>

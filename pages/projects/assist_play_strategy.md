@@ -71,7 +71,7 @@ During referee stoppages, the Assist handles team set pieces:
 - **On Opponent Restarts (Away)**: While the Attacker covers the central $3\text{ m}$ lane in front of the ball, the Assist guards a wider secondary arc ($3.5\text{--}4\text{ m}$ out) to cut off angled passes toward the wings.
 
 <div align="center">
-  <img alt="Assist Set-Piece Scenarios" src="../../assets/images/assist_set_piece.gif" width="680" />
+  <img alt="Assist Set-Piece Scenarios" src="../../assets/images/assist_set_piece.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Assist set-piece execution: circling the ball to align and pass to Attacker on Home restarts (left) vs. guarding the 3.8 m secondary wing arc on Away restarts (right).</sub>
 </div>
@@ -89,7 +89,7 @@ When the Assist wins the ball in open play, it clears the touchline or reverses 
 | **Reduced Squad ($2$ Robots)** | Unpressured and Attacker is already upfield           | Carries the ball into a midfield support pocket behind the attack |
 
 <div align="center">
-  <img alt="Assist Playmaking with Ball" src="../../assets/images/assist_has_ball.gif" width="680" />
+  <img alt="Assist Playmaking with Ball" src="../../assets/images/assist_has_ball.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Playmaking decisions: switching between passing and driving to shoot in a 3+ robot squad (left) vs. ignoring the home goalkeeper and scaling kick power by distance in a 2-robot squad (right).</sub>
 </div>
@@ -114,7 +114,7 @@ When the Attacker controls the ball, the Assist keeps at least $1.5\text{ m}$ sp
    Once the pass requirement is satisfied, the Attacker can shoot on its own. The Assist drops back to the defensive quarter-line ($y = 5.5\text{ m}$) and tracks the line between the ball and our goal. If the Attacker's shot is blocked or intercepted, the Assist is already positioned to break up the counter-attack.
 
 <div align="center">
-  <img alt="Assist Off-Ball Support and Cover" src="../../assets/images/assist_off_ball.gif" width="680" />
+  <img alt="Assist Off-Ball Support and Cover" src="../../assets/images/assist_off_ball.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Two-way off-ball transition: opening a 3 m pass lane outside the opponent shadow cone before the pass (left) vs. passing to Attacker in midfield and dropping to the y = 5.5 m quarter-line to cover the goal (right).</sub>
 </div>
@@ -136,7 +136,7 @@ $$
 This lets the robot meet the ball cleanly without overrunning the touchline.
 
 <div align="center">
-  <img alt="Assist Containment and Predictive Interception" src="../../assets/images/assist_containment_intercept.gif" width="680" />
+  <img alt="Assist Containment and Predictive Interception" src="../../assets/images/assist_containment_intercept.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Midfield recovery: holding a 3 m second-line containment buffer behind the ball (left) vs. driving to a velocity-lead intercept point ahead of a fast loose ball (right).</sub>
 </div>

@@ -113,10 +113,12 @@ p,
   color: var(--subtext-color);
 }
 
-/* Images */
-.markdown-body img {
+/* Images and Looped Simulation Videos */
+.markdown-body img,
+.markdown-body video {
   max-width: 100%;
   border-radius: 4px;
+  vertical-align: middle;
 }
 
 /* Tables */

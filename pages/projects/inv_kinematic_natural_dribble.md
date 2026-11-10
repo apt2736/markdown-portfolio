@@ -9,7 +9,9 @@ layout: default
 RoboCup Middle Size League (MSL) rules require Natural Dribbling: the ball must roll freely on the carpet in the direction of motion rather than being held stationary or spun backward during forward translation. On our robots, two spring-loaded dribbler arms handle the ball. Each arm is driven by an independent motor and instrumented with a Throttle Position Sensor (TPS) that measures mechanical arm deflection during contact.
 
 <div align="center">
-  <img alt="Natural Dribble Example" src="../../assets/images/iris_ball_handling.gif" width="360" />
+  <video autoplay loop muted playsinline width="360">
+    <source src="../../assets/images/iris_ball_handling.mp4" type="video/mp4" />
+  </video>
   <br>
   <sub>Example of natural dribble system (IRIS ITS)</sub>
 </div>
@@ -137,12 +139,14 @@ $$
 ## Result
 
 <div align="center">
-  <img alt="Inverse Kinematic for Natural Dribbling" src="../../assets/images/inv_kinematic_dribble.gif" width="160" />
+  <video autoplay loop muted playsinline width="160">
+    <source src="../../assets/images/inv_kinematic_dribble.mp4" type="video/mp4" />
+  </video>
   <br>
   <sub>Natural dribbling feedforward simulation result</sub>
 </div>
 
-## Source
+## References
 
 Coming Soon
 

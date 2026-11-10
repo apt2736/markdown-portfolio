@@ -70,7 +70,7 @@ $$
 This keeps the Defender legally $3\text{ m}$ clear of the ball while sealing the direct shot trajectory.
 
 <div align="center">
-  <img alt="Defender Set-Piece Goal Arc" src="../../assets/images/defender_set_piece.gif" width="680" />
+  <img alt="Defender Set-Piece Goal Arc" src="../../assets/images/defender_set_piece.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Adaptive goal-arc guarding: tracking the default 3.4 m arc on far restarts (left) vs. contracting the arc radius outside the penalty box when the opponent restarts near our goal (right).</sub>
 </div>
@@ -95,7 +95,7 @@ $$
 Clamping the lateral coordinate $x_{\text{def}}$ to the box edges ensures the Defender is not drawn out toward corner flags, keeping its body in front of the goal frame while tracking the ball's angle.
 
 <div align="center">
-  <img alt="Defender Collinear Shot Blocking" src="../../assets/images/defender_shot_blocking.gif" width="680" />
+  <img alt="Defender Collinear Shot Blocking" src="../../assets/images/defender_shot_blocking.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Line-of-sight shot blocking: sliding along y = 3.0 m on the ball-to-goal ray (left) vs. clamping lateral travel at the penalty box edges against wide threats (right).</sub>
 </div>
@@ -112,7 +112,7 @@ When an opponent shot or loose ball enters the Defender's dribbler, it initiates
    When an opponent is near the teammate or closes down the pass corridor, passing or clearing toward the friend risks an immediate turnover in our defensive third. Instead of passing or kicking toward the teammate, the Defender monitors its dribble distance. Once displacement reaches $2.5\text{ m}$, it pivots directly toward the opponent goalpost and launches a direct power shot downfield, relieving pressure and clearing into the opponent half.
 
 <div align="center">
-  <img alt="Defender Ball Recovery and Distribution" src="../../assets/images/defender_has_ball.gif" width="680" />
+  <img alt="Defender Ball Recovery and Distribution" src="../../assets/images/defender_has_ball.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Counter-attack distribution: escaping toward the nearer flank to pass forward to Attacker (left) vs. shooting directly toward the opponent goalpost when an opponent marks the teammate (right).</sub>
 </div>
@@ -122,7 +122,7 @@ When an opponent shot or loose ball enters the Defender's dribbler, it initiates
 When teammates have possession upfield or cameras lose the ball, the Defender holds station $1\text{ m}$ outside the top of the penalty box. In a three-robot formation, it anchors the center of the box edge; in a four-robot formation, it offsets slightly to share penalty-arc coverage with a second defender.
 
 <div align="center">
-  <img alt="Defender Penalty-Box Anchor Formations" src="../../assets/images/defender_anchor.gif" width="680" />
+  <img alt="Defender Penalty-Box Anchor Formations" src="../../assets/images/defender_anchor.gif" width="680" loading="lazy" decoding="async" />
   <br>
   <sub>Anchor positioning during upfield attacks: holding the central penalty-box station in a 3-robot squad (left) vs. splitting half-space coverage in a 4-robot squad (right).</sub>
 </div>

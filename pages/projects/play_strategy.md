@@ -9,7 +9,7 @@ layout: default
 In the RoboCup Middle Size League (MSL), teams of autonomous omnidirectional robots play soccer on a $14\text{ m} \times 22\text{ m}$ pitch without human intervention. A central BaseStation computer only relays referee whistle signals (Kickoff, Free Kick, Corner Kick, Throw-In, or Penalty) over Wi-Fi. Once play begins, the robots coordinate on their own to decide who challenges for the ball, where to pass, and when to shoot.
 
 <div align="center">
-  <img alt="IRIS ITS Middle Size League Robots" src="../../assets/images/iris_robots_lineup.jpeg" width="480" />
+  <img alt="IRIS ITS Middle Size League Robots" src="../../assets/images/iris_robots_lineup.jpeg" width="480" loading="lazy" decoding="async" />
   <br>
   <sub>IRIS ITS Middle Size League robots</sub>
 </div>
