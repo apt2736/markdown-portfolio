@@ -9,9 +9,8 @@ layout: default
 During mass-casualty earthquake disasters, field responders must triage hundreds of injured survivors with limited medical staff and damaged cellular networks. Standard manual triage under the Simple Triage and Rapid Treatment (START) and Emergency Severity Index (ESI) protocols requires sequential measurements across four separate instruments (sphygmomanometer cuff, pulse oximeter, electrocardiogram monitor, and manual respiratory counting) followed by paper recording. This process takes 5–10 minutes per patient and leaves waiting casualties unmonitored if their condition worsens.
 
 <div align="center">
-  <img alt="TriageBox PIMNAS 39 Poster" src="../../assets/images/triagebox_poster.jpeg" width="600" loading="lazy" decoding="async" />
-  <br>
-  <sub>TriageBox system architecture and validation poster, awarded 2nd Place (Silver Medal) in Presentation and 3rd Place (Bronze Medal) in Poster (PKM-KC1) at Pekan Ilmiah Mahasiswa Nasional (PIMNAS) 39.</sub>
+  <img alt="TriageBox PIMNAS 39 Poster" src="../../assets/images/triagebox_poster.jpeg" style="width: 100%; max-width: 600px; height: auto;" loading="lazy" decoding="async" />
+  <div style="font-size: 0.88rem; color: var(--subtext-color); margin-top: 6px;">TriageBox system architecture and validation poster, awarded 2nd Place (Silver Medal) in Presentation and 3rd Place (Bronze Medal) in Poster (PKM-KC1) at Pekan Ilmiah Mahasiswa Nasional (PIMNAS) 39.</div>
 </div>
 
 Developed for Program Kreativitas Mahasiswa - Karsa Cipta (PKM-KC), TriageBox is an offline-capable portable triage unit that reduces vital sign acquisition and priority classification to under one minute (57 s waveform capture and 2.53 s on-device inference). Each wearable patient node pairs dual-wavelength photoplethysmography (PPG, Red 660 nm and Infrared 940 nm), single-lead electrocardiography (Lead-I ECG), and an acoustic respiratory sensor with an embedded microcontroller that runs inference locally and transmits priority packets over a 433 MHz LoRa radio link to a base station.
@@ -122,9 +121,8 @@ $$
 Once $\widehat{\text{SBP}}$, $\text{HR}$, $\text{RR}$, and $\text{SpO}_2$ are obtained, the second stage classifies patient acuity. The classifier is trained on the Federated Multimodal Learning (FedMML) Emergency Department Triage dataset ([Imanov and Dulger, 2026](https://ssrn.com/abstract=6282898)), which contains $N = 87,234$ emergency encounters across five ESI levels.
 
 <div align="center">
-  <img alt="FedMML Target ESI 5-Class Distribution" src="../../assets/images/ml_classifier_class_dist.png" width="1000" loading="lazy" decoding="async" />
-  <br>
-  <sub>Class distribution of the FedMML Emergency Department Triage Dataset (<i>N</i> = 87,234), showing class imbalance between ESI 1 (1.1%, 924 cases) and ESI 3 (47.4%, 41,389 cases).</sub>
+  <img alt="FedMML Target ESI 5-Class Distribution" src="../../assets/images/ml_classifier_class_dist.png" style="width: 100%; max-width: 720px; height: auto;" loading="lazy" decoding="async" />
+  <div style="font-size: 0.88rem; color: var(--subtext-color); margin-top: 6px;">Class distribution of the FedMML Emergency Department Triage Dataset ($N = 87{,}234$), showing class imbalance between ESI 1 (1.1%, 924 cases) and ESI 3 (47.4%, 41,389 cases).</div>
 </div>
 
 Let $\mathbf{x} = [x_{\text{age}}, \; x_{\text{sex}}, \; x_{\text{sbp}}, \; x_{\text{hr}}, \; x_{\text{rr}}, \; x_{\text{spo2}}]^T \in \mathbb{R}^6$ denote the input feature vector, split into five continuous variables $\mathbf{x}_{\text{cont}} \in \mathbb{R}^5$ and binary sex $x_{\text{sex}} \in \lbrace 0, 1 \rbrace$. To prevent preprocessing leakage, the dataset $\mathcal{D}$ is partitioned via a stratified split into 70% training ($\mathcal{D}_{\text{train}}$), 15% validation ($\mathcal{D}_{\text{val}}$), and 15% holdout test ($\mathcal{D}_{\text{test}}$).
@@ -215,21 +213,21 @@ $$
 
 To verify that the decision boundaries learned from the training cohort reflect clinical triage standards rather than dataset bias, we compare the empirical feature distributions and split-gain attributions against the Emergency Severity Index (ESI) Handbook, Version 5 (Gilboy et al., 2023).
 
-<table align="center">
-  <tr>
-    <td align="center" width="550">
-      <img alt="Physiological Feature Distributions Across ESI Classes" src="../../assets/images/ml_classification_data_dist.jpeg" width="100%" loading="lazy" decoding="async" />
+<table align="center" style="border: none; border-collapse: collapse; margin: 1.5rem auto; width: 100%; max-width: 820px;">
+  <tr style="border: none; background: transparent;">
+    <td align="center" width="50%" style="border: none; background: transparent; padding: 4px;">
+      <img alt="Physiological Feature Distributions Across ESI Classes" src="../../assets/images/ml_classification_data_dist.jpeg" style="width: 100%; max-width: 390px; height: auto;" loading="lazy" decoding="async" />
     </td>
-    <td align="center" width="550">
-      <img alt="LightGBM Feature Importance by Total Information Gain" src="../../assets/images/ml_classification_feature_importance.jpeg" width="100%" loading="lazy" decoding="async" />
+    <td align="center" width="50%" style="border: none; background: transparent; padding: 4px;">
+      <img alt="LightGBM Feature Importance by Total Information Gain" src="../../assets/images/ml_classification_feature_importance.jpeg" style="width: 100%; max-width: 390px; height: auto;" loading="lazy" decoding="async" />
     </td>
   </tr>
-  <tr>
-    <td align="center">
-      <sub><b>(a)</b> Boxplot distributions of SBP, HR, RR, and SpO<sub>2</sub> across ESI Levels 1–5 (<i>N</i> = 87,234).</sub>
+  <tr style="border: none; background: transparent;">
+    <td align="center" style="border: none; background: transparent; padding: 4px 6px 0; font-size: 0.88rem; color: var(--subtext-color); line-height: 1.4;">
+      <b>(a)</b> Boxplot distributions of SBP, HR, RR, and SpO<sub>2</sub> across ESI Levels 1–5 ($N = 87{,}234$).
     </td>
-    <td align="center">
-      <sub><b>(b)</b> Total LightGBM split information gain across the six input features.</sub>
+    <td align="center" style="border: none; background: transparent; padding: 4px 6px 0; font-size: 0.88rem; color: var(--subtext-color); line-height: 1.4;">
+      <b>(b)</b> Total LightGBM split information gain across the six input features.
     </td>
   </tr>
 </table>
@@ -262,31 +260,31 @@ Under Chapter 2 (Figure 2-1) and Chapter 5 (Figure 5-1 and Table 5-1) of the ESI
 
 Because an autonomous field sensor only measures physiological waveforms and cannot observe whether a stable patient needs a prescription refill (0 resources) or a single suture (1 resource), separating ESI 4 from ESI 5 from vital signs alone is an ill-posed problem. Figure (a) shows that ESI 4 ($N = 23,199$) and ESI 5 ($N = 4,933$) share identical medians and interquartile ranges across all four vital signs: $\text{SBP} = 120\text{ mmHg}$ (IQR: 113–128), $\text{HR} = 75\text{ bpm}$ (IQR: 68–82), $\text{RR} = 16\text{ breaths/min}$ (IQR: 15–17), and $\text{SpO}_2 = 98\%$ (IQR: 97%–99%).
 
-<table align="center">
-  <tr>
-    <td align="center" width="50%">
-      <img alt="5-Class ESI Confusion Matrix" src="../../assets/images/ml_classifier_conf_mat_5_esi_class.png" width="550" loading="lazy" decoding="async" />
+<table align="center" style="border: none; border-collapse: collapse; margin: 1.5rem auto; width: 100%; max-width: 820px;">
+  <tr style="border: none; background: transparent;">
+    <td align="center" width="50%" style="border: none; background: transparent; padding: 4px;">
+      <img alt="5-Class ESI Confusion Matrix" src="../../assets/images/ml_classifier_conf_mat_5_esi_class.png" style="width: 100%; max-width: 390px; height: auto;" loading="lazy" decoding="async" />
     </td>
-    <td align="center" width="50%">
-      <img alt="5-Class ESI ROC Curves" src="../../assets/images/ml_classifier_roc_5_esi_class.png" width="550" loading="lazy" decoding="async" />
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center">
-      <sub><b>5-Class Model (ESI 1–5, <i>N</i><sub>test</sub> = 13,086):</b> Balanced Accuracy reaches 78.71% (Macro AUROC = 0.9207). Mutual overlap between ESI 4 and ESI 5 causes 41.8% of true ESI 4 cases (1,456 / 3,480) to be predicted as ESI 5, and 48.4% of true ESI 5 cases (358 / 740) to be predicted as ESI 4.</sub>
+    <td align="center" width="50%" style="border: none; background: transparent; padding: 4px;">
+      <img alt="5-Class ESI ROC Curves" src="../../assets/images/ml_classifier_roc_5_esi_class.png" style="width: 100%; max-width: 390px; height: auto;" loading="lazy" decoding="async" />
     </td>
   </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img alt="4-Class ESI Confusion Matrix" src="../../assets/images/ml_classifier_conf_mat_4_esi_class.png" width="550" loading="lazy" decoding="async" />
-    </td>
-    <td align="center" width="50%">
-      <img alt="4-Class ESI ROC Curves" src="../../assets/images/ml_classifier_roc_4_esi_class.png" width="550" loading="lazy" decoding="async" />
+  <tr style="border: none; background: transparent;">
+    <td colspan="2" align="center" style="border: none; background: transparent; padding: 4px 8px 14px; font-size: 0.88rem; color: var(--subtext-color); line-height: 1.4;">
+      <b>5-Class Model (ESI 1–5, $N_{\text{test}} = 13{,}086$):</b> Balanced Accuracy reaches 78.71% (Macro AUROC = 0.9207). Mutual overlap between ESI 4 and ESI 5 causes 41.8% of true ESI 4 cases (1,456 / 3,480) to be predicted as ESI 5, and 48.4% of true ESI 5 cases (358 / 740) to be predicted as ESI 4.
     </td>
   </tr>
-  <tr>
-    <td colspan="2" align="center">
-      <sub><b>4-Class Model (ESI 1–4, <i>N</i><sub>test</sub> = 12,346):</b> Dropping ESI 5 raises Balanced Accuracy to 87.77% (Macro AUROC = 0.9523), while ESI 4 sensitivity increases from 44.66% to 85.37% (2,971 / 3,480).</sub>
+  <tr style="border: none; background: transparent;">
+    <td align="center" width="50%" style="border: none; background: transparent; padding: 4px;">
+      <img alt="4-Class ESI Confusion Matrix" src="../../assets/images/ml_classifier_conf_mat_4_esi_class.png" style="width: 100%; max-width: 390px; height: auto;" loading="lazy" decoding="async" />
+    </td>
+    <td align="center" width="50%" style="border: none; background: transparent; padding: 4px;">
+      <img alt="4-Class ESI ROC Curves" src="../../assets/images/ml_classifier_roc_4_esi_class.png" style="width: 100%; max-width: 390px; height: auto;" loading="lazy" decoding="async" />
+    </td>
+  </tr>
+  <tr style="border: none; background: transparent;">
+    <td colspan="2" align="center" style="border: none; background: transparent; padding: 4px 8px 0; font-size: 0.88rem; color: var(--subtext-color); line-height: 1.4;">
+      <b>4-Class Model (ESI 1–4, $N_{\text{test}} = 12{,}346$):</b> Dropping ESI 5 raises Balanced Accuracy to 87.77% (Macro AUROC = 0.9523), while ESI 4 sensitivity increases from 44.66% to 85.37% (2,971 / 3,480).
     </td>
   </tr>
 </table>
@@ -302,55 +300,58 @@ Removing ESI 5 resolves this boundary conflict, increasing ESI 4 sensitivity by 
 On the 10% holdout test partition ($N_{\text{test}} = 939$ windows of 60 s duration), the dual LightGBM regressors track reference sphygmomanometer measurements closely and meet the AAMI / ANSI / ISO 81060-2 clinical standard (mean bias within $\pm 5.0\text{ mmHg}$ and error standard deviation $\le 8.0\text{ mmHg}$):
 
 <div align="center">
-  <img alt="SBP and DBP Holdout Test Scatter Plots" src="../../assets/images/ml_bp_regressor_scatter.png" width="1000" loading="lazy" decoding="async" />
-  <br>
-  <sub>Holdout test regression results (<i>N</i> = 939 windows, 60 s duration) for Systolic Blood Pressure (<i>R</i><sup>2</sup> = 0.9609, MAE = 1.56 mmHg) and Diastolic Blood Pressure (<i>R</i><sup>2</sup> = 0.9451, MAE = 1.28 mmHg).</sub>
+  <img alt="SBP and DBP Holdout Test Scatter Plots" src="../../assets/images/ml_bp_regressor_scatter.png" style="width: 100%; max-width: 720px; height: auto;" loading="lazy" decoding="async" />
+  <div style="font-size: 0.88rem; color: var(--subtext-color); margin-top: 6px;">Holdout test regression results ($N = 939$ windows, 60 s duration) for Systolic Blood Pressure ($R^2 = 0.9609$, MAE = 1.56 mmHg) and Diastolic Blood Pressure ($R^2 = 0.9451$, MAE = 1.28 mmHg).</div>
 </div>
 
-| Target Pressure                 | Holdout $R^2$ | MAE ($\text{mmHg}$) | RMSE ($\text{mmHg}$) | Mean Bias ($\text{mmHg}$) | Error SD ($\text{mmHg}$) | AAMI / ISO 81060-2 ($\lvert\text{Bias}\rvert \le 5.0$, $\text{SD} \le 8.0$) |  Embedded C Discrepancy   |
-| :------------------------------ | :-----------: | :-----------------: | :------------------: | :-----------------------: | :----------------------: | :-------------------------------------------------------------------------: | :-----------------------: |
-| **Systolic BP ($\text{SBP}$)**  |    0.9609     |        1.56         |         2.76         |           +0.04           |           2.77           |                        Pass (0.04 ≤ 5.0, 2.77 ≤ 8.0)                        | $\lt 10^{-9}\text{ mmHg}$ |
-| **Diastolic BP ($\text{DBP}$)** |    0.9451     |        1.28         |         2.14         |           +0.13           |           2.13           |                        Pass (0.13 ≤ 5.0, 2.13 ≤ 8.0)                        | $\lt 10^{-9}\text{ mmHg}$ |
+| Target | $R^2$ | MAE (mmHg) | RMSE (mmHg) | Bias (mmHg) | SD (mmHg) | ISO 81060-2 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Systolic (SBP)** | 0.9609 | 1.56 | 2.76 | +0.04 | 2.77 | Pass |
+| **Diastolic (DBP)** | 0.9451 | 1.28 | 2.14 | +0.13 | 2.13 | Pass |
 
-Compiled to standalone C on the embedded processor, the full 60 s resampling, QRS detection, 23-feature extraction, and dual tree evaluation completes in 2.51 s with numerical deviation below ${10^{-9}}\text{ mmHg}$ relative to floating-point reference execution.
+Compiled to standalone C on the embedded processor, the full 60 s resampling, QRS detection, 23-feature extraction, and dual tree evaluation completes in 2.51 s with numerical deviation below $10^{-9}\text{ mmHg}$ relative to floating-point reference execution.
 
 ### Triage classification and START mapping
 
 When the 4-class ESI probabilities are aggregated into the 3-tier START disaster priority scheme ($\text{Red} = \text{ESI 1}$, $\text{Yellow} = \text{ESI 2}$, $\text{Green} = \text{ESI 3-4}$), holdout Balanced Accuracy reaches 90.17% with a Macro AUROC of 0.9714 (95% DeLong CI: [0.9696, 0.9732]) and an on-device inference time of 21.04 ms:
 
-<table align="center">
-  <tr>
-    <td align="center" width="550">
-      <img alt="3-Tier START Triage Confusion Matrix" src="../../assets/images/ml_classifier_conf_mat_start_4_esi_class.png" width="550" loading="lazy" decoding="async" />
+<table align="center" style="border: none; border-collapse: collapse; margin: 1.5rem auto; width: 100%; max-width: 820px;">
+  <tr style="border: none; background: transparent;">
+    <td align="center" width="50%" style="border: none; background: transparent; padding: 4px;">
+      <img alt="3-Tier START Triage Confusion Matrix" src="../../assets/images/ml_classifier_conf_mat_start_4_esi_class.png" style="width: 100%; max-width: 390px; height: auto;" loading="lazy" decoding="async" />
     </td>
-    <td align="center" width="550">
-      <img alt="3-Tier START Triage ROC Curves" src="../../assets/images/ml_classifier_roc_start_4_esi_class.png" width="550" loading="lazy" decoding="async" />
+    <td align="center" width="50%" style="border: none; background: transparent; padding: 4px;">
+      <img alt="3-Tier START Triage ROC Curves" src="../../assets/images/ml_classifier_roc_start_4_esi_class.png" style="width: 100%; max-width: 390px; height: auto;" loading="lazy" decoding="async" />
     </td>
   </tr>
-  <tr>
-    <td colspan="2" align="center">
-      <sub><b>3-Tier START Triage Evaluation (<i>N</i><sub>test</sub> = 12,346):</b> Achieves 90.17% Balanced Accuracy and 0.9714 Macro AUROC, identifying 94.24% (131 / 139) of Red (Immediate) casualties with zero Red cases misclassified as Green (AUROC<sub>Red</sub> = 0.9980).</sub>
+  <tr style="border: none; background: transparent;">
+    <td colspan="2" align="center" style="border: none; background: transparent; padding: 4px 8px 0; font-size: 0.88rem; color: var(--subtext-color); line-height: 1.4;">
+      <b>3-Tier START Triage Evaluation ($N_{\text{test}} = 12{,}346$):</b> Achieves 90.17% Balanced Accuracy and 0.9714 Macro AUROC, identifying 94.24% (131 / 139) of Red (Immediate) casualties with zero Red cases misclassified as Green (AUROC<sub>Red</sub> = 0.9980).
     </td>
   </tr>
 </table>
 
-| Model Configuration & Class Tier               | Test Subject Count |    Sensitivity     |    Specificity     | Balanced Accuracy  |       AUROC (95% CI)        |
-| :--------------------------------------------- | :----------------: | :----------------: | :----------------: | :----------------: | :-------------------------: |
-| **1. Baseline 5-Class ESI (1–5)**              |     **13,086**     | **66.44% (Macro)** | **90.99% (Macro)** | **78.71% (Macro)** | **0.9207 [0.9182, 0.9233]** |
-| &emsp;&bull; ESI 1 (Immediate)                 |        139         |       94.24%       |       98.26%       |       96.25%       |   0.9981 [0.9966, 0.9995]   |
-| &emsp;&bull; ESI 2 (Emergent)                  |       2,518        |       80.22%       |       94.06%       |       87.14%       |   0.9585 [0.9548, 0.9622]   |
-| &emsp;&bull; ESI 3 (Urgent)                    |       6,209        |       73.06%       |       87.44%       |       80.25%       |   0.9032 [0.8981, 0.9082]   |
-| &emsp;&bull; ESI 4 (Less Urgent)               |       3,480        |       44.66%       |       91.48%       |       68.07%       |   0.9146 [0.9099, 0.9193]   |
-| &emsp;&bull; ESI 5 (Non-Urgent)                |        740         |       40.00%       |       83.69%       |       61.84%       |   0.8296 [0.8195, 0.8396]   |
-| **2. Refined 4-Class ESI (1–4)**               |     **12,346**     | **83.60% (Macro)** | **91.94% (Macro)** | **87.77% (Macro)** | **0.9523 [0.9504, 0.9541]** |
-| &emsp;&bull; ESI 1 (Immediate)                 |        139         |       94.24%       |       98.19%       |       96.22%       |   0.9980 [0.9965, 0.9994]   |
-| &emsp;&bull; ESI 2 (Emergent)                  |       2,518        |       80.30%       |       93.58%       |       86.94%       |   0.9565 [0.9527, 0.9603]   |
-| &emsp;&bull; ESI 3 (Urgent)                    |       6,209        |       74.49%       |       85.94%       |       80.21%       |   0.9001 [0.8947, 0.9056]   |
-| &emsp;&bull; ESI 4 (Less Urgent)               |       3,480        |       85.37%       |       90.05%       |       87.71%       |   0.9543 [0.9510, 0.9577]   |
-| **3. Operational 3-Tier START (from ESI 1–4)** |     **12,346**     | **88.76% (Macro)** | **91.57% (Macro)** | **90.17% (Macro)** | **0.9714 [0.9696, 0.9732]** |
-| &emsp;&bull; Red (Immediate / ESI 1)           |        139         |       94.24%       |       98.19%       |       96.22%       |   0.9980 [0.9965, 0.9994]   |
-| &emsp;&bull; Yellow (Delayed / ESI 2)          |       2,518        |       80.30%       |       93.58%       |       86.94%       |   0.9565 [0.9527, 0.9603]   |
-| &emsp;&bull; Green (Minor / ESI 3–4)           |       9,689        |       91.73%       |       82.95%       |       87.34%       |   0.9597 [0.9561, 0.9633]   |
+| Tier / Class | Support | Sensitivity | Specificity | Bal. Acc. | AUROC (95% CI) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **1. Baseline ESI (1–5)** | **13,086** | **66.44%** | **90.99%** | **78.71%** | **0.9207 [0.9182, 0.9233]** |
+| &emsp;ESI 1 (Immediate) | 139 | 94.24% | 98.26% | 96.25% | 0.9981 [0.9966, 0.9995] |
+| &emsp;ESI 2 (Emergent) | 2,518 | 80.22% | 94.06% | 87.14% | 0.9585 [0.9548, 0.9622] |
+| &emsp;ESI 3 (Urgent) | 6,209 | 73.06% | 87.44% | 80.25% | 0.9032 [0.8981, 0.9082] |
+| &emsp;ESI 4 (Less Urgent) | 3,480 | 44.66% | 91.48% | 68.07% | 0.9146 [0.9099, 0.9193] |
+| &emsp;ESI 5 (Non-Urgent) | 740 | 40.00% | 83.69% | 61.84% | 0.8296 [0.8195, 0.8396] |
+| **2. Refined ESI (1–4)** | **12,346** | **83.60%** | **91.94%** | **87.77%** | **0.9523 [0.9504, 0.9541]** |
+| &emsp;ESI 1 (Immediate) | 139 | 94.24% | 98.19% | 96.22% | 0.9980 [0.9965, 0.9994] |
+| &emsp;ESI 2 (Emergent) | 2,518 | 80.30% | 93.58% | 86.94% | 0.9565 [0.9527, 0.9603] |
+| &emsp;ESI 3 (Urgent) | 6,209 | 74.49% | 85.94% | 80.21% | 0.9001 [0.8947, 0.9056] |
+| &emsp;ESI 4 (Less Urgent) | 3,480 | 85.37% | 90.05% | 87.71% | 0.9543 [0.9510, 0.9577] |
+| **3. Operational START** | **12,346** | **88.76%** | **91.57%** | **90.17%** | **0.9714 [0.9696, 0.9732]** |
+| &emsp;Red (Immediate) | 139 | 94.24% | 98.19% | 96.22% | 0.9980 [0.9965, 0.9994] |
+| &emsp;Yellow (Delayed) | 2,518 | 80.30% | 93.58% | 86.94% | 0.9565 [0.9527, 0.9603] |
+| &emsp;Green (Minor) | 9,689 | 91.73% | 82.95% | 87.34% | 0.9597 [0.9561, 0.9633] |
+
+<div align="center">
+  <div style="font-size: 0.85rem; color: var(--subtext-color); margin-top: 4px;">* Model tier header rows report macro-averaged sensitivity, specificity, and balanced accuracy across classes.</div>
+</div>
 
 ### Potential improvements
 
