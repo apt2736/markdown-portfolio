@@ -260,13 +260,13 @@ $$
 
 The empirical ESI 2 distributions in Figure (a) align directly with Decision Point D. The ESI 2 heart rate median is 105 bpm (IQR: 95–115 bpm), exceeding the 100 bpm cutoff, whereas the ESI 3 median drops back inside normal limits to 88 bpm (IQR: 80–95 bpm). Similarly, the ESI 2 respiratory rate median is 22 breaths/min (IQR: 19–25 breaths/min), above the 20 breaths/min threshold, while ESI 3 returns to 18 breaths/min (IQR: 16–20 breaths/min). For oxygen saturation, the ESI 2 cohort sits at a median of 93% (IQR: 91%–95%), straddling the 92% cutoff, whereas ESI 3 rises to 96% and ESI 4–5 settle at 98%.
 
-| Triage Tier | ESI Handbook v5 Criterion (Ch. 2, 3, 5, 6)                                                | Dataset Distribution (Median [IQR])                                                    | Clinical Alignment                                                                 |
-| :---------- | :---------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------- |
+| Triage Tier | ESI Handbook v5 Criterion (Ch. 2, 3, 5, 6)                                                 | Dataset Distribution (Median [IQR])                                                     | Clinical Alignment                                                                 |
+| :---------- | :----------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------- |
 | **ESI 1**   | $\text{SpO}\_2 \lt 90\%$, shock ($\text{SBP} \lt 90\text{ mmHg}$), arrest or agonal vitals | $\text{SpO}\_2$: 88% [85.0–90.5%]; $\text{SBP}$: 125 [70–181]; $\text{HR}$: 95 [45–141] | Captures hypoxemia and two-sided shock/arrest tails                                |
 | **ESI 2**   | Adult Danger Zone: $\text{HR} \gt 100$, $\text{RR} \gt 20$, $\text{SpO}\_2 \lt 92\%$       | $\text{HR}$: 105 [95–115]; $\text{RR}$: 22 [19–25]; $\text{SpO}\_2$: 93% [91–95%]       | Median $\text{HR}$ (105) and $\text{RR}$ (22) match $\gt 100$ and $\gt 20$ cutoffs |
-| **ESI 3**   | Vital signs within normal limits (WNL); $\ge 2$ ED resources                              | $\text{HR}$: 88 [80–95]; $\text{RR}$: 18 [16–20]; $\text{SpO}\_2$: 96% [95–97%]         | Satisfies $\text{HR} \le 100$, $\text{RR} \le 20$, $\text{SpO}\_2 \ge 92\%$         |
-| **ESI 4**   | Vital signs WNL; 1 ED resource required                                                   | $\text{HR}$: 75 [68–82]; $\text{RR}$: 16 [15–17]; $\text{SpO}\_2$: 98% [97–99%]         | Normotensive resting baseline ($\text{SBP}$: 120 mmHg)                             |
-| **ESI 5**   | Vital signs WNL; 0 ED resources required                                                  | $\text{HR}$: 75 [68–82]; $\text{RR}$: 16 [15–17]; $\text{SpO}\_2$: 98% [97–99%]         | Identical vital sign distribution to ESI 4                                         |
+| **ESI 3**   | Vital signs within normal limits (WNL); $\ge 2$ ED resources                               | $\text{HR}$: 88 [80–95]; $\text{RR}$: 18 [16–20]; $\text{SpO}\_2$: 96% [95–97%]         | Satisfies $\text{HR} \le 100$, $\text{RR} \le 20$, $\text{SpO}\_2 \ge 92\%$        |
+| **ESI 4**   | Vital signs WNL; 1 ED resource required                                                    | $\text{HR}$: 75 [68–82]; $\text{RR}$: 16 [15–17]; $\text{SpO}\_2$: 98% [97–99%]         | Normotensive resting baseline ($\text{SBP}$: 120 mmHg)                             |
+| **ESI 5**   | Vital signs WNL; 0 ED resources required                                                   | $\text{HR}$: 75 [68–82]; $\text{RR}$: 16 [15–17]; $\text{SpO}\_2$: 98% [97–99%]         | Identical vital sign distribution to ESI 4                                         |
 
 The split-gain attribution in Figure (b) reinforces this finding. The four cardiopulmonary vital signs account for 99.34% of the total information gain across the tree ensemble ($\text{SpO}\_2$: 589,204.5 or 37.62%; $\text{HR}$: 412,302.4 or 26.33%; $\text{RR}$: 305,990.9 or 19.54%; $\text{SBP}$: 248,401.3 or 15.86%), while age (9,705.9 or 0.62%) and sex (599.9 or 0.04%) contribute 0.66%. The model partitions patients using the physiological thresholds defined at Decision Points A and D rather than demographic correlates.
 
@@ -354,7 +354,7 @@ When the 4-class ESI probabilities are aggregated into the 3-tier START disaster
     <thead>
       <tr style="background-color: var(--table-zebra); border-bottom: 2px solid var(--border-color);">
         <th style="padding: 6px 10px; text-align: left; border: 1px solid var(--border-color);">Tier / Class</th>
-        <th style="padding: 6px 8px; border: 1px solid var(--border-color);">Support</th>
+        <th style="padding: 6px 8px; border: 1px solid var(--border-color);">Count</th>
         <th style="padding: 6px 8px; border: 1px solid var(--border-color);">Sensitivity</th>
         <th style="padding: 6px 8px; border: 1px solid var(--border-color);">Specificity</th>
         <th style="padding: 6px 8px; border: 1px solid var(--border-color);">Bal. Acc.</th>
@@ -451,7 +451,7 @@ When the 4-class ESI probabilities are aggregated into the 3-tier START disaster
         <td style="padding: 4px 8px; border: 1px solid var(--border-color);">0.9543 [0.9510, 0.9577]</td>
       </tr>
       <tr style="font-weight: 600; background-color: var(--table-zebra);">
-        <td style="padding: 5px 10px; text-align: left; border: 1px solid var(--border-color);">3. Operational START</td>
+        <td style="padding: 5px 10px; text-align: left; border: 1px solid var(--border-color);">3. START</td>
         <td style="padding: 5px 8px; border: 1px solid var(--border-color);">12,346</td>
         <td style="padding: 5px 8px; border: 1px solid var(--border-color);">88.76%</td>
         <td style="padding: 5px 8px; border: 1px solid var(--border-color);">91.57%</td>
@@ -484,7 +484,7 @@ When the 4-class ESI probabilities are aggregated into the 3-tier START disaster
       </tr>
     </tbody>
   </table>
-  <div style="font-size: 0.82rem; color: var(--subtext-color); margin-top: 6px; text-align: center;">* Model tier header rows report macro-averaged sensitivity, specificity, and balanced accuracy across classes.</div>
+  <div style="font-size: 0.82rem; color: var(--subtext-color); margin-top: 6px; text-align: center;">Model tier header rows report macro-averaged sensitivity, specificity, and balanced accuracy across classes.</div>
 </div>
 
 ### Potential improvements
