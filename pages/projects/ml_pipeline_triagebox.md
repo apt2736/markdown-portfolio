@@ -304,10 +304,10 @@ On the 10% holdout test partition ($N_{\text{test}} = 939$ windows of 60 s durat
   <div style="font-size: 0.88rem; color: var(--subtext-color); margin-top: 6px;">Holdout test regression results ($N = 939$ windows, 60 s duration) for Systolic Blood Pressure ($R^2 = 0.9609$, MAE = 1.56 mmHg) and Diastolic Blood Pressure ($R^2 = 0.9451$, MAE = 1.28 mmHg).</div>
 </div>
 
-| Target | $R^2$ | MAE (mmHg) | RMSE (mmHg) | Bias (mmHg) | SD (mmHg) | ISO 81060-2 |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Systolic (SBP)** | 0.9609 | 1.56 | 2.76 | +0.04 | 2.77 | Pass |
-| **Diastolic (DBP)** | 0.9451 | 1.28 | 2.14 | +0.13 | 2.13 | Pass |
+| Target              | $R^2$  | MAE (mmHg) | RMSE (mmHg) | Bias (mmHg) | SD (mmHg) | ISO 81060-2 |
+| :------------------ | :----: | :--------: | :---------: | :---------: | :-------: | :---------: |
+| **Systolic (SBP)**  | 0.9609 |    1.56    |    2.76     |    +0.04    |   2.77    |    Pass     |
+| **Diastolic (DBP)** | 0.9451 |    1.28    |    2.14     |    +0.13    |   2.13    |    Pass     |
 
 Compiled to standalone C on the embedded processor, the full 60 s resampling, QRS detection, 23-feature extraction, and dual tree evaluation completes in 2.51 s with numerical deviation below $10^{-9}\text{ mmHg}$ relative to floating-point reference execution.
 
@@ -331,11 +331,7 @@ When the 4-class ESI probabilities are aggregated into the 3-tier START disaster
   </tr>
 </table>
 
-| Tier / Class | Support | Sensitivity | Specificity | Bal. Acc. | AUROC (95% CI) |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **1. Baseline ESI (1–5)** | **13,086** | **66.44%** | **90.99%** | **78.71%** | **0.9207 [0.9182, 0.9233]** |
-| &emsp;ESI 1 (Immediate) | 139 | 94.24% | 98.26% | 96.25% | 0.9981 [0.9966, 0.9995] |
-| &emsp;ESI 2 (Emergent) | 2,518 | 80.22% | 94.06% | 87.14% | 0.9585 [0.9548, 0.9622] |
+| Tier / Class | Count| 80.22% | 94.06% | 87.14% | 0.9585 [0.9548, 0.9622] |
 | &emsp;ESI 3 (Urgent) | 6,209 | 73.06% | 87.44% | 80.25% | 0.9032 [0.8981, 0.9082] |
 | &emsp;ESI 4 (Less Urgent) | 3,480 | 44.66% | 91.48% | 68.07% | 0.9146 [0.9099, 0.9193] |
 | &emsp;ESI 5 (Non-Urgent) | 740 | 40.00% | 83.69% | 61.84% | 0.8296 [0.8195, 0.8396] |
