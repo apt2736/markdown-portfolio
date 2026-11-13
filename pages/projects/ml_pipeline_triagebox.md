@@ -21,13 +21,23 @@ The on-device machine learning pipeline consists of two sequential gradient-boos
 
 ### Cuffless blood pressure regression
 
-Mechanical oscillometric cuffs are slow to inflate, power-intensive, and sensitive to motion artifacts in field trauma settings. To estimate arterial pressure continuously from optical and electrical waveforms, the first stage processes synchronized Lead-I ECG and dual-wavelength finger PPG signals from the [Li et al. (2026)](https://data.mendeley.com/datasets/pz2zzr8vhm/1) dataset (148 subjects, 444 three-minute recordings across seated rest, light-exercise recovery, and moderate-exercise recovery).
+Mechanical oscillometric cuffs are slow to inflate, power-intensive, and sensitive to motion artifacts in field trauma settings. To estimate arterial pressure continuously from optical and electrical waveforms, the first stage processes synchronized Lead-I ECG and dual-wavelength finger PPG signals from the [Li et al. (2026)](https://data.mendeley.com/datasets/pz2zzr8vhm/1) dataset (148 subjects, 85 male and 63 female, age $23.3 \pm 2.2\text{ years}$; 444 three-minute recordings across seated rest, light-exercise recovery, and moderate-exercise recovery). Across the 148-subject cohort, reference systolic blood pressure ($\text{SBP}$) spans $84.0\text{--}162.0\text{ mmHg}$ ($114.7 \pm 13.6\text{ mmHg}$, median $114.5\text{ mmHg}$) and diastolic blood pressure ($\text{DBP}$) spans $52.0\text{--}95.0\text{ mmHg}$ ($68.0 \pm 9.2\text{ mmHg}$, median $67.0\text{ mmHg}$), with a per-subject pulse pressure ($\text{PP} = \text{SBP} - \text{DBP}$) of $46.6 \pm 10.0\text{ mmHg}$ (range $25\text{--}81\text{ mmHg}$).
 
-Raw sensor streams sampled at $f\_{s,\text{raw}} = 240\text{ Hz}$ are segmented into 60 s sliding windows with a 2 s stride ($N\_{\text{win}} = 9,387$ windows) and resampled to $f\_s = 100\text{ Hz}$ ($N = 6,000$ samples per window) through polyphase FIR filtering with upsampling factor $L = 5$ and decimation factor $M = 12$:
+<div align="center">
+  <img alt="Per-Subject Pulse-Pressure Dynamic Span" src="../../assets/images/ml_regression_per_subject_pulse.png" style="width: 100%; max-width: 720px; height: auto;" loading="lazy" decoding="async" />
+  <div style="font-size: 0.88rem; color: var(--subtext-color); margin-top: 6px;">Per-subject systolic and diastolic blood pressure span across all $n = 148$ subjects sorted by $\text{SBP}$, showing physiological coupling ($\text{SBP} \gt \text{DBP}$) and pulse-pressure coverage ($\text{PP} = 46.6 \pm 10.0\text{ mmHg}$, range $25\text{--}81\text{ mmHg}$) from normotensive to hypertensive regimes.</div>
+</div>
+
+Raw sensor streams sampled at $f\_{s,\text{raw}} = 240\text{ Hz}$ are segmented into 60 s sliding windows with a 2 s stride ($N\_{\text{win}} = 9,387$ windows), partitioned into 70% training ($6,570$ windows), 20% validation ($1,878$ windows), and 10% holdout test ($939$ windows) sets, and resampled to $f\_s = 100\text{ Hz}$ ($N = 6,000$ samples per window) through polyphase FIR filtering with upsampling factor $L = 5$ and decimation factor $M = 12$:
 
 $$
 x[n] = \sum_{k} x_{\text{raw}}[k] \, h_{\text{LP}}\!\left(n M - k L\right), \qquad f_s = \frac{L}{M} f_{s,\text{raw}} = \frac{5}{12}(240\text{ Hz}) = 100\text{ Hz}
 $$
+
+<div align="center">
+  <img alt="Target Blood Pressure Distributions Across Train, Validation, and Test Splits" src="../../assets/images/ml_regression_bp_dist.png" style="width: 100%; max-width: 720px; height: auto;" loading="lazy" decoding="async" />
+  <div style="font-size: 0.88rem; color: var(--subtext-color); margin-top: 6px;">Overlaid probability density histograms of target $\text{SBP}$ ($84\text{--}162\text{ mmHg}$) and $\text{DBP}$ ($52\text{--}95\text{ mmHg}$) across the 70% training, 20% validation, and 10% holdout test partitions ($N\_{\text{win}} = 9{,}387$), confirming consistent target coverage without partition shift.</div>
+</div>
 
 Let $e[n]$, $p\_{\text{IR}}[n]$, and $p\_{\text{Red}}[n]$ denote the resampled ECG, infrared PPG (940 nm), and red PPG (660 nm) signals for $n \in \lbrace 0, 1, \dots, N - 1 \rbrace$. Cardiac R-peaks on $e[n]$ are detected using the [Pan and Tompkins (1985)](https://doi.org/10.1109/TBME.1985.325532) transformation, which computes the discrete derivative, squared energy, and a $W\_{\text{int}} = 15\text{ samples}$ (150 ms) moving-window average $E\_{\text{QRS}}[n]$:
 
@@ -58,6 +68,11 @@ Measuring the delay from the ECG R-peak $r\_k$ to each landmark gives three Puls
 $$
 \text{PAT}_{f,k} = \frac{n_{f,k} - r_k}{f_s}\times 10^3, \qquad \text{PAT}_{d,k} = \frac{n_{d,k} - r_k}{f_s}\times 10^3, \qquad \text{PAT}_{p,k} = \frac{n_{p,k} - r_k}{f_s}\times 10^3
 $$
+
+<div align="center">
+  <img alt="Beat-Aligned Ensemble Average of Normalized ECG and Dual-Wavelength PPG" src="../../assets/images/ml_regression_beat_ensemble_average.png" style="width: 100%; max-width: 720px; height: auto;" loading="lazy" decoding="async" />
+  <div style="font-size: 0.88rem; color: var(--subtext-color); margin-top: 6px;">Beat-aligned ensemble average (median and 25th–75th percentile IQR band) of $Z$-score normalized Lead-I ECG, IR PPG (940 nm), and Red PPG (660 nm) waveforms synchronized to the ECG R-peak ($t = 0\text{ ms}$), showing consistent phase lock across cardiac cycles with the filtered PPG peak at $+80\text{ ms}$ and systolic nadir at $+252\text{ ms}$.</div>
+</div>
 
 Because $\text{PAT}$ includes the electromechanical Pre-Ejection Period ($\text{PEP}$) before aortic valve opening and covaries with heart rate, rate-corrected arrival times are formed via the Fridericia cube-root and Framingham linear formulas. An empirical $\text{PEP}$ estimate is also subtracted from $\text{PAT}$ to isolate vascular Pulse Transit Time ($\text{PTT}$):
 
@@ -514,6 +529,7 @@ J. Pan and W. J. Tompkins, "A Real-Time QRS Detection Algorithm," _IEEE Transact
 E. R. DeLong, D. M. DeLong, and D. L. Clarke-Pearson, "Comparing the Areas under Two or More Correlated Receiver Operating Characteristic Curves: A Nonparametric Approach," _Biometrics_, vol. 44, no. 3, pp. 837–845, Sep. 1988, doi: [10.2307/2531595](https://doi.org/10.2307/2531595).
 
 G. Ke _et al._, "LightGBM: A Highly Efficient Gradient Boosting Decision Tree," in _Advances in Neural Information Processing Systems (NeurIPS)_, vol. 30, 2017, pp. 3146–3154.
+
 T. Akiba, S. Sano, T. Yanase, T. Ohta, and M. Koyama, "Optuna: A Next-generation Hyperparameter Optimization Framework," in _Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining_, 2019, pp. 2623–2631.
 
 [Back to Projects](./../projects.md)
