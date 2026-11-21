@@ -257,10 +257,10 @@ body {
   text-align: center !important;
 }
 
-/* LinkedIn-style External Link Preview Cards (Horizontally Tiled) */
+/* LinkedIn-style External Link & Media Preview Cards (Horizontally Tiled) */
 .link-card-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.85rem;
   margin-top: 0.85rem;
 }
@@ -291,7 +291,7 @@ body {
 .link-card-thumb {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   background-color: var(--code-bg);
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
@@ -303,6 +303,15 @@ body {
   object-fit: cover;
   display: block;
   border-radius: 0;
+}
+
+.link-card-thumb--contain {
+  background-color: var(--code-bg);
+  padding: 4px;
+}
+
+.link-card-thumb--contain img {
+  object-fit: contain;
 }
 
 .link-card-body {
@@ -497,6 +506,12 @@ body {
 .site-footer-links a:hover {
   color: var(--link-color);
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .link-card-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {

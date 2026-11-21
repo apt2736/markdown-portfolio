@@ -48,6 +48,22 @@ title: Honors
     <a class="btn btn-sm" href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">View TriageBox ML Pipeline &rarr;</a>
   </div>
   <div class="link-card-list">
+    <a class="link-card" href="{{ '/assets/images/pimnas_39_double_award.jpeg' | relative_url }}" target="_blank" rel="noopener noreferrer">
+      <div class="link-card-thumb link-card-thumb--contain">
+        <img alt="PIMNAS 39 Awarding" src="{{ '/assets/images/pimnas_39_double_award.jpeg' | relative_url }}" loading="lazy" decoding="async" />
+      </div>
+      <div class="link-card-body">
+        <div class="link-card-title">Double Medal Awards — PIMNAS 39</div>
+        <p class="link-card-desc">TriageBox team holding the 2nd Place Presentation (Silver) and 3rd Place Poster (Bronze) PKM-KC1 awards at PIMNAS 39.</p>
+        <div class="link-card-meta">
+          <span class="link-card-domain">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            Photo · View full image
+          </span>
+          <span>&#8599;</span>
+        </div>
+      </div>
+    </a>
     <a class="link-card" href="https://www.instagram.com/p/DfahmbkgX0k/" target="_blank" rel="noopener noreferrer">
       <div class="link-card-thumb">
         <img alt="ITS Pusat Prestasi PIMNAS 39 Instagram Post" src="{{ '/assets/images/link_preview_pimnas_ig.jpg' | relative_url }}" loading="lazy" decoding="async" />
@@ -65,10 +81,6 @@ title: Honors
       </div>
     </a>
   </div>
-  <div class="card-media">
-    <img alt="PIMNAS 39 Awarding" src="{{ '/assets/images/pimnas_39_double_award.jpeg' | relative_url }}" loading="lazy" decoding="async" />
-    <div class="card-caption">Double Medal Awards — PIMNAS 39</div>
-  </div>
 </div>
 
 <div class="card">
@@ -82,12 +94,28 @@ title: Honors
     <a class="btn btn-sm" href="{{ '/pages/projects.html' | relative_url }}">All MSL Projects &rarr;</a>
   </div>
   <div class="link-card-list">
+    <a class="link-card" href="{{ '/assets/images/certificate_tournament.jpeg' | relative_url }}" target="_blank" rel="noopener noreferrer">
+      <div class="link-card-thumb link-card-thumb--contain">
+        <img alt="RoboCup Tournament Certificate" src="{{ '/assets/images/certificate_tournament.jpeg' | relative_url }}" loading="lazy" decoding="async" />
+      </div>
+      <div class="link-card-body">
+        <div class="link-card-title">Certificate of Award — 3rd Place MSL</div>
+        <p class="link-card-desc">Official RoboCup 2026 tournament award certificate recognizing 3rd Place in the Middle Size League soccer competition.</p>
+        <div class="link-card-meta">
+          <span class="link-card-domain">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            Certificate · View full image
+          </span>
+          <span>&#8599;</span>
+        </div>
+      </div>
+    </a>
     <a class="link-card" href="https://www.youtube.com/watch?v=IPPSB2uQ6VY" target="_blank" rel="noopener noreferrer">
       <div class="link-card-thumb">
         <img alt="Falcons vs IRIS RoboCup 2026 Incheon Match Thumbnail" src="{{ '/assets/images/link_preview_robocup_yt.jpg' | relative_url }}" loading="lazy" decoding="async" />
       </div>
       <div class="link-card-body">
-        <div class="link-card-title">Falcons vs IRIS — RoboCup Incheon MSL League 2026</div>
+        <div class="link-card-title">Falcons vs IRIS — RoboCup Incheon MSL 2026</div>
         <p class="link-card-desc">Full match recording of IRIS ITS competing in the Middle Size League at RoboCup 2026 in Incheon, South Korea.</p>
         <div class="link-card-meta">
           <span class="link-card-domain">
@@ -103,7 +131,7 @@ title: Honors
         <img alt="IRIS ITS 3rd Place RoboCup 2026 Instagram Post" src="{{ '/assets/images/link_preview_robocup_ig.jpg' | relative_url }}" loading="lazy" decoding="async" />
       </div>
       <div class="link-card-body">
-        <div class="link-card-title">Victory Earned, Podium Secured — 3rd Place RoboCup 2026 MSL</div>
+        <div class="link-card-title">Victory Earned, Podium Secured — 3rd Place</div>
         <p class="link-card-desc">Official IRIS ITS Robotics announcement celebrating 3rd Place in the Middle Size League at RoboCup 2026.</p>
         <div class="link-card-meta">
           <span class="link-card-domain">
@@ -115,10 +143,6 @@ title: Honors
       </div>
     </a>
   </div>
-  <div class="card-media">
-    <img alt="RoboCup Tournament Certificate" src="{{ '/assets/images/certificate_tournament.jpeg' | relative_url }}" loading="lazy" decoding="async" />
-    <div class="card-caption">Certificate of Award — 3rd Place Middle Size League</div>
-  </div>
 </div>
 
 <div class="card">
@@ -127,8 +151,22 @@ title: Honors
     <span class="card-date">2026</span>
   </div>
   <p class="card-subtitle">RoboCup Federation — Team IRIS ITS</p>
-  <div class="card-media">
-    <img alt="RoboCup Participation Certificate" src="{{ '/assets/images/certificate_participation.jpeg' | relative_url }}" loading="lazy" decoding="async" />
-    <div class="card-caption">Certificate of Participation — RoboCup 2026</div>
+  <div class="link-card-list">
+    <a class="link-card" href="{{ '/assets/images/certificate_participation.jpeg' | relative_url }}" target="_blank" rel="noopener noreferrer">
+      <div class="link-card-thumb link-card-thumb--contain">
+        <img alt="RoboCup Participation Certificate" src="{{ '/assets/images/certificate_participation.jpeg' | relative_url }}" loading="lazy" decoding="async" />
+      </div>
+      <div class="link-card-body">
+        <div class="link-card-title">Certificate of Participation — RoboCup 2026</div>
+        <p class="link-card-desc">Official RoboCup Federation Major Student Participant certificate with Team IRIS ITS in Incheon, South Korea.</p>
+        <div class="link-card-meta">
+          <span class="link-card-domain">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            Certificate · View full image
+          </span>
+          <span>&#8599;</span>
+        </div>
+      </div>
+    </a>
   </div>
 </div>
