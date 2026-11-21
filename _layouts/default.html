@@ -329,12 +329,12 @@
       <nav class="page-footer-nav" aria-label="Page navigation">
         <div class="btn-group">
           {% if page.url contains 'attacker_play_strategy' or page.url contains 'assist_play_strategy' or page.url contains 'defender_play_strategy' %}
-          <a class="btn" href="{{ '/pages/projects/play_strategy.html' | relative_url }}">&larr; Play Strategy Overview</a>
+          <a class="btn" href="{{ '/pages/projects/play_strategy.html' | relative_url }}">Play Strategy Overview</a>
           {% endif %}
           {% if page.url contains '/pages/projects/' %}
-          <a class="btn" href="{{ '/pages/projects.html' | relative_url }}">&larr; All Projects</a>
+          <a class="btn" href="{{ '/pages/projects.html' | relative_url }}">All Projects</a>
           {% endif %}
-          <a class="btn" href="{{ '/' | relative_url }}">&larr; Home</a>
+          <a class="btn" href="{{ '/' | relative_url }}">Home</a>
         </div>
       </nav>
       {% endunless %}

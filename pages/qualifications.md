@@ -38,7 +38,6 @@ title: Skills & Qualifications
     <span class="tag">Pan-Tompkins QRS Detection</span>
     <span class="tag">Pulse Transit Time</span>
     <span class="tag">DeLong AUROC</span>
-    <span class="tag">Standalone ANSI C Inference</span>
   </div>
 </div>
 
@@ -46,7 +45,7 @@ title: Skills & Qualifications
   <div class="card-title">Programming Languages</div>
   <div class="tag-list">
     <span class="tag">C++</span>
-    <span class="tag">C (ANSI C / Embedded)</span>
+    <span class="tag">C</span>
     <span class="tag">Python</span>
     <span class="tag">Java</span>
     <span class="tag">JavaScript</span>

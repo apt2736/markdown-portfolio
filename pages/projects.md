@@ -112,6 +112,5 @@ title: Projects
     <span class="tag">LightGBM</span>
     <span class="tag">Optuna</span>
     <span class="tag">ECG/PPG Signal Processing</span>
-    <span class="tag">ANSI C</span>
   </div>
 </div>

@@ -12,7 +12,7 @@ title: Honors
   </div>
   <p class="card-subtitle">Konvensi Sains Teknologi Industri (KSTI) 2026 — Institut Teknologi Sepuluh Nopember</p>
   <div class="btn-group">
-    <a class="btn btn-sm" href="{{ '/pages/projects/bev_autotune_fira.html' | relative_url }}">View 1:10 Autonomous Car Writeup &rarr;</a>
+    <a class="btn btn-sm" href="{{ '/pages/projects/bev_autotune_fira.html' | relative_url }}">View 1:10 Autonomous Car Writeup  </a>
   </div>
 </div>
 
@@ -27,7 +27,7 @@ title: Honors
     <li><strong>3rd Place (Bronze Medal)</strong> — Poster Category, PKM-KC1 Pekan Ilmiah Mahasiswa Nasional 39 (TriageBox)</li>
   </ul>
   <div class="btn-group" style="margin-top: 0.65rem;">
-    <a class="btn btn-sm" href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">View TriageBox ML Pipeline &rarr;</a>
+    <a class="btn btn-sm" href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">View TriageBox ML Pipeline  </a>
   </div>
   <div class="card-media">
     <img alt="PIMNAS 39 Awarding" src="{{ '/assets/images/pimnas_39_double_award.jpeg' | relative_url }}" loading="lazy" decoding="async" />
@@ -42,8 +42,8 @@ title: Honors
   </div>
   <p class="card-subtitle">RoboCup Federation — Incheon, South Korea (Team IRIS ITS)</p>
   <div class="btn-group">
-    <a class="btn btn-sm" href="{{ '/pages/projects/play_strategy.html' | relative_url }}">View MSL Play Strategy &rarr;</a>
-    <a class="btn btn-sm" href="{{ '/pages/projects.html' | relative_url }}">All MSL Projects &rarr;</a>
+    <a class="btn btn-sm" href="{{ '/pages/projects/play_strategy.html' | relative_url }}">View MSL Play Strategy  </a>
+    <a class="btn btn-sm" href="{{ '/pages/projects.html' | relative_url }}">All MSL Projects  </a>
   </div>
   <div class="card-media">
     <img alt="RoboCup Tournament Certificate" src="{{ '/assets/images/certificate_tournament.jpeg' | relative_url }}" loading="lazy" decoding="async" />

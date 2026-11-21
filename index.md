@@ -14,7 +14,7 @@ layout: default
       <a class="btn" href="mailto:aslampandutasminto@gmail.com">Email</a>
       <a class="btn" href="https://github.com/apt2736" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a class="btn" href="https://www.linkedin.com/in/aslam-pandu-tasminto" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a class="btn" href="{{ '/pages/projects.html' | relative_url }}">All Projects &rarr;</a>
+      <a class="btn" href="{{ '/pages/projects.html' | relative_url }}">All Projects  </a>
     </div>
   </div>
   <div class="hero-avatar">
@@ -29,13 +29,12 @@ layout: default
     <div class="card-title"><a href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">LightGBM ML Pipeline for Triage Classification and Cuffless Blood Pressure Regression</a></div>
     <span class="card-date">Jul – Oct 2026</span>
   </div>
-  <p>Two-stage embedded pipeline extracting 23 ECG/PPG cardiovascular biomarkers for cuffless SBP/DBP regression (ISO 81060-2 compliant on holdout) and ESI-to-START disaster triage classification (90.17% balanced accuracy, 0.9714 Macro AUROC) compiled to standalone ANSI C.</p>
+  <p>Two-stage embedded pipeline extracting 23 ECG/PPG cardiovascular biomarkers for cuffless SBP/DBP regression (ISO 81060-2 compliant on holdout) and ESI-to-START disaster triage classification (90.17% balanced accuracy, 0.9714 Macro AUROC).</p>
   <div class="tag-list">
     <span class="tag">PIMNAS 39 Silver &amp; Bronze</span>
     <span class="tag">LightGBM</span>
     <span class="tag">Optuna</span>
     <span class="tag">Signal Processing</span>
-    <span class="tag">ANSI C</span>
   </div>
 </div>
 
@@ -86,27 +85,27 @@ layout: default
 
 <div class="explore-grid">
   <a class="card card-interactive" href="{{ '/pages/projects.html' | relative_url }}">
-    <div class="card-title">Projects &rarr;</div>
+    <div class="card-title">Projects  </div>
     <p>Technical writeups across 1:10 autonomous cars, RoboCup MSL robotics, and embedded ML.</p>
   </a>
   <a class="card card-interactive" href="{{ '/pages/experience.html' | relative_url }}">
-    <div class="card-title">Experience &rarr;</div>
+    <div class="card-title">Experience  </div>
     <p>IRIS ITS robotics programming, Modelling &amp; Simulation Lab, PROVICOM Lab, and OMITS.</p>
   </a>
   <a class="card card-interactive" href="{{ '/pages/education.html' | relative_url }}">
-    <div class="card-title">Education &rarr;</div>
+    <div class="card-title">Education  </div>
     <p>B.Sc. in Mathematics at Institut Teknologi Sepuluh Nopember (ITS), GPA &amp; coursework.</p>
   </a>
   <a class="card card-interactive" href="{{ '/pages/qualifications.html' | relative_url }}">
-    <div class="card-title">Skills &amp; Qualifications &rarr;</div>
+    <div class="card-title">Skills &amp; Qualifications  </div>
     <p>Robotics, control systems, computer vision, machine learning, and programming stack.</p>
   </a>
   <a class="card card-interactive" href="{{ '/pages/extracurriculars.html' | relative_url }}">
-    <div class="card-title">Honors &rarr;</div>
+    <div class="card-title">Honors  </div>
     <p>KSTI 2026 1st Place, PIMNAS 39 double medal awards, and RoboCup 2026 3rd Place.</p>
   </a>
   <a class="card card-interactive" href="{{ '/pages/links.html' | relative_url }}">
-    <div class="card-title">Links &amp; Contact &rarr;</div>
+    <div class="card-title">Links &amp; Contact  </div>
     <p>Direct access to CV PDF, email, GitHub repositories, and LinkedIn profile.</p>
   </a>
 </div>
