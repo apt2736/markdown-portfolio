@@ -106,6 +106,6 @@ layout: default
   </a>
   <a class="card card-interactive" href="{{ '/pages/links.html' | relative_url }}">
     <div class="card-title">Links &amp; Contact  </div>
-    <p>Direct access to CV PDF, email, GitHub repositories, and LinkedIn profile.</p>
+    <p>Direct access to CV, email, GitHub repositories, and LinkedIn profile.</p>
   </a>
 </div>
