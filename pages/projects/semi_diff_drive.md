@@ -178,10 +178,6 @@ $$
   <sub>Differential drive-like motion simulation result</sub>
 </div>
 
-## References
-
-Coming Soon
-
 [Back to Projects](./../projects.md)
 
 [Back to Main](./../../README.md)

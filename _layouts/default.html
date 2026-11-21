@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title | default: site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link
       rel="stylesheet"
       href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}"
@@ -308,6 +308,20 @@
     </script>
   </head>
   <body>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="site-brand" href="{{ '/' | relative_url }}">Aslam Pandu Tasminto</a>
+        <div class="site-nav-links">
+          <a href="{{ '/' | relative_url }}"{% if page.url == '/' or page.url == '/index.html' %} class="active"{% endif %}>Home</a>
+          <a href="{{ '/pages/projects.html' | relative_url }}"{% if page.url contains '/pages/projects' %} class="active"{% endif %}>Projects</a>
+          <a href="{{ '/pages/experience.html' | relative_url }}"{% if page.url contains '/pages/experience' %} class="active"{% endif %}>Experience</a>
+          <a href="{{ '/pages/education.html' | relative_url }}"{% if page.url contains '/pages/education' %} class="active"{% endif %}>Education</a>
+          <a href="{{ '/pages/qualifications.html' | relative_url }}"{% if page.url contains '/pages/qualifications' %} class="active"{% endif %}>Skills</a>
+          <a href="{{ '/pages/extracurriculars.html' | relative_url }}"{% if page.url contains '/pages/extracurriculars' %} class="active"{% endif %}>Honors</a>
+          <a href="{{ '/assets/docs/Curriculum_Vitae_Aslam_Pandu_Tasminto.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
+        </div>
+      </nav>
+    </header>
     <div class="page-wrapper">
       <main class="markdown-body">{{ content }}</main>
     </div>
