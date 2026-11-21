@@ -12,7 +12,7 @@ title: Honors
   </div>
   <p class="card-subtitle">Konvensi Sains Teknologi Industri (KSTI) 2026 — Institut Teknologi Sepuluh Nopember</p>
   <div class="btn-group">
-    <a class="btn btn-sm" href="{{ '/pages/projects/bev_autotune_fira.html' | relative_url }}">View 1:10 Autonomous Car Writeup &rarr;</a>
+    <a class="btn btn-sm" href="{{ '/pages/projects/bev_autotune_fira.html' | relative_url }}">View 1:10 Autonomous Car Writeup</a>
   </div>
   <div class="link-card-list">
     <a class="link-card" href="https://www.instagram.com/p/Dfr1wbOmnoO/?utm_source=ig_web_copy_link&amp;hvrq=MzRlODBiNWFlZA==&amp;avpt=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
@@ -27,7 +27,6 @@ title: Honors
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
             instagram.com · @iris.itsrobotic
           </span>
-          <span>&#8599;</span>
         </div>
       </div>
     </a>
@@ -45,7 +44,7 @@ title: Honors
     <li><strong>3rd Place (Bronze Medal)</strong> — Poster Category, PKM-KC1 Pekan Ilmiah Mahasiswa Nasional 39 (TriageBox)</li>
   </ul>
   <div class="btn-group" style="margin-top: 0.65rem;">
-    <a class="btn btn-sm" href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">View TriageBox ML Pipeline &rarr;</a>
+    <a class="btn btn-sm" href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">View TriageBox ML Pipeline</a>
   </div>
   <div class="link-card-list">
     <a class="link-card" href="{{ '/assets/images/pimnas_39_double_award.jpeg' | relative_url }}" target="_blank" rel="noopener noreferrer">
@@ -60,7 +59,6 @@ title: Honors
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Photo · View full image
           </span>
-          <span>&#8599;</span>
         </div>
       </div>
     </a>
@@ -76,7 +74,6 @@ title: Honors
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
             instagram.com · @its_pusatprestasi
           </span>
-          <span>&#8599;</span>
         </div>
       </div>
     </a>
@@ -90,8 +87,8 @@ title: Honors
   </div>
   <p class="card-subtitle">RoboCup Federation — Incheon, South Korea (Team IRIS ITS)</p>
   <div class="btn-group">
-    <a class="btn btn-sm" href="{{ '/pages/projects/play_strategy.html' | relative_url }}">View MSL Play Strategy &rarr;</a>
-    <a class="btn btn-sm" href="{{ '/pages/projects.html' | relative_url }}">All MSL Projects &rarr;</a>
+    <a class="btn btn-sm" href="{{ '/pages/projects/play_strategy.html' | relative_url }}">View MSL Play Strategy</a>
+    <a class="btn btn-sm" href="{{ '/pages/projects.html' | relative_url }}">All MSL Projects</a>
   </div>
   <div class="link-card-list">
     <a class="link-card" href="{{ '/assets/images/certificate_tournament.jpeg' | relative_url }}" target="_blank" rel="noopener noreferrer">
@@ -106,7 +103,6 @@ title: Honors
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Certificate · View full image
           </span>
-          <span>&#8599;</span>
         </div>
       </div>
     </a>
@@ -122,7 +118,6 @@ title: Honors
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
             youtube.com · Tech United Eindhoven
           </span>
-          <span>&#8599;</span>
         </div>
       </div>
     </a>
@@ -138,7 +133,6 @@ title: Honors
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
             instagram.com · @iris.itsrobotic
           </span>
-          <span>&#8599;</span>
         </div>
       </div>
     </a>
@@ -164,7 +158,6 @@ title: Honors
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
             Certificate · View full image
           </span>
-          <span>&#8599;</span>
         </div>
       </div>
     </a>
