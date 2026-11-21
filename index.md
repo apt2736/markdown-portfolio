@@ -10,7 +10,7 @@ layout: default
       Undergraduate Mathematics student at Institut Teknologi Sepuluh Nopember (ITS) focused on autonomous robot software, motion control, computer vision, and embedded machine learning. Robotics programmer for <strong>IRIS ITS</strong> (<strong>3rd Place, RoboCup 2026 Middle Size League</strong>; <strong>1st Place, KSTI 2026 Mini Autonomous Vehicle</strong>) and ML Engineer for <strong>TriageBox</strong> (<strong>PIMNAS 39 Silver &amp; Bronze Medalist</strong>).
     </p>
     <div class="btn-group hero-links">
-      <a class="btn btn-primary" href="{{ '/assets/docs/Curriculum_Vitae_Aslam_Pandu_Tasminto.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+      <a class="btn btn-primary" href="{{ '/assets/docs/Curriculum_Vitae_Aslam_Pandu_Tasminto.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
       <a class="btn" href="mailto:aslampandutasminto@gmail.com">Email</a>
       <a class="btn" href="https://github.com/apt2736" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a class="btn" href="https://www.linkedin.com/in/aslam-pandu-tasminto" target="_blank" rel="noopener noreferrer">LinkedIn</a>
