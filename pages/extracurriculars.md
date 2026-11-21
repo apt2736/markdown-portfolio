@@ -12,7 +12,25 @@ title: Honors
   </div>
   <p class="card-subtitle">Konvensi Sains Teknologi Industri (KSTI) 2026 — Institut Teknologi Sepuluh Nopember</p>
   <div class="btn-group">
-    <a class="btn btn-sm" href="{{ '/pages/projects/bev_autotune_fira.html' | relative_url }}">View 1:10 Autonomous Car Writeup  </a>
+    <a class="btn btn-sm" href="{{ '/pages/projects/bev_autotune_fira.html' | relative_url }}">View 1:10 Autonomous Car Writeup &rarr;</a>
+  </div>
+  <div class="link-card-list">
+    <a class="link-card" href="https://www.instagram.com/p/Dfr1wbOmnoO/?utm_source=ig_web_copy_link&amp;hvrq=MzRlODBiNWFlZA==&amp;avpt=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+      <div class="link-card-thumb">
+        <img alt="IRIS ITS 1st Place KSTI 2026 Instagram Post" src="{{ '/assets/images/link_preview_ksti_ig.jpg' | relative_url }}" loading="lazy" decoding="async" />
+      </div>
+      <div class="link-card-body">
+        <div class="link-card-title">1st Place — KSTI 2026! (IRIS ITS)</div>
+        <p class="link-card-desc">Official announcement from IRIS ITS Robotics celebrating 1st Place in the Mini Autonomous Vehicle Robot Competition at KSTI 2026.</p>
+        <div class="link-card-meta">
+          <span class="link-card-domain">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+            instagram.com · @iris.itsrobotic
+          </span>
+          <span>&#8599;</span>
+        </div>
+      </div>
+    </a>
   </div>
 </div>
 
@@ -27,7 +45,25 @@ title: Honors
     <li><strong>3rd Place (Bronze Medal)</strong> — Poster Category, PKM-KC1 Pekan Ilmiah Mahasiswa Nasional 39 (TriageBox)</li>
   </ul>
   <div class="btn-group" style="margin-top: 0.65rem;">
-    <a class="btn btn-sm" href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">View TriageBox ML Pipeline  </a>
+    <a class="btn btn-sm" href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">View TriageBox ML Pipeline &rarr;</a>
+  </div>
+  <div class="link-card-list">
+    <a class="link-card" href="https://www.instagram.com/p/DfahmbkgX0k/" target="_blank" rel="noopener noreferrer">
+      <div class="link-card-thumb">
+        <img alt="ITS Pusat Prestasi PIMNAS 39 Instagram Post" src="{{ '/assets/images/link_preview_pimnas_ig.jpg' | relative_url }}" loading="lazy" decoding="async" />
+      </div>
+      <div class="link-card-body">
+        <div class="link-card-title">ITS Kokoh di 3 Besar Juara Umum PIMNAS 2026</div>
+        <p class="link-card-desc">Official DITMAWA ITS announcement congratulating the ITS contingent and medalists at PIMNAS 39.</p>
+        <div class="link-card-meta">
+          <span class="link-card-domain">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+            instagram.com · @its_pusatprestasi
+          </span>
+          <span>&#8599;</span>
+        </div>
+      </div>
+    </a>
   </div>
   <div class="card-media">
     <img alt="PIMNAS 39 Awarding" src="{{ '/assets/images/pimnas_39_double_award.jpeg' | relative_url }}" loading="lazy" decoding="async" />
@@ -42,8 +78,42 @@ title: Honors
   </div>
   <p class="card-subtitle">RoboCup Federation — Incheon, South Korea (Team IRIS ITS)</p>
   <div class="btn-group">
-    <a class="btn btn-sm" href="{{ '/pages/projects/play_strategy.html' | relative_url }}">View MSL Play Strategy  </a>
-    <a class="btn btn-sm" href="{{ '/pages/projects.html' | relative_url }}">All MSL Projects  </a>
+    <a class="btn btn-sm" href="{{ '/pages/projects/play_strategy.html' | relative_url }}">View MSL Play Strategy &rarr;</a>
+    <a class="btn btn-sm" href="{{ '/pages/projects.html' | relative_url }}">All MSL Projects &rarr;</a>
+  </div>
+  <div class="link-card-list">
+    <a class="link-card" href="https://www.youtube.com/watch?v=IPPSB2uQ6VY" target="_blank" rel="noopener noreferrer">
+      <div class="link-card-thumb">
+        <img alt="Falcons vs IRIS RoboCup 2026 Incheon Match Thumbnail" src="{{ '/assets/images/link_preview_robocup_yt.jpg' | relative_url }}" loading="lazy" decoding="async" />
+      </div>
+      <div class="link-card-body">
+        <div class="link-card-title">Falcons vs IRIS — RoboCup Incheon MSL League 2026</div>
+        <p class="link-card-desc">Full match recording of IRIS ITS competing in the Middle Size League at RoboCup 2026 in Incheon, South Korea.</p>
+        <div class="link-card-meta">
+          <span class="link-card-domain">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            youtube.com · Tech United Eindhoven
+          </span>
+          <span>&#8599;</span>
+        </div>
+      </div>
+    </a>
+    <a class="link-card" href="https://www.instagram.com/p/DadMTCyGhRW/" target="_blank" rel="noopener noreferrer">
+      <div class="link-card-thumb">
+        <img alt="IRIS ITS 3rd Place RoboCup 2026 Instagram Post" src="{{ '/assets/images/link_preview_robocup_ig.jpg' | relative_url }}" loading="lazy" decoding="async" />
+      </div>
+      <div class="link-card-body">
+        <div class="link-card-title">Victory Earned, Podium Secured — 3rd Place RoboCup 2026 MSL</div>
+        <p class="link-card-desc">Official IRIS ITS Robotics announcement celebrating 3rd Place in the Middle Size League at RoboCup 2026.</p>
+        <div class="link-card-meta">
+          <span class="link-card-domain">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+            instagram.com · @iris.itsrobotic
+          </span>
+          <span>&#8599;</span>
+        </div>
+      </div>
+    </a>
   </div>
   <div class="card-media">
     <img alt="RoboCup Tournament Certificate" src="{{ '/assets/images/certificate_tournament.jpeg' | relative_url }}" loading="lazy" decoding="async" />

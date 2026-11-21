@@ -5,9 +5,9 @@ layout: default
 <div class="hero-card">
   <div class="hero-text">
     <h1 class="hero-title">Aslam Pandu Tasminto</h1>
-    <p class="hero-subtitle">Mathematics Undergraduate at ITS · Robotics Software, Control Systems &amp; Embedded ML</p>
+    <p class="hero-subtitle">Mathematics Undergraduate at ITS · Robotics Software, Control Systems</p>
     <p>
-      Undergraduate Mathematics student at Institut Teknologi Sepuluh Nopember (ITS) focused on autonomous robot software, motion control, computer vision, and embedded machine learning. Robotics programmer for <strong>IRIS ITS</strong> (<strong>3rd Place, RoboCup 2026 Middle Size League</strong>; <strong>1st Place, KSTI 2026 Mini Autonomous Vehicle</strong>) and ML Engineer for <strong>TriageBox</strong> (<strong>PIMNAS 39 Silver &amp; Bronze Medalist</strong>).
+      Undergraduate Mathematics student at Institut Teknologi Sepuluh Nopember (ITS) focused on autonomous robot software, control systems, computer vision. Robotics programmer for <strong>IRIS ITS</strong> (<strong>3rd Place, RoboCup 2026 Middle Size League</strong>; <strong>1st Place, KSTI 2026 Mini Autonomous Vehicle</strong>) and ML Engineer for <strong>TriageBox</strong> (<strong>PIMNAS 39 Silver &amp; Bronze Medalist</strong>).
     </p>
     <div class="btn-group hero-links">
       <a class="btn btn-primary" href="{{ '/assets/docs/Curriculum_Vitae_Aslam_Pandu_Tasminto.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
@@ -86,7 +86,7 @@ layout: default
 <div class="explore-grid">
   <a class="card card-interactive" href="{{ '/pages/projects.html' | relative_url }}">
     <div class="card-title">Projects  </div>
-    <p>Technical writeups across 1:10 autonomous cars, RoboCup MSL robotics, and embedded ML.</p>
+    <p>Technical writeups across 1:10 autonomous cars, RoboCup MSL robotics.</p>
   </a>
   <a class="card card-interactive" href="{{ '/pages/experience.html' | relative_url }}">
     <div class="card-title">Experience  </div>
