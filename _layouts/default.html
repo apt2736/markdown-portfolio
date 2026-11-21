@@ -318,12 +318,37 @@
           <a href="{{ '/pages/education.html' | relative_url }}"{% if page.url contains '/pages/education' %} class="active"{% endif %}>Education</a>
           <a href="{{ '/pages/qualifications.html' | relative_url }}"{% if page.url contains '/pages/qualifications' %} class="active"{% endif %}>Skills</a>
           <a href="{{ '/pages/extracurriculars.html' | relative_url }}"{% if page.url contains '/pages/extracurriculars' %} class="active"{% endif %}>Honors</a>
-          <a href="{{ '/assets/docs/Curriculum_Vitae_Aslam_Pandu_Tasminto.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
+          <a class="btn btn-sm" href="{{ '/assets/docs/Curriculum_Vitae_Aslam_Pandu_Tasminto.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
         </div>
       </nav>
     </header>
     <div class="page-wrapper">
       <main class="markdown-body">{{ content }}</main>
+
+      {% unless page.url == '/' or page.url == '/index.html' %}
+      <nav class="page-footer-nav" aria-label="Page navigation">
+        <div class="btn-group">
+          {% if page.url contains 'attacker_play_strategy' or page.url contains 'assist_play_strategy' or page.url contains 'defender_play_strategy' %}
+          <a class="btn" href="{{ '/pages/projects/play_strategy.html' | relative_url }}">&larr; Play Strategy Overview</a>
+          {% endif %}
+          {% if page.url contains '/pages/projects/' %}
+          <a class="btn" href="{{ '/pages/projects.html' | relative_url }}">&larr; All Projects</a>
+          {% endif %}
+          <a class="btn" href="{{ '/' | relative_url }}">&larr; Home</a>
+        </div>
+      </nav>
+      {% endunless %}
     </div>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span>Aslam Pandu Tasminto</span>
+        <div class="site-footer-links">
+          <a href="mailto:aslampandutasminto@gmail.com">Email</a>
+          <a href="https://github.com/apt2736" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/aslam-pandu-tasminto" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="{{ '/assets/docs/Curriculum_Vitae_Aslam_Pandu_Tasminto.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

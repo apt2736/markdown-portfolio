@@ -531,7 +531,3 @@ E. R. DeLong, D. M. DeLong, and D. L. Clarke-Pearson, "Comparing the Areas under
 G. Ke _et al._, "LightGBM: A Highly Efficient Gradient Boosting Decision Tree," in _Advances in Neural Information Processing Systems (NeurIPS)_, vol. 30, 2017, pp. 3146–3154.
 
 T. Akiba, S. Sano, T. Yanase, T. Ohta, and M. Koyama, "Optuna: A Next-generation Hyperparameter Optimization Framework," in _Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining_, 2019, pp. 2623–2631.
-
-[Back to Projects](./../projects.md)
-
-[Back to Main](./../../README.md)

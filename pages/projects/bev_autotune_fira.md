@@ -119,7 +119,3 @@ $$
   <br>
   <sub>Bird's Eye View autotuning result</sub>
 </div>
-
-[Back to Projects](./../projects.md)
-
-[Back to Main](./../../README.md)

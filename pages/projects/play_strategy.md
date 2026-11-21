@@ -139,7 +139,3 @@ Detailed breakdowns for each role:
 - [Attacker Play Strategy](./attacker_play_strategy.md): Striker dribbling under the $3\text{ m}$ limit, front-facing pressing, and vision-guided finishing.
 - [Assist Play Strategy](./assist_play_strategy.md): Set-piece restarts, distance-scaled passing, ball interception, and defensive recovery.
 - [Defender Play Strategy](./defender_play_strategy.md): Penalty-box shot blocking, variable standoff arcs, and counter-attack clearance.
-
-[Back to Projects](./../projects.md)
-
-[Back to Main](./../../README.md)

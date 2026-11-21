@@ -204,7 +204,3 @@ $$
 ## References
 
 S. Temizer, "Potential Field Method Formula: Step by Step Construction of the Formula," MIT Artificial Intelligence Laboratory, Mobile Autonomous Robot Software (MARS) Project, 2001. [Online]. Available: [https://people.csail.mit.edu/lpk/mars/temizer_2001/Potential_Field_Method/index.html#Complete%20Formula](https://people.csail.mit.edu/lpk/mars/temizer_2001/Potential_Field_Method/index.html#Complete%20Formula)
-
-[Back to Projects](./../projects.md)
-
-[Back to Main](./../../README.md)

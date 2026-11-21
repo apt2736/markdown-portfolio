@@ -177,7 +177,3 @@ $$
   <br>
   <sub>Differential drive-like motion simulation result</sub>
 </div>
-
-[Back to Projects](./../projects.md)
-
-[Back to Main](./../../README.md)

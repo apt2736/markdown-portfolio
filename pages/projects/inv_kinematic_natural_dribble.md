@@ -145,7 +145,3 @@ $$
   <br>
   <sub>Natural dribbling feedforward simulation result</sub>
 </div>
-
-[Back to Projects](./../projects.md)
-
-[Back to Main](./../../README.md)

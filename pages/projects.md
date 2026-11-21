@@ -7,59 +7,111 @@ title: Projects
 
 <h3 align="justify">IRIS ITS 1:10 Scale Autonomous Car | Ongoing</h3>
 
-[Bird's Eye View Autotuner with RealSense using RANSAC Plane Regression](projects/bev_autotune_fira.md) \| September 2026
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/bev_autotune_fira.html' | relative_url }}">Bird's Eye View Autotuner with RealSense using RANSAC Plane Regression</a></div>
+    <span class="card-date">Sep 2026</span>
+  </div>
+  <p>Automated camera-to-ground extrinsic calibration and Bird's Eye View (BEV) homography synthesis from RealSense depth point clouds using axis-constrained RANSAC plane regression and Gram-Schmidt orthogonalization.</p>
+  <div class="tag-list">
+    <span class="tag">KSTI 2026 1st Place</span>
+    <span class="tag">ROS 2</span>
+    <span class="tag">Intel RealSense</span>
+    <span class="tag">PCL</span>
+    <span class="tag">RANSAC</span>
+    <span class="tag">OpenCV</span>
+  </div>
+</div>
 
-<p class="project-entry-desc">Automated camera-to-ground extrinsic calibration and Bird's Eye View (BEV) homography synthesis from RealSense depth point clouds using axis-constrained RANSAC plane regression and Gram-Schmidt orthogonalization.</p>
-<div class="item-tags">ROS 2 · Intel RealSense · Point Cloud Library (PCL) · RANSAC · OpenCV</div>
-
-<br>
-
-[Steering Control with Stanley Method and Linear Quadratic Regulator](projects/lqr_follow_fira.md) \| _(Coming Soon)_
-
-<p class="project-entry-desc">Lateral path-tracking controller combining geometric Stanley steering with Linear Quadratic Regulator (LQR) state feedback for high-speed 1:10 scale autonomous driving.</p>
-<div class="item-tags">Control Systems · Stanley Method · LQR · Autonomous Driving</div>
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/lqr_follow_fira.html' | relative_url }}">Steering Control with Stanley Method and Linear Quadratic Regulator</a></div>
+    <span class="card-date">Coming Soon</span>
+  </div>
+  <p>Lateral path-tracking controller combining geometric Stanley steering with Linear Quadratic Regulator (LQR) state feedback for high-speed 1:10 scale autonomous driving.</p>
+  <div class="tag-list">
+    <span class="tag">Control Systems</span>
+    <span class="tag">Stanley Method</span>
+    <span class="tag">LQR</span>
+    <span class="tag">Autonomous Driving</span>
+  </div>
+</div>
 
 ---
 
 <h3 align="justify">IRIS ITS Middle Size League Soccer Robot | January – June 2026</h3>
 
-[Inverse Kinematic Feedforward Control with Ellipsoid Gain Profile for MSL Natural Dribbling](projects/inv_kinematic_natural_dribble.md) \| April 2026
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/inv_kinematic_natural_dribble.html' | relative_url }}">Inverse Kinematic Feedforward Control with Ellipsoid Gain Profile for MSL Natural Dribbling</a></div>
+    <span class="card-date">Apr 2026</span>
+  </div>
+  <p>Direction-dependent 2D ellipsoid feedforward gain profile blended with Throttle Position Sensor (TPS) PID feedback to eliminate phase lag and lateral slip during natural dribbling.</p>
+  <div class="tag-list">
+    <span class="tag">RoboCup 2026 3rd Place</span>
+    <span class="tag">Inverse Kinematics</span>
+    <span class="tag">Feedforward + PID</span>
+    <span class="tag">C++</span>
+  </div>
+</div>
 
-<p class="project-entry-desc">Direction-dependent 2D ellipsoid feedforward gain profile blended with Throttle Position Sensor (TPS) PID feedback to eliminate phase lag and lateral slip during natural dribbling.</p>
-<div class="item-tags">RoboCup 2026 3rd Place · Inverse Kinematics · Feedforward + PID · C++</div>
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/potential_field_obs_avoidance.html' | relative_url }}">Artificial Potential Field Based Obstacle Avoidance with Dynamic Acceleration Control</a></div>
+    <span class="card-date">May 2026</span>
+  </div>
+  <p>Discrete world-frame Artificial Potential Field grid planner coupled with reactive sector avoidance and a polar velocity-step limiter to prevent high-CG robot tipping.</p>
+  <div class="tag-list">
+    <span class="tag">RoboCup 2026 3rd Place</span>
+    <span class="tag">Motion Planning</span>
+    <span class="tag">APF</span>
+    <span class="tag">Acceleration Limiting</span>
+  </div>
+</div>
 
-<br>
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/semi_diff_drive.html' | relative_url }}">Differential Drive-like Motion on Omnidirectional Robot with 3rd-Order Bézier Curve Path Planning</a></div>
+    <span class="card-date">Apr 2026</span>
+  </div>
+  <p>Constrained omnidirectional trajectory tracker using De Casteljau cubic Bézier interpolation and ball-centered 180° pivots to preserve dribbler alignment at speed.</p>
+  <div class="tag-list">
+    <span class="tag">RoboCup 2026 3rd Place</span>
+    <span class="tag">Bézier Path Planning</span>
+    <span class="tag">Omnidirectional Kinematics</span>
+  </div>
+</div>
 
-[Artificial Potential Field Based Obstacle Avoidance with Dynamic Acceleration Control](projects/potential_field_obs_avoidance.md) \| May 2026
-
-<p class="project-entry-desc">Discrete world-frame Artificial Potential Field grid planner coupled with reactive sector avoidance and a polar velocity-step limiter to prevent high-CG robot tipping.</p>
-<div class="item-tags">RoboCup 2026 3rd Place · Motion Planning · APF · Acceleration Limiting</div>
-
-<br>
-
-[Differential Drive-like Motion on Omnidirectional Robot with 3rd-Order Bézier Curve Path Planning](projects/semi_diff_drive.md) \| April 2026
-
-<p class="project-entry-desc">Constrained omnidirectional trajectory tracker using De Casteljau cubic Bézier interpolation and ball-centered 180° pivots to preserve dribbler alignment at speed.</p>
-<div class="item-tags">RoboCup 2026 3rd Place · Bézier Path Planning · Omnidirectional Kinematics</div>
-
-<br>
-
-[Multi-Robot Play Strategy for RoboCup Middle Size League 2026](projects/play_strategy.md) \| June 2026
-
-<p class="project-entry-desc">Decentralized tactical coordination across Attacker, Assist, and Defender roles with cooperative passing handshakes, set-piece standoffs, and three-layer defensive containment.</p>
-<div class="item-tags">RoboCup 2026 3rd Place · Multi-Robot Systems · Tactical State Machines</div>
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/play_strategy.html' | relative_url }}">Multi-Robot Play Strategy for RoboCup Middle Size League 2026</a></div>
+    <span class="card-date">Jun 2026</span>
+  </div>
+  <p>Decentralized tactical coordination across Attacker, Assist, and Defender roles with cooperative passing handshakes, set-piece standoffs, and three-layer defensive containment.</p>
+  <div class="tag-list">
+    <span class="tag">RoboCup 2026 3rd Place</span>
+    <span class="tag">Multi-Robot Systems</span>
+    <span class="tag">Tactical State Machines</span>
+  </div>
+</div>
 
 ---
 
 <h3 align="justify">TriageBox: Smart ML-Integrated Triage Device for Mass-Casualty Earthquake Response | January – November 2026</h3>
 
-<p class="project-entry-desc"><em>PKM-KC (TriageBox: Alat Triase Cerdas Terintegrasi Machine Learning untuk Mempercepat Triase Korban Massal Bencana Gempa) — PIMNAS 39 Silver (Presentation) &amp; Bronze (Poster) Medalist.</em></p>
+<p class="category-note"><em>PKM-KC (Alat Triase Cerdas Terintegrasi Machine Learning untuk Mempercepat Triase Korban Massal Bencana Gempa) — PIMNAS 39 Silver (Presentation) &amp; Bronze (Poster) Medalist.</em></p>
 
-[Machine Learning Pipeline based on LightGBM for Triage Classification and Blood Pressure Regression](projects/ml_pipeline_triagebox.md) \| July – October 2026
-
-<p class="project-entry-desc">Two-stage on-device LightGBM pipeline extracting 23 ECG/PPG cardiovascular biomarkers for cuffless SBP/DBP estimation (ISO 81060-2 compliant on holdout) and ESI-to-START priority classification (90.17% balanced accuracy, 0.9714 Macro AUROC).</p>
-<div class="item-tags">PIMNAS 39 Silver &amp; Bronze · LightGBM · Optuna · ECG/PPG Signal Processing</div>
-
----
-
-[Back to Main](./../README.md)
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">Machine Learning Pipeline based on LightGBM for Triage Classification and Blood Pressure Regression</a></div>
+    <span class="card-date">Jul – Oct 2026</span>
+  </div>
+  <p>Two-stage on-device LightGBM pipeline extracting 23 ECG/PPG cardiovascular biomarkers for cuffless SBP/DBP estimation (ISO 81060-2 compliant on holdout) and ESI-to-START priority classification (90.17% balanced accuracy, 0.9714 Macro AUROC).</p>
+  <div class="tag-list">
+    <span class="tag">PIMNAS 39 Silver &amp; Bronze</span>
+    <span class="tag">LightGBM</span>
+    <span class="tag">Optuna</span>
+    <span class="tag">ECG/PPG Signal Processing</span>
+    <span class="tag">ANSI C</span>
+  </div>
+</div>

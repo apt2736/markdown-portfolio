@@ -3,13 +3,15 @@ layout: default
 title: Links
 ---
 
-# Links
+# Links &amp; Contact
 
-[![CV (PDF)](https://img.shields.io/badge/Curriculum_Vitae-PDF-B30B00?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](../assets/docs/Curriculum_Vitae_Aslam_Pandu_Tasminto.pdf)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:aslampandutasminto@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aslam-pandu-tasminto)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/apt2736)
-
----
-
-[Back to Main](./../README.md)
+<div class="card">
+  <div class="card-title" style="margin-bottom: 0.45rem;">Direct Profiles &amp; Resume</div>
+  <p>Reach out via email or browse my code repositories, professional profile, and latest Curriculum Vitae below.</p>
+  <div class="btn-group" style="margin-top: 0.85rem;">
+    <a class="btn btn-primary" href="{{ '/assets/docs/Curriculum_Vitae_Aslam_Pandu_Tasminto.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Curriculum Vitae (PDF)</a>
+    <a class="btn" href="mailto:aslampandutasminto@gmail.com">aslampandutasminto@gmail.com</a>
+    <a class="btn" href="https://github.com/apt2736" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/aslam-pandu-tasminto" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+</div>
