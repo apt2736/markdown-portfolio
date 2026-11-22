@@ -15,83 +15,122 @@ title: "Project Overview: IRIS ITS Middle Size League Soccer Robot"
   <span class="tag">Multi-Robot Systems</span>
 </div>
 
-<p align="center">
-  <img src="{{ '/assets/images/iris_robots_lineup.jpeg' | relative_url }}" alt="IRIS ITS Middle Size League robot fleet (Mansur #1, Massimo #2, Pabel #7, Matheo #3) at RoboCup 2026 in Incheon, South Korea" width="88%" />
+<br />
+
+<div align="center">
+  <img alt="IRIS ITS Middle Size League Robots" src="../../assets/images/iris_robots_lineup.jpeg" width="480" loading="lazy" decoding="async" />
   <br />
-  <em>The Generation 5 IRIS ITS Middle Size League fleet (Goalkeeper Mansur #1 and Outfield robots Massimo #2, Pabel #7, and Matheo #3) during pre-match preparation at RoboCup 2026 in Incheon, South Korea.</em>
-</p>
+  <sub>The Generation 5 IRIS ITS Middle Size League fleet (Goalkeeper Mansur #1 and Outfield robots Massimo #2, Pabel #7, and Matheo #3) during pre-match preparation at RoboCup 2026 in Incheon, South Korea.</sub>
+</div>
 
 ## 1. Team Profile & Competition Context
 
-**IRIS** is the autonomous soccer and wheeled robotics research team of **Institut Teknologi Sepuluh Nopember (ITS)** in Surabaya, Indonesia. Founded in 2016 to compete in *Kontes Robot Indonesia (KRI)*, the team has focused since 2017 on the Indonesian national wheeled soccer division (**KRSBI-B**, *Kontes Robot Sepak Bola Indonesia Beroda*) and the international **RoboCup Middle Size League (MSL)** and **RoboCup Asia-Pacific (RCAP)**. The team is organized into four divisions: **Programming** (perception, localization, motion control, multi-agent strategy, and basestation software), **Electrical** (power distribution, custom PCBs, solenoid kicker electronics, and embedded STM32 firmware), **Mechanical** (omnidirectional chassis, compliant dribbler suspension, and kicker mechanisms), and **Official** (operations, sponsorship, and team management).
+**IRIS** is the autonomous soccer and wheeled robotics research team of **Institut Teknologi Sepuluh Nopember (ITS)** in Surabaya, Indonesia. Founded in 2016 to compete in _Kontes Robot Indonesia (KRI)_, the team has focused since 2017 on the Indonesian national wheeled soccer division (**KRSBI-B**, _Kontes Robot Sepak Bola Indonesia Beroda_) and the international **RoboCup Middle Size League (MSL)** and **RoboCup Asia-Pacific (RCAP)**. The team is organized into four divisions: **Programming** (perception, localization, motion control, multi-agent strategy, and basestation software), **Electrical** (power distribution, custom PCBs, solenoid kicker electronics, and embedded STM32 firmware), **Mechanical** (omnidirectional chassis, compliant dribbler suspension, and kicker mechanisms), and **Official** (operations, sponsorship, and team management).
 
 In the **RoboCup Middle Size League**, teams of up to five fully autonomous wheeled robots play on an indoor artificial turf pitch measuring 14 m × 22 m (8 m × 12 m for 3v3 national KRSBI-B tournaments) using a standard FIFA Size 5 soccer ball. Once a match starts, human control is not permitted: an off-field **BaseStation** computer only relays official Referee Box signals (kick-off, free kick, penalty, throw-in, stop) over Wi-Fi, while all visual perception, self-localization, role assignment, path planning, and motor control run onboard each robot.
 
 ### Competition Track Record (MSL Division)
 
-| Year | Competition | Achievement |
-| :--- | :--- | :--- |
-| **2026** | **RoboCup World Championship (Incheon, South Korea)** | **3rd Place (Middle Size League Tournament)** |
-| **2024** | RoboCup World Championship (Eindhoven, Netherlands) | 5th Place Technical Challenge & 6th Place Scientific Challenge |
-| **2024** | Kontes Robot Indonesia (KRSBI-B) | 2nd Place Regional II & Best Design Award |
-| **2023** | Kontes Robot Indonesia (KRSBI-B) | 3rd Place National, 1st Place Regional II, Best Design & Best Strategy |
-| **2022** | **RoboCup World Championship (Bangkok, Thailand)** | **3rd Place (Middle Size League Tournament)** |
-| **2022** | **RoboCup Asia-Pacific (RCAP)** | **1st Place Open Challenge & 1st Place Cooperation Challenge** |
-| **2022** | Kontes Robot Indonesia (KRSBI-B) | 2nd Place National, 2nd Place Regional II & Best Strategy Award |
+| Year     | Competition                                           | Achievement                                                            |
+| :------- | :---------------------------------------------------- | :--------------------------------------------------------------------- |
+| **2026** | **RoboCup World Championship (Incheon, South Korea)** | **3rd Place (Middle Size League Tournament)**                          |
+| **2024** | RoboCup World Championship (Eindhoven, Netherlands)   | 5th Place Technical Challenge & 6th Place Scientific Challenge         |
+| **2024** | Kontes Robot Indonesia (KRSBI-B)                      | 2nd Place Regional II & Best Design Award                              |
+| **2023** | Kontes Robot Indonesia (KRSBI-B)                      | 3rd Place National, 1st Place Regional II, Best Design & Best Strategy |
+| **2022** | **RoboCup World Championship (Bangkok, Thailand)**    | **3rd Place (Middle Size League Tournament)**                          |
+| **2022** | **RoboCup Asia-Pacific (RCAP)**                       | **1st Place Open Challenge & 1st Place Cooperation Challenge**         |
+| **2022** | Kontes Robot Indonesia (KRSBI-B)                      | 2nd Place National, 2nd Place Regional II & Best Strategy Award        |
 
 ---
 
 ## 2. Robot Fleet & System Architecture
 
-Across five mechanical generations developed between 2017 and 2026 (Gen 1–2 in 2017, Gen 3 in 2019, Gen 4 in 2021, and Gen 5 from 2021 to the present), IRIS converged on two specialized robot platforms tailored to their field roles: three **Outfield / Striker Robots** (*Massimo #2*, *Matheo #3*, and *Pabel #7*) built for agile 360° ball handling and high-speed passing/shooting, and one **Goalkeeper Robot** (*Mansur #1*) built for rapid lateral goal-line coverage and 3D shot interception.
+Across five mechanical generations developed between 2017 and 2026 (Gen 1–2 in 2017, Gen 3 in 2019, Gen 4 in 2021, and Gen 5 from 2021 to the present), IRIS converged on two specialized robot platforms tailored to their field roles: three **Outfield / Striker Robots** (_Massimo #2_, _Matheo #3_, and _Pabel #7_) built for agile 360° ball handling and high-speed passing/shooting, and one **Goalkeeper Robot** (_Mansur #1_) built for rapid lateral goal-line coverage and 3D shot interception.
 
-| Outfield / Striker Platform | Goalkeeper Platform |
-|:---:|:---:|
-|<img src="{{ '/assets/images/iris_msl_strikers.png' | relative_url }}" alt="Outfield robots Massimo (#2) and Matheo (#3)" style="max-height: 280px; width: auto;" />|<img src="{{ '/assets/images/iris_msl_goalkeeper.png' | relative_url }}" alt="Goalkeeper robot Mansur (#1)" style="max-height: 280px; width: auto;" />|
-|*Gen 5 Outfield Robots: Massimo (#2) and Matheo (#3)*|*Gen 5 Goalkeeper Robot: Mansur (#1)*|
+<div align="center">
+  <table>
+    <tr>
+      <th align="center">Outfield / Striker Platform</th>
+      <th align="center">Goalkeeper Platform</th>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="../../assets/images/iris_msl_strikers.png" alt="Outfield robots Massimo (#2) and Matheo (#3)" style="max-height: 280px; width: auto;" loading="lazy" decoding="async" />
+      </td>
+      <td align="center">
+        <img src="../../assets/images/iris_msl_goalkeeper.png" alt="Goalkeeper robot Mansur (#1)" style="max-height: 280px; width: auto;" loading="lazy" decoding="async" />
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><em>Gen 5 Outfield Robots: Massimo (#2) and Matheo (#3)</em></td>
+      <td align="center"><em>Gen 5 Goalkeeper Robot: Mansur (#1)</em></td>
+    </tr>
+  </table>
+</div>
 
 ### Hardware & Embedded Specification Comparison
 
-| Subsystem | Outfield / Striker Robots (*Massimo #2, Matheo #3, Pabel #7*) | Goalkeeper Robot (*Mansur #1*) |
-| :--- | :--- | :--- |
-| **Chassis & Drive Layout** | Triangular 3-omniwheel holonomic base (120°, 240°, 0°) driven by brushed DC (BDC) motors with industrial servo drives (Elmo / Beckhoff) | Rhombus 4-omniwheel holonomic base driven by BDC motors with extendable upper goal-blocking frame |
-| **Primary Vision System** | 360° catadioptric omnidirectional camera (upward camera facing a hyperbolic mirror tower) for full-field perception | Active pan-tilt mechanism carrying an **Intel RealSense RGB-D** depth camera for 3D ball trajectory tracking |
-| **Ball Handling (Dribbler)** | Dual-roller BDC dribbler mounted on a compliant spring-loaded dynamic suspension with a Throttle Position Sensor (TPS) measuring arm deflection | Dual-roller BDC dribbler with dynamic spring suspension |
-| **Kicking Mechanism** | High-power electromagnetic solenoid kicker powered by a boosted capacitor bank for flat passes and long-range shots | High-power electromagnetic solenoid clearance kicker |
-| **Onboard Compute & Low-Level I/O** | Onboard x86 mini-PC (10th-Gen Intel Core i3/i5) communicating over CAN bus / Ethernet with an **STM32F4 Discovery** microcontroller | Onboard x86 mini-PC paired with an **STM32F4 Discovery** microcontroller |
-| **Odometry & Inertial Sensors** | 3 motor encoders + 2 passive dead-wheel rotary encoders, **MPU6050** 6-axis IMU / gyroscope, Sharp GP analog distance sensor, and optical proximity sensor | 2 passive dead-wheel rotary encoders, IMU, and optical ball-possession proximity sensor |
-| **Power Supply** | 2 × 20 V Li-ion batteries (logic & auxiliary actuation) + 1 × 16 V high-discharge LiPo battery (traction drives) | 2 × 24 V Li-ion battery packs |
+| Subsystem                           | Outfield / Striker Robots (_Massimo #2, Matheo #3, Pabel #7_)                                                                                              | Goalkeeper Robot (_Mansur #1_)                                                                               |
+| :---------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| **Chassis & Drive Layout**          | Triangular 3-omniwheel holonomic base (120°, 240°, 0°) driven by brushed DC (BDC) motors with industrial servo drives (Elmo / Beckhoff)                    | Rhombus 4-omniwheel holonomic base driven by BDC motors with extendable upper goal-blocking frame            |
+| **Primary Vision System**           | 360° catadioptric omnidirectional camera (upward camera facing a hyperbolic mirror tower) for full-field perception                                        | Active pan-tilt mechanism carrying an **Intel RealSense RGB-D** depth camera for 3D ball trajectory tracking |
+| **Ball Handling (Dribbler)**        | Dual-roller BDC dribbler mounted on a compliant spring-loaded dynamic suspension with a Throttle Position Sensor (TPS) measuring arm deflection            | Dual-roller BDC dribbler with dynamic spring suspension                                                      |
+| **Kicking Mechanism**               | High-power electromagnetic solenoid kicker powered by a boosted capacitor bank for flat passes and long-range shots                                        | High-power electromagnetic solenoid clearance kicker                                                         |
+| **Onboard Compute & Low-Level I/O** | Onboard x86 mini-PC (10th-Gen Intel Core i3/i5) communicating over EtherCAT / CAN bus with an **STM32F4 Discovery** microcontroller                        | Onboard x86 mini-PC paired with an **STM32F4 Discovery** microcontroller                                     |
+| **Odometry & Inertial Sensors**     | 3 motor encoders + 2 passive dead-wheel rotary encoders, **MPU6050** 6-axis IMU / gyroscope, Sharp GP analog distance sensor, and optical proximity sensor | 2 passive dead-wheel rotary encoders, IMU, and optical ball-possession proximity sensor                      |
+| **Power Supply**                    | 2 × 20 V Li-ion batteries (logic & auxiliary actuation) + 1 × 16 V high-discharge LiPo battery (traction drives)                                           | 2 × 24 V Li-ion battery packs                                                                                |
 
-### Onboard ROS 1 Software Architecture
+### Main Control Software Topology
 
-Each robot runs a distributed **ROS 1** (C++) node graph separating vision processing, world-state estimation, tactical planning, and low-level hardware actuation:
+The onboard Mini-PC runs a customized Linux-based OS with **ROS** (started automatically at boot via Linux `systemd`), divided into five packages: **Communication** (UDP multicast with TDMA for robot-to-robot and BaseStation exchange), **Hardware** (Hardware Abstraction Layer bridging EtherCAT sensors and CAN bus motor drivers), **Vision** (omnidirectional and depth camera detection), **World Model** (global field-frame estimation of lines, ball, obstacles, and robot pose), and **Strategy** (tactical decision-making and game action execution):
 
 ```mermaid
-flowchart LR
-    subgraph Perception ["Perception & World Model"]
-        CAM["360° Omnidirectional Camera"] --> VIS["Vision Pipeline<br/>(Ball, Lines, Obstacles)"]
-        VIS --> LOC["Self-Localization<br/>(Odometry + Line ICP)"]
-        VIS --> BALL["Ball Tracker<br/>(Fusion & Trajectory)"]
-        VIS --> GOAL["Open-Goal Detector<br/>(Secant Aiming)"]
+flowchart TD
+    OMNI["Omnidirectional<br/>Camera Detection"]
+    ICAST_OTHER["ICAST Data<br/>Other Robots"]
+    HAL_SENS["Hardware Abstraction<br/>Layer (Sensor)"]
+
+    subgraph WorldModel ["World Model"]
+        LINE_WM["Line World Model"]
+        BALL_WM["Ball World Model"]
+        OBS_WM["Obstacle World Model"]
+        POSE_WM["Robot Pose<br/>World Model"]
     end
 
-    subgraph Strategy ["Strategy & Motion Planning"]
-        LOC --> ROLES["Role State Machines<br/>(Attacker / Assist / Defender)"]
-        BALL --> ROLES
-        GOAL --> ROLES
-        VIS --> MOT["Motion Planner<br/>(APF + 3rd-Order Bézier)"]
-        ROLES --> MOT
-        BS["BaseStation & Teammates<br/>(Wi-Fi UDP)"] <--> ROLES
-    end
+    ICAST_BS["ICAST Basestation<br/>Data"]
+    STRATEGY["Master Strategy"]
+    DEPTH["Depth Camera<br/>Detection"]
+    GAME_ACT["Game Action<br/>Process"]
+    HAL_ACT["Hardware Abstraction<br/>Layer (Actuator)"]
 
-    subgraph Actuation ["Hardware & Actuation"]
-        MOT --> CAN["Traction Wheel Drivers<br/>(CAN Bus Safety Layer)"]
-        MOT --> DRIB["Natural Dribbler Control<br/>(IK Ellipsoid FF + TPS PID)"]
-        ROLES --> STM["STM32F4 Controller<br/>(Solenoid Kicker & Sensors)"]
-    end
+    OMNI --> LINE_WM
+    OMNI --> BALL_WM
+    OMNI --> OBS_WM
+    ICAST_OTHER --> BALL_WM
+    ICAST_OTHER --> OBS_WM
+    LINE_WM --> POSE_WM
+    HAL_SENS --> POSE_WM
 
-    WEB["Web Tuning Dashboard"] <-->|"Live Parameter Updates"| Perception
-    WEB <-->|"PID & Dribble Gains"| Actuation
+    POSE_WM --> STRATEGY
+    BALL_WM --> STRATEGY
+    OBS_WM --> STRATEGY
+    DEPTH --> STRATEGY
+    STRATEGY <--> ICAST_BS
+
+    STRATEGY --> GAME_ACT
+    GAME_ACT --> HAL_ACT
+
+    classDef vision fill:#e64528,stroke:#9a2b18,stroke-width:2px,color:#ffffff;
+    classDef comm fill:#5cd6c8,stroke:#2a8c82,stroke-width:2px,color:#0f172a;
+    classDef hw fill:#5fd068,stroke:#2e7d32,stroke-width:2px,color:#0f172a;
+    classDef wm fill:#ffffff,stroke:#64748b,stroke-width:2px,color:#0f172a;
+    classDef strat fill:#7b4dff,stroke:#4c1d95,stroke-width:2px,color:#ffffff;
+
+    class OMNI,DEPTH vision;
+    class ICAST_OTHER,ICAST_BS comm;
+    class HAL_SENS,HAL_ACT hw;
+    class LINE_WM,BALL_WM,OBS_WM,POSE_WM wm;
+    class STRATEGY,GAME_ACT strat;
 ```
 
 ---
