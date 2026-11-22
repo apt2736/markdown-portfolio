@@ -9,10 +9,7 @@ title: "Project Overview: IRIS ITS Middle Size League Soccer Robot"
   <span class="tag">RoboCup 2026 3rd Place</span>
   <span class="tag">ROS 1</span>
   <span class="tag">C++</span>
-  <span class="tag">OpenCV</span>
   <span class="tag">CAN Bus</span>
-  <span class="tag">OpenVINO</span>
-  <span class="tag">Multi-Robot Systems</span>
 </div>
 
 <br />
@@ -144,7 +141,7 @@ My primary engineering work for the RoboCup 2026 campaign focused on four core c
     <div class="card-title"><a href="{{ '/pages/projects/inv_kinematic_natural_dribble.html' | relative_url }}">1. Inverse Kinematic Feedforward Control with Ellipsoid Gain Profile for MSL Natural Dribbling</a></div>
     <span class="card-date">Apr 2026</span>
   </div>
-  <p>Couples robot translational and rotational velocities directly to left and right dribbler roller speeds via a direction-dependent 2D ellipsoid feedforward gain profile, blended with Throttle Position Sensor (TPS) PID feedback to eliminate phase lag and forward or lateral ball slip under RoboCup's <em>natural dribbling</em> rule.</p>
+  <p>Feedforward dribbler speed control using a 2D ellipsoid gain profile blended with TPS PID feedback to reduce ball slip and phase lag under RoboCup's <em>natural dribbling</em> rule.</p>
 </div>
 
 <div class="card card-interactive">
@@ -152,7 +149,7 @@ My primary engineering work for the RoboCup 2026 campaign focused on four core c
     <div class="card-title"><a href="{{ '/pages/projects/potential_field_obs_avoidance.html' | relative_url }}">2. Artificial Potential Field Based Obstacle Avoidance with Dynamic Acceleration Control</a></div>
     <span class="card-date">May 2026</span>
   </div>
-  <p>Combines a discrete world-frame Artificial Potential Field (APF) grid planner with a local reactive sector-avoidance layer and a clearance-scaled polar velocity-step limiter, preventing the tall, high-center-of-gravity robot from tipping during sudden evasive maneuvers.</p>
+  <p>World-frame Artificial Potential Field obstacle avoidance paired with reactive sector steering and dynamic acceleration limits to keep the robot from tipping during evasive turns.</p>
 </div>
 
 <div class="card card-interactive">
@@ -160,7 +157,7 @@ My primary engineering work for the RoboCup 2026 campaign focused on four core c
     <div class="card-title"><a href="{{ '/pages/projects/semi_diff_drive.html' | relative_url }}">3. Differential Drive-like Motion on Omnidirectional Robot with 3rd-Order Bézier Curve Path Planning</a></div>
     <span class="card-date">Apr 2026</span>
   </div>
-  <p>Constrains the holonomic 3-wheel base during ball possession to track smooth De Casteljau cubic Bézier trajectories while aligning chassis heading with the velocity tangent, and executing ball-centered 180° pivots prior to reverse segments so the ball never rolls out of the narrow dribbler jaws.</p>
+  <p>Cubic Bézier path following and ball-centered 180° turns that keep the dribbler aligned with the robot's travel direction at speed.</p>
 </div>
 
 <div class="card card-interactive">
@@ -168,7 +165,7 @@ My primary engineering work for the RoboCup 2026 campaign focused on four core c
     <div class="card-title"><a href="{{ '/pages/projects/play_strategy.html' | relative_url }}">4. Multi-Robot Play Strategy for RoboCup Middle Size League 2026</a></div>
     <span class="card-date">Jun 2026</span>
   </div>
-  <p>Decentralized tactical state machines coordinating Attacker, Assist, and Defender roles across dynamic 1v1, 2v2, and 3v3 field states, including cooperative passing handshakes, rules-compliant set-piece standoffs, and three-layer defensive containment.</p>
+  <p>Role-based play strategy for Attacker, Assist, and Defender covering set pieces, passing coordination, and layered defense across variable team sizes.</p>
 </div>
 
 ---

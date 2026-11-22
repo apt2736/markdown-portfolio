@@ -54,7 +54,33 @@ flowchart TD
         DribbleDist -->|"Yes"| ClearGoal["Shoot directly toward opponent goalpost<br/>Punt ball downfield into opponent half"]
         DribbleDist -->|"No"| ContinueFlank["Continue flank carry while searching for clear pass"]
     end
+
+    classDef entry fill:#1e293b,stroke:#475569,stroke-width:2px,color:#ffffff;
+    classDef decision fill:#f59e0b,stroke:#b45309,stroke-width:2px,color:#0f172a;
+    classDef setpiece fill:#7c3aed,stroke:#5b21b6,stroke-width:2px,color:#ffffff;
+    classDef hasball fill:#16a34a,stroke:#166534,stroke-width:2px,color:#ffffff;
+    classDef offball fill:#0ea5e9,stroke:#0369a1,stroke-width:2px,color:#ffffff;
+    classDef defense fill:#dc2626,stroke:#991b1b,stroke-width:2px,color:#ffffff;
+    classDef recovery fill:#0d9488,stroke:#115e59,stroke-width:2px,color:#ffffff;
+
+    class Start entry;
+    class CheckRef,BallDist,DefState,ScanPass,DribbleDist decision;
+    class DefHome,DefaultArc,ContractArc setpiece;
+    class FlankEscape,PassForward,ClearGoal,ContinueFlank hasball;
+    class HoldAnchor offball;
+    class LineOfSight,ClampBox defense;
+    class ResetStation recovery;
 ```
+
+<p style="font-size: 0.85rem; color: var(--subtext-color); margin-top: -0.3rem;">
+  <strong>Color key:</strong>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#f59e0b;color:#0f172a;font-weight:600;margin:0 0.25rem;">Decision</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#7c3aed;color:#fff;font-weight:600;margin:0 0.25rem;">Set-Piece</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#16a34a;color:#fff;font-weight:600;margin:0 0.25rem;">With Ball &amp; Clearance</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#0ea5e9;color:#fff;font-weight:600;margin:0 0.25rem;">Anchor Support</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#dc2626;color:#fff;font-weight:600;margin:0 0.25rem;">Shot Blocking</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#0d9488;color:#fff;font-weight:600;margin:0 0.25rem;">Roaming</span>
+</p>
 
 ### 2. Set Pieces: Adaptive Goal-Arc Guarding
 

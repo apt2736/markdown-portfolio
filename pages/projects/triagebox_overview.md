@@ -6,13 +6,11 @@ title: "Project Overview: TriageBox Smart ML-Integrated Triage Device"
 # Project Overview: TriageBox Smart ML-Integrated Triage Device
 
 <div class="tag-list">
-  <span class="tag">PIMNAS 39 Silver &amp; Bronze Medalist</span>
-  <span class="tag">PKM-KC 2026</span>
-  <span class="tag">LightGBM (Edge ML)</span>
-  <span class="tag">STM32F4 &amp; ESP32-S3</span>
-  <span class="tag">ECG &amp; PPG Signal Processing</span>
-  <span class="tag">LoRa 433 MHz</span>
-  <span class="tag">Nest.js &amp; React.js</span>
+  <span class="tag">PIMNAS 39 Silver &amp; Bronze</span>
+  <span class="tag">STM32</span>
+  <span class="tag">ESP32-S3</span>
+  <span class="tag">LoRa</span>
+  <span class="tag">LightGBM</span>
 </div>
 
 <br />
@@ -49,7 +47,7 @@ During major earthquakes in Indonesia, field medical teams face overwhelming cas
 
 ## 2. System Architecture & Hardware Specifications
 
-The TriageBox ecosystem consists of three integrated tiers: reusable **Wearable Patient Nodes** strapped to casualties during triage and post-triage monitoring, a pole-mounted **LoRa Receiver Station** deployed at the medical tent, and a local **Command Center Dashboard** for medical coordinators.
+TriageBox is split into three parts: reusable **Wearable Patient Nodes** strapped to casualties during triage and waiting-room monitoring, a pole-mounted **LoRa Receiver Station** at the medical tent, and a local **Command Center Dashboard** for medical coordinators.
 
 <div align="center">
   <table>
@@ -166,7 +164,7 @@ My primary technical contribution to TriageBox was designing, training, and opti
     <div class="card-title"><a href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">Machine Learning Pipeline based on LightGBM for Triage Classification and Blood Pressure Regression</a></div>
     <span class="card-date">Jul – Oct 2026</span>
   </div>
-  <p>Two-stage on-device LightGBM pipeline extracting 23 ECG/PPG cardiovascular biomarkers (Pulse Arrival Time, Pulse Transit Time, vascular stiffness, and optical perfusion features) for cuffless SBP/DBP estimation (1.56 / 1.15 mmHg MAE, ISO 81060-2 compliant on holdout) and ESI-to-START priority classification (94.24% Red sensitivity, 90.17% balanced accuracy, 0.9714 Macro AUROC).</p>
+  <p>Two-stage LightGBM pipeline running on ESP32-S3: cuffless systolic and diastolic blood pressure estimation from ECG/PPG features (1.56 / 1.15 mmHg MAE), followed by ESI-to-START triage classification (94.24% Red sensitivity, 90.17% balanced accuracy).</p>
 </div>
 
 ---

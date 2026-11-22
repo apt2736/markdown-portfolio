@@ -80,7 +80,30 @@ flowchart TD
         LooseBall -->|"Near Boundary"| RecovAtt["Attacker: Boundary-safe loop to gather ball inward"]
         LooseBall -->|"Lost Sight / Roam"| RecovTeam["Attacker/Assist: Search last coordinates and patrol zones<br/>Defender: Hold central station outside penalty box"]
     end
+
+    classDef entry fill:#1e293b,stroke:#475569,stroke-width:2px,color:#ffffff;
+    classDef decision fill:#f59e0b,stroke:#b45309,stroke-width:2px,color:#0f172a;
+    classDef attacker fill:#e64528,stroke:#9a2b18,stroke-width:2px,color:#ffffff;
+    classDef assist fill:#0ea5e9,stroke:#0369a1,stroke-width:2px,color:#ffffff;
+    classDef defender fill:#16a34a,stroke:#166534,stroke-width:2px,color:#ffffff;
+    classDef team fill:#7c3aed,stroke:#5b21b6,stroke-width:2px,color:#ffffff;
+
+    class Start entry;
+    class CheckRef,HomeSet,AwaySet,PossCheck,OurBall,OppBall,LooseBall,AttProg,AstProg,DefProg,DefCheck decision;
+    class SetAtt,AwayAtt,AttAction,AttEvade,PressLayer1,RecovAtt attacker;
+    class SetAst,AwayAst,AstCover,AstAction,PressLayer2,RecovAst assist;
+    class SetDef,AwayDef,DefAnchor,DefPass,DefClear,PressLayer3 defender;
+    class RecovTeam team;
 ```
+
+<p style="font-size: 0.85rem; color: var(--subtext-color); margin-top: -0.3rem;">
+  <strong>Color key:</strong>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#f59e0b;color:#0f172a;font-weight:600;margin:0 0.25rem;">Decision</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#e64528;color:#fff;font-weight:600;margin:0 0.25rem;">Attacker</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#0ea5e9;color:#fff;font-weight:600;margin:0 0.25rem;">Assist</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#16a34a;color:#fff;font-weight:600;margin:0 0.25rem;">Defender</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#7c3aed;color:#fff;font-weight:600;margin:0 0.25rem;">Team Roaming</span>
+</p>
 
 ### 2. Role Specialization
 
