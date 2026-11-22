@@ -135,13 +135,14 @@ title: Projects
 <div class="card card-interactive card-overview">
   <div class="card-header">
     <div class="card-title"><span class="card-badge">Overview</span><a href="{{ '/pages/projects/triagebox_overview.html' | relative_url }}">Project Overview: TriageBox Smart ML-Integrated Triage Device</a></div>
-    <span class="card-date">Coming Soon</span>
+    <span class="card-date">Jan – Nov 2026</span>
   </div>
-  <p>End-to-end portable medical triage hardware, physiological sensor acquisition, and on-device machine learning integration for rapid mass-casualty earthquake response.</p>
+  <p>End-to-end portable medical triage hardware (STM32F4 + ESP32-S3 patient node, 504.75 m LoRa receiver station, RFID tracking, and Nest.js/React.js command dashboard), physiological sensor verification, and on-device machine learning integration for rapid mass-casualty earthquake response.</p>
   <div class="tag-list">
     <span class="tag">Project Overview</span>
     <span class="tag">PIMNAS 39 Silver &amp; Bronze</span>
     <span class="tag">Embedded ML</span>
+    <span class="tag">LoRa &amp; IoT</span>
     <span class="tag">Biomedical Instrumentation</span>
   </div>
 </div>
