@@ -87,7 +87,7 @@ TriageBox is split into three parts: reusable **Wearable Patient Nodes** strappe
 | **LoRa Receiver Station**    | **Controller & Networking** | **ESP32** + **SX1278 433 MHz LoRa** module + **W5500 Ethernet** module in a weather-resistant pole-mounted enclosure; receives packets from multiple field nodes and publishes to the local server via **MQTT**                                                           |
 | **Command Center Dashboard** | **Software Stack**          | **Nest.js** backend, **React.js** frontend, **MQTT** message broker, and **PostgreSQL** database; provides real-time triage distribution, unacknowledged **Red (Critical)** alerts, per-wristband vital history, and hospital referral readiness                          |
 
-### End-to-End System Dataflow (_Alur Sistem_)
+### End-to-End System Dataflow
 
 ```mermaid
 flowchart LR
