@@ -14,13 +14,12 @@ title: Skills & Qualifications
     <span class="tag">PCL</span>
     <span class="tag">Intel RealSense</span>
     <span class="tag">CAN Bus</span>
-    <span class="tag">Inverse Kinematics</span>
+    <span class="tag">Kinematics</span>
     <span class="tag">PID Control</span>
     <span class="tag">Feedforward Control</span>
     <span class="tag">Motion Planning</span>
     <span class="tag">Path Planning</span>
     <span class="tag">State Machines</span>
-    <span class="tag">Kalman Filtering</span>
     <span class="tag">Localization</span>
   </div>
 </div>
@@ -40,13 +39,11 @@ title: Skills & Qualifications
 </div>
 
 <div class="card">
-  <div class="card-title">Embedded &amp; Development Tools</div>
+  <div class="card-title">Development &amp; Documentation Tools</div>
   <div class="tag-list">
-    <span class="tag">STM32</span>
-    <span class="tag">ESP32</span>
-    <span class="tag">LoRa</span>
     <span class="tag">Linux</span>
     <span class="tag">LaTeX</span>
+    <span class="tag">Visual Studio Code</span>
     <span class="tag">NetBeans IDE</span>
   </div>
 </div>
