@@ -13,6 +13,7 @@
   :root {
     --text-color: #c9d1d9;
     --bg-color: #0d1117;
+    --header-bg-color: #010409;
     --link-color: #58a6ff;
     --link-hover: #3fb950;
     --border-color: #30363d;
@@ -31,7 +32,9 @@ body {
   padding: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica,
+    Arial, sans-serif;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -48,7 +51,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--bg-color);
+  background-color: var(--header-bg-color);
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -88,7 +91,9 @@ body {
   text-decoration: none;
   padding: 0.2rem 0;
   border-bottom: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .site-nav-links a:not(.btn):hover,
@@ -121,7 +126,10 @@ body {
   color: var(--text-color);
   text-decoration: none;
   cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .btn:hover,
@@ -720,7 +728,10 @@ p,
   border: 1px solid var(--border-color);
   border-radius: 0;
   cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease;
   line-height: 1;
 }
 
@@ -868,7 +879,9 @@ mjx-container[jax="CHTML"][display="true"],
 /* Code Blocks */
 .markdown-body pre,
 .markdown-body code {
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
   font-size: 85%;
 }
 

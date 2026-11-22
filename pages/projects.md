@@ -16,6 +16,7 @@ title: Projects
   <div class="tag-list">
     <span class="tag">KSTI 2026 1st Place</span>
     <span class="tag">ROS 2</span>
+    <span class="tag">Intel RealSense</span>
   </div>
 </div>
 
@@ -41,7 +42,8 @@ title: Projects
   <p>Lateral path-tracking controller that combines the Stanley steering method with LQR state feedback.</p>
   <div class="tag-list">
     <span class="tag">ROS 2</span>
-    <span class="tag">C++</span>
+    <span class="tag">Optimal Control</span>
+    <span class="tag">Path Tracking</span>
   </div>
 </div>
 
@@ -58,7 +60,8 @@ title: Projects
   <div class="tag-list">
     <span class="tag">RoboCup 2026 3rd Place</span>
     <span class="tag">ROS 1</span>
-    <span class="tag">C++</span>
+    <span class="tag">OpenCV</span>
+    <span class="tag">PCL</span>
     <span class="tag">CAN Bus</span>
   </div>
 </div>
@@ -70,8 +73,8 @@ title: Projects
   </div>
   <p>Feedforward dribbler speed control using a 2D ellipsoid gain profile blended with TPS PID feedback to reduce ball slip and phase lag.</p>
   <div class="tag-list">
-    <span class="tag">C++</span>
-    <span class="tag">Kinematics</span>
+    <span class="tag">Inverse Kinematics</span>
+    <span class="tag">Feedforward Control</span>
     <span class="tag">PID</span>
   </div>
 </div>
@@ -83,8 +86,9 @@ title: Projects
   </div>
   <p>World-frame Artificial Potential Field obstacle avoidance paired with reactive sector steering and dynamic acceleration limits to keep the robot from tipping.</p>
   <div class="tag-list">
-    <span class="tag">C++</span>
+    <span class="tag">Artificial Potential Field</span>
     <span class="tag">Motion Planning</span>
+    <span class="tag">Acceleration Control</span>
   </div>
 </div>
 
@@ -95,8 +99,9 @@ title: Projects
   </div>
   <p>Cubic Bézier path following and ball-centered 180° turns that keep the dribbler aligned with the robot's travel direction at speed.</p>
   <div class="tag-list">
-    <span class="tag">C++</span>
+    <span class="tag">Bézier Curves</span>
     <span class="tag">Path Planning</span>
+    <span class="tag">Omnidirectional Kinematics</span>
   </div>
 </div>
 
@@ -107,7 +112,7 @@ title: Projects
   </div>
   <p>Role-based play strategy for Attacker, Assist, and Defender covering set pieces, passing coordination, and layered defense across variable team sizes.</p>
   <div class="tag-list">
-    <span class="tag">C++</span>
+    <span class="tag">Multi-Robot Coordination</span>
     <span class="tag">State Machines</span>
   </div>
 </div>

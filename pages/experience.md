@@ -30,9 +30,11 @@ title: Experience
       <span class="tag">ROS 1</span>
       <span class="tag">ROS 2</span>
       <span class="tag">OpenCV</span>
-      <span class="tag">C++</span>
+      <span class="tag">PCL</span>
       <span class="tag">CAN bus</span>
       <span class="tag">Intel RealSense</span>
+      <span class="tag">Motion Planning</span>
+      <span class="tag">Control Systems</span>
     </div>
   </div>
   <div class="card-logo">
@@ -65,7 +67,8 @@ title: Experience
       <li>Tutored and graded 30+ undergraduate students.</li>
     </ul>
     <div class="tag-list">
-      <span class="tag">Java</span>
+      <span class="tag">Algorithms</span>
+      <span class="tag">Object-Oriented Programming</span>
       <span class="tag">NetBeans IDE</span>
     </div>
   </div>

@@ -8,7 +8,8 @@ title: "Project Overview: IRIS ITS Middle Size League Soccer Robot"
 <div class="tag-list">
   <span class="tag">RoboCup 2026 3rd Place</span>
   <span class="tag">ROS 1</span>
-  <span class="tag">C++</span>
+  <span class="tag">OpenCV</span>
+  <span class="tag">PCL</span>
   <span class="tag">CAN Bus</span>
 </div>
 
@@ -195,7 +196,7 @@ Lighting conditions, turf friction, and dribbler spring tension change from one 
 
 ## 5. Experimental R&D & Engineering Trade-Offs
 
-During the 2025–2026 season, I also explored three experimental perception and state-estimation ideas. Testing them on the actual robot hardware clarified where each approach shines and where compute or field-geometry limits made simpler alternatives better suited for RoboCup 2026.
+During the 2026, I also explored three experimental perception and state-estimation ideas. Testing them on the actual robot hardware clarified where each approach shines and where compute or field-geometry limits made simpler alternatives better suited for RoboCup 2026.
 
 ### Panoramic Ball Detection with YOLOv12
 
