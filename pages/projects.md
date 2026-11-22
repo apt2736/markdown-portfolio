@@ -7,6 +7,20 @@ title: Projects
 
 <h3 align="justify">IRIS ITS 1:10 Scale Autonomous Car | Ongoing</h3>
 
+<div class="card card-interactive card-overview">
+  <div class="card-header">
+    <div class="card-title"><span class="card-badge">Overview</span><a href="{{ '/pages/projects/fira_car_overview.html' | relative_url }}">Project Overview: IRIS ITS 1:10 Scale Autonomous Car</a></div>
+    <span class="card-date">Coming Soon</span>
+  </div>
+  <p>System architecture, Ackermann chassis and sensor suite (Intel RealSense RGB-D, ROS 2 stack), and competition context for the IRIS ITS 1:10 scale autonomous vehicle platform.</p>
+  <div class="tag-list">
+    <span class="tag">Project Overview</span>
+    <span class="tag">KSTI 2026 1st Place</span>
+    <span class="tag">ROS 2</span>
+    <span class="tag">Autonomous Driving</span>
+  </div>
+</div>
+
 <div class="card card-interactive">
   <div class="card-header">
     <div class="card-title"><a href="{{ '/pages/projects/bev_autotune_fira.html' | relative_url }}">Bird's Eye View Autotuner with RealSense using RANSAC Plane Regression</a></div>
@@ -40,6 +54,23 @@ title: Projects
 ---
 
 <h3 align="justify">IRIS ITS Middle Size League Soccer Robot | January – June 2026</h3>
+
+<div class="card card-interactive card-overview">
+  <div class="card-header">
+    <div class="card-title"><span class="card-badge">Overview</span><a href="{{ '/pages/projects/iris_msl_overview.html' | relative_url }}">Project Overview: IRIS ITS Middle Size League Soccer Robot</a></div>
+    <span class="card-date">Jan – Jun 2026</span>
+  </div>
+  <p>Team profile, Generation 5 Striker and Goalkeeper hardware/ROS 1 architecture, links to core control and strategy modules, and supporting engineering work (Secant open-goal orientation correction, 360° catadioptric camera masking, CANopen actuator safety, web-based live parameter tuning, and experimental R&amp;D on panoramic YOLOv12, k-d tree MCL, and Kalman Filter ball prediction).</p>
+  <div class="tag-list">
+    <span class="tag">Project Overview</span>
+    <span class="tag">RoboCup 2026 3rd Place</span>
+    <span class="tag">ROS 1</span>
+    <span class="tag">C++</span>
+    <span class="tag">SocketCAN</span>
+    <span class="tag">OpenCV</span>
+    <span class="tag">OpenVINO</span>
+  </div>
+</div>
 
 <div class="card card-interactive">
   <div class="card-header">
@@ -100,6 +131,20 @@ title: Projects
 <h3 align="justify">TriageBox: Smart ML-Integrated Triage Device for Mass-Casualty Earthquake Response | January – November 2026</h3>
 
 <p class="category-note"><em>PKM-KC (Alat Triase Cerdas Terintegrasi Machine Learning untuk Mempercepat Triase Korban Massal Bencana Gempa) — PIMNAS 39 Silver (Presentation) &amp; Bronze (Poster) Medalist.</em></p>
+
+<div class="card card-interactive card-overview">
+  <div class="card-header">
+    <div class="card-title"><span class="card-badge">Overview</span><a href="{{ '/pages/projects/triagebox_overview.html' | relative_url }}">Project Overview: TriageBox Smart ML-Integrated Triage Device</a></div>
+    <span class="card-date">Coming Soon</span>
+  </div>
+  <p>End-to-end portable medical triage hardware, physiological sensor acquisition, and on-device machine learning integration for rapid mass-casualty earthquake response.</p>
+  <div class="tag-list">
+    <span class="tag">Project Overview</span>
+    <span class="tag">PIMNAS 39 Silver &amp; Bronze</span>
+    <span class="tag">Embedded ML</span>
+    <span class="tag">Biomedical Instrumentation</span>
+  </div>
+</div>
 
 <div class="card card-interactive">
   <div class="card-header">
