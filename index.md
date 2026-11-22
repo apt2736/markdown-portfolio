@@ -5,7 +5,7 @@ layout: default
 <div class="hero-card">
   <div class="hero-text">
     <h1 class="hero-title">Aslam Pandu Tasminto</h1>
-    <p class="hero-subtitle">Mathematics Undergraduate at ITS · Robotics Software, Control Systems</p>
+    <p class="hero-subtitle">Mathematics Undergraduate at ITS · Robotics Software, Control Systems, Computer Vision</p>
     <p>
       Undergraduate Mathematics student at Institut Teknologi Sepuluh Nopember (ITS) focused on autonomous robot software, control systems, computer vision. Robotics programmer for <strong>IRIS ITS</strong> (<strong>3rd Place, RoboCup 2026 Middle Size League</strong>; <strong>1st Place, KSTI 2026 Mini Autonomous Vehicle</strong>) and ML Engineer for <strong>TriageBox</strong> (<strong>PIMNAS 39 Silver &amp; Bronze Medalist</strong>).
     </p>
@@ -24,60 +24,46 @@ layout: default
 
 ## Featured Projects
 
-<div class="card card-interactive">
+<div class="card card-interactive card-overview">
   <div class="card-header">
-    <div class="card-title"><a href="{{ '/pages/projects/ml_pipeline_triagebox.html' | relative_url }}">LightGBM ML Pipeline for Triage Classification and Cuffless Blood Pressure Regression</a></div>
-    <span class="card-date">Jul – Oct 2026</span>
+    <div class="card-title"><span class="card-badge">Overview</span><a href="{{ '/pages/projects/fira_car_overview.html' | relative_url }}">IRIS ITS 1:10 Scale Autonomous Car</a></div>
+    <span class="card-date">Ongoing</span>
   </div>
-  <p>Two-stage embedded pipeline extracting 23 ECG/PPG cardiovascular biomarkers for cuffless SBP/DBP regression (ISO 81060-2 compliant on holdout) and ESI-to-START disaster triage classification (90.17% balanced accuracy, 0.9714 Macro AUROC).</p>
-  <div class="tag-list">
-    <span class="tag">PIMNAS 39 Silver &amp; Bronze</span>
-    <span class="tag">LightGBM</span>
-    <span class="tag">Optuna</span>
-    <span class="tag">Signal Processing</span>
-  </div>
-</div>
-
-<div class="card card-interactive">
-  <div class="card-header">
-    <div class="card-title"><a href="{{ '/pages/projects/bev_autotune_fira.html' | relative_url }}">Bird's Eye View Autotuner with RealSense using RANSAC Plane Regression</a></div>
-    <span class="card-date">Sep 2026</span>
-  </div>
-  <p>Automated camera-to-ground extrinsic calibration and Bird's Eye View homography synthesis from RealSense depth point clouds using axis-constrained RANSAC plane regression and Gram-Schmidt orthogonalization.</p>
+  <p>Overview of the IRIS ITS 1:10 scale autonomous car platform, covering the vehicle hardware, ROS 2 software stack, and competition background.</p>
   <div class="tag-list">
     <span class="tag">KSTI 2026 1st Place</span>
     <span class="tag">ROS 2</span>
     <span class="tag">Intel RealSense</span>
-    <span class="tag">RANSAC</span>
-    <span class="tag">OpenCV</span>
   </div>
 </div>
 
-<div class="card card-interactive">
+<div class="card card-interactive card-overview">
   <div class="card-header">
-    <div class="card-title"><a href="{{ '/pages/projects/play_strategy.html' | relative_url }}">Multi-Robot Play Strategy for RoboCup Middle Size League 2026</a></div>
-    <span class="card-date">Jun 2026</span>
+    <div class="card-title"><span class="card-badge">Overview</span><a href="{{ '/pages/projects/iris_msl_overview.html' | relative_url }}">IRIS ITS Middle Size League Soccer Robot</a></div>
+    <span class="card-date">Jan – Jun 2026</span>
   </div>
-  <p>Decentralized role-based tactical architecture (Attacker, Assist, Defender) coordinating set-piece standoffs, cooperative passing handshakes, and layered defensive containment across variable squad sizes.</p>
+  <p>Background on the IRIS ITS soccer robotics team, our Generation 5 striker and goalkeeper platforms, the five-package ROS control topology, and supporting work in camera masking, open-goal aiming, CAN bus safety, web tuning, and vision/localization experiments.</p>
   <div class="tag-list">
     <span class="tag">RoboCup 2026 3rd Place</span>
-    <span class="tag">Multi-Robot Coordination</span>
-    <span class="tag">ROS</span>
-    <span class="tag">C++</span>
+    <span class="tag">ROS 1</span>
+    <span class="tag">OpenCV</span>
+    <span class="tag">PCL</span>
+    <span class="tag">CAN Bus</span>
   </div>
 </div>
 
-<div class="card card-interactive">
+<div class="card card-interactive card-overview">
   <div class="card-header">
-    <div class="card-title"><a href="{{ '/pages/projects/potential_field_obs_avoidance.html' | relative_url }}">Artificial Potential Field Obstacle Avoidance with Dynamic Acceleration Control</a></div>
-    <span class="card-date">May 2026</span>
+    <div class="card-title"><span class="card-badge">Overview</span><a href="{{ '/pages/projects/triagebox_overview.html' | relative_url }}">TriageBox: Smart ML-Integrated Triage Device</a></div>
+    <span class="card-date">Jan – Nov 2026</span>
   </div>
-  <p>Discrete world-frame APF grid planner paired with reactive sector deflection and a polar velocity-step limiter to prevent high-center-of-gravity tipping during high-speed match maneuvers.</p>
+  <p>Portable earthquake triage system built for PKM-KC 2026: a wearable patient node, a LoRa receiver station, and a post dashboard that measure four vital signs and assign START triage priorities in under one minute without cellular networks.</p>
   <div class="tag-list">
-    <span class="tag">Motion Planning</span>
-    <span class="tag">Control Systems</span>
-    <span class="tag">Omnidirectional Robotics</span>
-    <span class="tag">C++</span>
+    <span class="tag">PIMNAS 39 Silver &amp; Bronze</span>
+    <span class="tag">STM32</span>
+    <span class="tag">ESP32-S3</span>
+    <span class="tag">LoRa</span>
+    <span class="tag">LightGBM</span>
   </div>
 </div>
 

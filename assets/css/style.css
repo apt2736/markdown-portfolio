@@ -1,6 +1,9 @@
 :root {
   --text-color: #24292f;
   --bg-color: #ffffff;
+  --header-bg-color: #f6f8fa;
+  --nav-link-color: #32383f;
+  --nav-brand-color: #1f2328;
   --link-color: #0969da;
   --link-hover: #1f883d;
   --border-color: #d0d7de;
@@ -14,6 +17,8 @@
     --text-color: #c9d1d9;
     --bg-color: #0d1117;
     --header-bg-color: #010409;
+    --nav-link-color: #e6edf3;
+    --nav-brand-color: #f0f6fc;
     --link-color: #58a6ff;
     --link-hover: #3fb950;
     --border-color: #30363d;
@@ -69,7 +74,7 @@ body {
 .site-brand {
   font-weight: 650;
   font-size: 0.98rem;
-  color: var(--text-color);
+  color: var(--nav-brand-color);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -87,7 +92,7 @@ body {
 
 .site-nav-links a:not(.btn) {
   font-size: 0.9rem;
-  color: var(--subtext-color);
+  color: var(--nav-link-color);
   text-decoration: none;
   padding: 0.2rem 0;
   border-bottom: 2px solid transparent;

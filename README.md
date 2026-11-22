@@ -4,7 +4,7 @@ permalink: /
 ---
 
 <h1 align="center">Aslam Pandu Tasminto</h1>
-<p align="center"><sub>Mathematics Undergraduate at ITS · Robotics Software, Control Systems</sub></p>
+<p align="center"><sub>Mathematics Undergraduate at ITS · Robotics Software, Control Systems, Computer Vision</sub></p>
 
 <table align="center">
   <tbody>
@@ -41,7 +41,6 @@ permalink: /
 
 ## Featured Projects
 
-- **[LightGBM ML Pipeline for Triage Classification and Cuffless Blood Pressure Regression](./pages/projects/ml_pipeline_triagebox.md)** — Two-stage ECG/PPG regression and ESI-to-START disaster triage pipeline (_PIMNAS 39 Silver & Bronze_).
-- **[Multi-Robot Play Strategy for RoboCup Middle Size League 2026](./pages/projects/play_strategy.md)** — Decentralized Attacker, Assist, and Defender coordination with cooperative passing and layered defense (_RoboCup 2026 3rd Place_).
-- **[Artificial Potential Field Obstacle Avoidance with Dynamic Acceleration Control](./pages/projects/potential_field_obs_avoidance.md)** — Discrete APF routing combined with reactive sector deflection and polar acceleration limiting.
-- **[Inverse Kinematic Feedforward Control with Ellipsoid Gain Profile for MSL Natural Dribbling](./pages/projects/inv_kinematic_natural_dribble.md)** — Directional ellipsoid feedforward blended with TPS PID feedback for compliant ball handling.
+- **[IRIS ITS 1:10 Scale Autonomous Car](./pages/projects/fira_car_overview.md)** (_KSTI 2026 1st Place_): Overview of the 1:10 scale autonomous car hardware, ROS 2 stack, and perception/control modules.
+- **[IRIS ITS Middle Size League Soccer Robot](./pages/projects/iris_msl_overview.md)** (_RoboCup 2026 3rd Place_): Generation 5 striker and goalkeeper platforms, five-package ROS control topology, and autonomous soccer modules.
+- **[TriageBox: Smart ML-Integrated Triage Device](./pages/projects/triagebox_overview.md)** (_PIMNAS 39 Silver & Bronze_): Portable earthquake triage node, LoRa receiver station, and dashboard assigning START triage priorities in under one minute.
