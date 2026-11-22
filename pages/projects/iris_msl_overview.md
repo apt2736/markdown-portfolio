@@ -38,8 +38,6 @@ In the **RoboCup Middle Size League**, teams of up to five fully autonomous whee
 | **2022** | **RoboCup Asia-Pacific (RCAP)**                       | **1st Place Open Challenge & 1st Place Cooperation Challenge**         |
 | **2022** | Kontes Robot Indonesia (KRSBI-B)                      | 2nd Place National, 2nd Place Regional II & Best Strategy Award        |
 
----
-
 ## 2. Robot Fleet & System Architecture
 
 Across five mechanical generations developed between 2017 and 2026 (Gen 1–2 in 2017, Gen 3 in 2019, Gen 4 in 2021, and Gen 5 from 2021 to the present), IRIS converged on two specialized robot platforms tailored to their field roles: three **Outfield / Striker Robots** (_Massimo #2_, _Matheo #3_, and _Pabel #7_) built for agile 360° ball handling and high-speed passing/shooting, and one **Goalkeeper Robot** (_Mansur #1_) built for rapid lateral goal-line coverage and 3D shot interception.
@@ -130,7 +128,14 @@ flowchart TD
     class STRATEGY,GAME_ACT strat;
 ```
 
----
+<p style="font-size: 0.85rem; color: var(--subtext-color); margin-top: -0.3rem;">
+  <strong>Color key (ROS packages):</strong>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#e64528;color:#fff;font-weight:600;margin:0 0.25rem;">Vision</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#5cd6c8;color:#0f172a;font-weight:600;margin:0 0.25rem;">Communication</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#5fd068;color:#0f172a;font-weight:600;margin:0 0.25rem;">Hardware (HAL)</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#ffffff;color:#0f172a;border:1px solid #64748b;font-weight:600;margin:0 0.25rem;">World Model</span>
+  <span style="display:inline-block;padding:0.08rem 0.45rem;background:#7b4dff;color:#fff;font-weight:600;margin:0 0.25rem;">Strategy</span>
+</p>
 
 ## 3. Core Autonomous Control & Strategy Modules
 
@@ -168,8 +173,6 @@ My primary engineering work for the RoboCup 2026 campaign focused on four core c
   <p>Role-based play strategy for Attacker, Assist, and Defender covering set pieces, passing coordination, and layered defense across variable team sizes.</p>
 </div>
 
----
-
 ## 4. Supporting Engineering Contributions
 
 Beyond the four major modules above, keeping the fleet reliable across matches and tight venue setup windows involved several smaller but practical improvements across vision, embedded communication, and operator tooling.
@@ -189,8 +192,6 @@ The onboard PC communicates with the three omnidirectional traction motor driver
 ### Web-Based Parameter Tuning Dashboard
 
 Lighting conditions, turf friction, and dribbler spring tension change from one competition hall to another, leaving little time to edit config files or recompile code during setup. I developed a browser-based tuning dashboard connected to each robot over Wi-Fi so the team can inspect the live field map and adjust dribble gains, motion PIDs, kicker offsets, vision color thresholds, and starting robot pose in real time, saving tuned presets directly back to the robot's configuration.
-
----
 
 ## 5. Experimental R&D & Engineering Trade-Offs
 
