@@ -157,8 +157,28 @@ Passing between moving robots requires tight coordination so the receiver does n
 
 ## Role-Specific Strategy Breakdowns
 
-Detailed breakdowns for each role:
+Detailed breakdowns for each outfield role:
 
-- [Attacker Play Strategy](./attacker_play_strategy.md): Striker dribbling under the $3\text{ m}$ limit, front-facing pressing, and vision-guided finishing.
-- [Assist Play Strategy](./assist_play_strategy.md): Set-piece restarts, distance-scaled passing, ball interception, and defensive recovery.
-- [Defender Play Strategy](./defender_play_strategy.md): Penalty-box shot blocking, variable standoff arcs, and counter-attack clearance.
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/attacker_play_strategy.html' | relative_url }}">1. Attacker Play Strategy</a></div>
+    <span class="card-date">Striker</span>
+  </div>
+  <p>Striker dribbling under the 3 m limit, front-facing pressing around ball-shielding opponents, and vision-guided finishing into the open side of the goalpost.</p>
+</div>
+
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/assist_play_strategy.html' | relative_url }}">2. Assist Play Strategy</a></div>
+    <span class="card-date">Playmaker</span>
+  </div>
+  <p>Set-piece restart execution, squad-size adaptive passing, predictive moving-ball interception, and midfield counter-attack coverage.</p>
+</div>
+
+<div class="card card-interactive">
+  <div class="card-header">
+    <div class="card-title"><a href="{{ '/pages/projects/defender_play_strategy.html' | relative_url }}">3. Defender Play Strategy</a></div>
+    <span class="card-date">Penalty-Box Anchor</span>
+  </div>
+  <p>Penalty-line shot blocking along the ball-to-goal ray, variable restart standoff arcs outside the box, and flank-escape counter-attack clearances.</p>
+</div>
